@@ -9,6 +9,7 @@ interface IPlayerStats{
 interface IMatchSchema extends Document{
     player1Stats: IPlayerStats;
     player2Stats: IPlayerStats;
+    questions: Types.ObjectId[];
     winner?: Types.ObjectId | null;
     totalTestCases: number;
     duration: number;
@@ -34,7 +35,7 @@ const playerStatsSchema: Schema<IPlayerStats>= new Schema({
     }
 }, {_id: false})
 
-const matchSchema: Schema<IMatchSchema>= new Schema({
+const matchSchema= new Schema<IMatchSchema>({
     player1Stats:{
         type: playerStatsSchema,
         required: true,
@@ -46,6 +47,11 @@ const matchSchema: Schema<IMatchSchema>= new Schema({
     winner:{
         type: Schema.Types.ObjectId,
         ref: 'User',
+        default: null,
+    },
+    questions:{
+        type: [Schema.Types.ObjectId],
+        ref: 'Question',
         default: null,
     },
     totalTestCases:{

@@ -1,16 +1,6 @@
 import mongoose from "mongoose";
-import {Schema, Model, Document, Types} from "mongoose";
-
-type reqStatus= "PENDING" | "ACCEPTED" | "REJECTED" | "BLOCKED";
-interface IFriendsSchema extends Document{
-    sentBy: Types.ObjectId;
-    userA: Types.ObjectId;
-    userB: Types.ObjectId;
-    status: reqStatus;
-    createdAt: Date;
-    updatedAt: Date;
-}
-
+import {Schema, Model} from "mongoose";
+import type { IFriendsSchema } from "./Friends.types.js";
 //Remember to store the smaller objectId as userA & larger as userB {understand how that's helpful}
 //understand more about indexing
 const friendsSchema : Schema<IFriendsSchema>= new Schema({

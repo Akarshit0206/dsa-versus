@@ -1,31 +1,7 @@
 import { Schema, model, Document } from "mongoose";
+import type { ITestCase, IQuestion, Language } from "./Question.types.js";
 
-type Difficulty = "easy" | "medium" | "hard";
-type Language = 71 | 54 | 62; // python | cpp | java
-
-interface ITest {
-  input: string;
-  output: string;
-  isSample: boolean;
-}
-
-interface IQuestion extends Document {
-  title: string;
-  slug: string;
-  description: string;
-  difficulty: Difficulty;
-  constraints: string[];
-  topics: string[];
-  baseMemoryLimit: number; // MB
-  baseTimeLimit: number; // sec
-  timeLimitMultiplier: Record<Language, number>;
-  testCases: ITest[];
-  starterCode?: Record<Language, string>;
-  createdAt: Date;
-  updatedAt: Date;
-}
-
-const TestSchema = new Schema<ITest>(
+const TestSchema = new Schema<ITestCase>(
   {
     input: { type: String, required: true },
     output: { type: String, required: true },
@@ -79,5 +55,6 @@ const QuestionSchema= new Schema<IQuestion>(
 );
 
 
-export const QuestionModel = model<IQuestion>("Question", QuestionSchema);
-export type { IQuestion, ITest, Difficulty, Language };
+const QuestionModel = model<IQuestion>("Question", QuestionSchema);
+
+export default QuestionModel;

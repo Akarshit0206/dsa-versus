@@ -1,29 +1,8 @@
 import mongoose from "mongoose";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
-import {Schema, Document, Model, Types} from 'mongoose';
-
-interface IUser extends Document{
-    username: string,
-    email: string,
-    password: string,
-    avatar: string,
-    refreshToken ?: string,
-    isPasswordCorrect(password: string) : Promise<boolean>,
-    generateAccessToken(): string,
-    generateRefreshToken(): string,
-}
-
-type AccessTokenPayload= {
-    _id: Types.ObjectId,
-    username: string,
-    email: string,
-}
-
-type RefreshTokenPayload={
-    _id: Types.ObjectId,
-}
-
+import {Schema, Model} from 'mongoose';
+import type { IUser, AccessTokenPayload, RefreshTokenPayload } from "./User.types.js";
 
 const userSchema: Schema<IUser>= new Schema({
     username:{
@@ -97,7 +76,7 @@ userSchema.methods.generateRefreshToken= function(this: IUser): string{
         payload,
         secret,
         {
-            expiresIn: (process.env.ACCESS_EXPIRY ?? "1d") as jwt.SignOptions["expiresIn"],
+            expiresIn: (process.env.REFRESH_TOKEN_EXPIRY ?? "1d") as jwt.SignOptions["expiresIn"],
         }
     )
 }

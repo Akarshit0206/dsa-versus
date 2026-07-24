@@ -28,6 +28,7 @@ const userSchema: Schema<IUser>= new Schema({
     },
     avatar:{
         type: String,
+        default: "",
     },
     refreshToken:{
         type: String,

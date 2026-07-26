@@ -1,8 +1,7 @@
 import express from "express";
-import type { Request, Response, NextFunction } from "express";
+import {registerUser} from "../controllers/auth.controller.js";
+import { asyncHandler } from "../utils/index.js";
 
 export const authRouter= express.Router();
 
-authRouter.route("/register").get((req: Request, res: Response, next: NextFunction)=>{
-    res.send("Hello Register");
-})
+authRouter.route("/register").post(asyncHandler(registerUser));

@@ -12,13 +12,13 @@ interface IUser extends Document{
 }
 
 type AccessTokenPayload= {
-    _id: Types.ObjectId,
+    id: Types.ObjectId,
     username: string,
     email: string,
 }
 
 type RefreshTokenPayload={
-    _id: Types.ObjectId,
+    id: Types.ObjectId,
 }
 
 export type {IUser, AccessTokenPayload, RefreshTokenPayload};

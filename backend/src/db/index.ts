@@ -4,7 +4,7 @@ async function connectDb(): Promise<void>{
     try{
         const uri= process.env.MONGODB_URI;
         if(!uri) throw new Error("MONGODB_URI is not defined in environment variables");
-        const connectionInstance= await mongoose.connect(`${uri}/dsa-versus`);
+        const connectionInstance= await mongoose.connect(`${uri}dsa-battle-dev`);
         console.log("MongoDB Connected successfully !! Host:", connectionInstance.connection.host);
     }
     catch (error) {

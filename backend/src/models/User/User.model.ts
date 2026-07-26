@@ -49,7 +49,7 @@ userSchema.methods.isPasswordCorrect= async function(this: IUser, password : str
 userSchema.methods.generateAccessToken= function(this: IUser): string{
     const secret = process.env.ACCESS_TOKEN_SECRET;
     const payload: AccessTokenPayload={
-            _id: this._id,
+            id: this._id,
             username: this.username,
             email: this.email
         }; 
@@ -68,8 +68,8 @@ userSchema.methods.generateAccessToken= function(this: IUser): string{
 userSchema.methods.generateRefreshToken= function(this: IUser): string{
     const secret= process.env.REFRESH_TOKEN_SECRET;
     const payload: RefreshTokenPayload= {
-            _id: this._id,
-        };
+            id: this._id,
+        }; 
     if(!secret){
         throw new Error("Refresh Token Secret not defined !!");
     }

@@ -2,7 +2,10 @@ import User from "../models/User/User.model.js";
 import { ApiError, ApiResponse } from "../utils/index.js";
 import type { RequestHandler } from "express";
 import type { IUser } from "../models/User/User.types.js";
+import mongoose from "mongoose";
 
+
+//Helper functions
 
 const isValidPassword = (password: string): boolean => {
   const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)\S{4,}$/;
@@ -38,6 +41,35 @@ export const isValidEmail = (email: string): boolean => {
   return true;
 };
 
+const generateAccessAndRefreshToken= async (userId: mongoose.Types.ObjectId) =>{
+    try{
+        const user= await User.findById(userId);
+        if(!user){
+            throw new Error("Couldn't Find User");
+        }
+        const refreshToken= user.generateRefreshToken();
+        const accessToken= user.generateAccessToken();
+
+        if(!refreshToken || !accessToken){
+            throw new Error("Failed to create refresh and access token");
+        }
+
+        user.refreshToken= refreshToken;
+        user.save({validateBeforeSave: false});
+
+        return {accessToken, refreshToken};
+    }
+    catch(error){
+        if(error instanceof Error){
+            throw new ApiError(500, error.message);
+        }
+        else{
+            throw new ApiError(500, "Something went wong while generating access and refresh tokens")
+        }
+    }
+}
+
+//controller functions
 export const registerUser: RequestHandler= async (req, res, next)=>{
     const {username, email, password} = req.body;
 
@@ -76,5 +108,49 @@ export const registerUser: RequestHandler= async (req, res, next)=>{
 
     return res.status(201).json(
         new ApiResponse(201, createdUser, "User registered Successfully")
+    )
+}
+
+const loginUser: RequestHandler= async (req, res, next)=>{
+    const {identifier, password} = req.body;
+
+    if(!identifier || !password){
+        throw new ApiError(400, "Both fields are required");
+    }
+
+    const user= await User.findOne({
+        $or: [{username: identifier}, {email: identifier}],
+    })
+    if(!user){
+        throw new ApiError(404, "User does not exists");
+    }
+
+    const isPasswordValid= await user.isPasswordCorrect(password);
+    if(!isPasswordValid){
+        throw new ApiError(401, "Incorrect credentials");
+    }
+
+    const {accessToken, refreshToken}= await generateAccessAndRefreshToken(user._id);
+
+    const loggedInUser= await User.findById(user._id).select("-password -refreshToken");
+
+    const options = {
+        httpOnly: true,
+        secure: true,
+        sameSite: "strict" as const,
+    }
+
+    res
+    .status(200)
+    .cookie("accessToken", accessToken, options)
+    .cookie("refreshToken", refreshToken, options)
+    .json(
+        new ApiResponse(
+            200,
+            {
+                user: loggedInUser,
+            },
+            "User logged In successfully",
+        )
     )
 }

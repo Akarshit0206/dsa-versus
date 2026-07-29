@@ -111,7 +111,7 @@ export const registerUser: RequestHandler= async (req, res, next)=>{
     )
 }
 
-const loginUser: RequestHandler= async (req, res, next)=>{
+export const loginUser: RequestHandler= async (req, res, next)=>{
     const {identifier, password} = req.body;
 
     if(!identifier || !password){
@@ -153,4 +153,41 @@ const loginUser: RequestHandler= async (req, res, next)=>{
             "User logged In successfully",
         )
     )
+}
+
+export const logoutUser: RequestHandler = async(req, res) => {
+    await User.findByIdAndUpdate(
+        req.user._id,
+        {
+            $unset: {
+                refreshToken: 1 // this removes the field from document
+            }
+        },
+        {
+            new: true
+        }
+    )
+
+    const options = {
+        httpOnly: true,
+        secure: true,
+        sameSite: "strict" as const,
+    }
+
+    return res
+    .status(200)
+    .clearCookie("accessToken", options)
+    .clearCookie("refreshToken", options)
+    .json(new ApiResponse(200, {}, "User logged Out"))
+}
+
+//may shift from auth to user controller
+export const getCurrentUser: RequestHandler= async (req, res, next)=>{
+    return res
+    .status(200)
+    .json(new ApiResponse(
+        200,
+        req.user,
+        "User fetched successfully"
+    ));
 }

@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router'
 import { JoinRoomForm } from '@/components/join-room-form'
 import { MarkerUnderline } from '@/components/marker-underline'
 
@@ -34,7 +34,7 @@ export function JoinRoomPage() {
             Join a{' '}
             <span className="relative inline-block">
               duel
-              <MarkerUnderline className="absolute -bottom-2 left-0 h-2.5 w-full" />
+              <MarkerUnderline className="absolute -bottom-2 left-0 h-2.5 w-full text-slate-400 dark:text-slate-500" />
             </span>
           </h1>
           <p className="mt-7 text-pretty leading-relaxed text-muted-foreground">
@@ -47,7 +47,7 @@ export function JoinRoomPage() {
         <ul className="mt-10 grid gap-3">
           {TIPS.map((tip) => (
             <li key={tip} className="flex items-start gap-3 text-sm text-muted-foreground">
-              <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-marker" aria-hidden="true" />
+              <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-slate-500" aria-hidden="true" />
               {tip}
             </li>
           ))}

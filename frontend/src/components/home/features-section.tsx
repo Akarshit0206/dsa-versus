@@ -41,13 +41,13 @@ const TOPICS = ['Arrays', 'Strings', 'Hash maps', 'Two pointers', 'Linked lists'
 
 export function FeaturesSection() {
   return (
-    <section className="relative overflow-hidden border-t border-border/70 bg-secondary/40 px-5 py-20 sm:px-8 sm:py-24">
-      {/* Backdrop the frosted cards blur against, at every breakpoint. */}
+    <section className="relative overflow-hidden border-t border-slate-200/80 bg-slate-100/30 px-5 py-20 sm:px-8 sm:py-24 dark:border-slate-800/80 dark:bg-slate-900/30">
+      {/* Background Doodles */}
       <DoodleBackdrop
         src="/doodles/bst.png"
         className="-right-14 top-16 h-52 w-52 sm:h-72 sm:w-72"
         tilt="7deg"
-        opacity="opacity-[0.06]"
+        opacity="opacity-[0.05]"
         interactive={false}
         float
       />
@@ -55,68 +55,71 @@ export function FeaturesSection() {
         src="/doodles/linked-list.png"
         className="-left-20 bottom-24 h-48 w-48 sm:h-64 sm:w-64"
         tilt="-10deg"
-        opacity="opacity-[0.05]"
+        opacity="opacity-[0.04]"
         interactive={false}
       />
 
       <div className="relative z-10 mx-auto w-full max-w-6xl">
         <div className="max-w-xl">
-          <h2 className="text-balance text-3xl font-extrabold tracking-tight text-ink sm:text-4xl">
+          <h2 className="text-balance text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl dark:text-slate-100">
             Built for{' '}
             <span className="group relative inline-block">
               rivalry
-              <MarkerUnderline className="absolute -bottom-1.5 left-0 h-2.5 w-full origin-left transition-transform duration-500 ease-out group-hover:scale-x-105" />
+              <MarkerUnderline className="absolute -bottom-1.5 left-0 h-2.5 w-full origin-left text-slate-400 transition-transform duration-500 ease-out group-hover:scale-x-105 dark:text-slate-500" />
             </span>
           </h2>
-          <p className="mt-6 text-pretty leading-relaxed text-muted-foreground">
+          <p className="mt-5 text-pretty text-sm leading-relaxed text-slate-600 sm:text-base dark:text-slate-400">
             Everything you need to turn interview prep into something you actually want to do
             again tomorrow.
           </p>
         </div>
 
-        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {/* Feature Cards Grid */}
+        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {FEATURES.map((feature) => (
             <div
               key={feature.title}
-              className="glass lift group relative overflow-hidden rounded-xl p-7"
+              className="glass-strong lift group relative cursor-pointer overflow-hidden rounded-xl border border-slate-200/90 bg-white/90 p-6 transition-all duration-300 hover:border-slate-400 hover:bg-white hover:shadow-md dark:border-slate-800 dark:bg-slate-900/80 dark:hover:border-slate-600"
             >
               <DoodleBackdrop
                 src={feature.doodle}
                 className={feature.doodleClass}
                 tilt={feature.tilt}
+                opacity="opacity-[0.06]"
+                hoverOpacity="group-hover:opacity-[0.12]"
               />
 
               <div className="relative z-10">
-                <feature.icon
-                  className="size-5 text-marker transition-transform duration-300 ease-out group-hover:-rotate-6 group-hover:scale-110 motion-reduce:group-hover:rotate-0 motion-reduce:group-hover:scale-100"
-                  aria-hidden="true"
-                />
-                <h3 className="mt-5 text-base font-bold text-ink">{feature.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{feature.body}</p>
+                <div className="inline-flex size-10 items-center justify-center rounded-lg border border-slate-200 bg-slate-100 text-slate-900 shadow-xs transition-transform duration-300 group-hover:scale-105 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-100">
+                  <feature.icon className="size-5 text-slate-800 transition-transform duration-300 group-hover:rotate-3 dark:text-slate-200" aria-hidden="true" />
+                </div>
+                <h3 className="mt-4 text-base font-bold tracking-tight text-slate-900 dark:text-slate-100">{feature.title}</h3>
+                <p className="mt-2 text-xs leading-relaxed text-slate-600 sm:text-sm dark:text-slate-400">{feature.body}</p>
               </div>
             </div>
           ))}
         </div>
 
-        <div className="glass group relative mt-8 grid gap-6 overflow-hidden rounded-xl p-7 sm:p-10 lg:grid-cols-2 lg:items-center lg:gap-12">
+        {/* Topics Board Section */}
+        <div className="glass-strong group relative mt-8 grid gap-6 overflow-hidden rounded-xl border border-slate-200/90 p-7 sm:p-10 lg:grid-cols-2 lg:items-center lg:gap-12 dark:border-slate-800">
           <DoodleBackdrop
             src="/doodles/time-complexity.png"
             className="-bottom-10 left-1/4 h-40 w-64 lg:hidden"
             tilt="-4deg"
-            opacity="opacity-[0.07]"
+            opacity="opacity-[0.05]"
           />
 
           <div className="relative z-10">
-            <h3 className="text-xl font-bold text-ink sm:text-2xl">Every topic on the board</h3>
-            <p className="mt-4 text-pretty text-sm leading-relaxed text-muted-foreground">
+            <h3 className="text-xl font-bold text-slate-900 sm:text-2xl dark:text-slate-100">Every topic on the board</h3>
+            <p className="mt-3 text-pretty text-sm leading-relaxed text-slate-600 dark:text-slate-400">
               Pick a single topic to grind or leave it on random and let the arena decide what you
               are weakest at.
             </p>
-            <ul className="mt-7 flex flex-wrap gap-2">
+            <ul className="mt-6 flex flex-wrap gap-2">
               {TOPICS.map((topic) => (
                 <li
                   key={topic}
-                  className="cursor-default rounded-md border border-border bg-background/60 px-3 py-1.5 text-xs font-medium text-ink transition-[transform,border-color,background-color] duration-200 ease-out hover:-translate-y-0.5 hover:border-marker/50 hover:bg-background motion-reduce:hover:translate-y-0"
+                  className="cursor-pointer rounded-md border border-slate-200 bg-white px-3 py-1.5 text-xs font-medium text-slate-800 transition-all duration-200 hover:-translate-y-0.5 hover:bg-slate-900 hover:text-white dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-100 dark:hover:text-slate-900"
                 >
                   {topic}
                 </li>
@@ -130,7 +133,7 @@ export function FeaturesSection() {
               alt="Hand-drawn comparative time complexity diagram"
               width={520}
               height={340}
-              className="hidden h-auto w-full max-w-sm opacity-80 transition-transform duration-500 ease-out group-hover:scale-[1.03] motion-reduce:group-hover:scale-100 lg:block"
+              className="hidden h-auto w-full max-w-sm opacity-75 transition-transform duration-500 ease-out group-hover:scale-[1.02] lg:block"
             />
             <div className="flex items-center justify-center gap-6 lg:hidden">
               <img
@@ -138,14 +141,14 @@ export function FeaturesSection() {
                 alt="Hand-drawn stack push and pop diagram"
                 width={320}
                 height={320}
-                className="h-auto w-28 opacity-80 sm:w-36"
+                className="h-auto w-28 opacity-75 sm:w-36"
               />
               <img
                 src="/doodles/bst.png"
                 alt="Hand-drawn binary search tree diagram"
                 width={320}
                 height={320}
-                className="h-auto w-36 opacity-80 sm:w-44"
+                className="h-auto w-36 opacity-75 sm:w-44"
               />
             </div>
           </div>

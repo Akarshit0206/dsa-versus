@@ -33,10 +33,9 @@ export function BattlePreview() {
   const fullText = useMemo(() => YOUR_LINES.join('\n'), [])
 
   const [typed, setTyped] = useState(reduceMotion ? fullText.length : 0)
-  const [secondsLeft, setSecondsLeft] = useState(271)
+  const [secondsLeft, setSecondsLeft] = useState(154)
   const [opponentTests, setOpponentTests] = useState(12)
 
-  // Typewriter loop for the local player's editor.
   useEffect(() => {
     if (reduceMotion) {
       setTyped(fullText.length)
@@ -46,9 +45,8 @@ export function BattlePreview() {
     let hold = 0
     const id = window.setInterval(() => {
       if (index >= fullText.length) {
-        // Hold the finished snippet for ~2s, then retype from the top.
         hold += 1
-        if (hold > 40) {
+        if (hold > 50) {
           index = 0
           hold = 0
           setTyped(0)
@@ -57,25 +55,23 @@ export function BattlePreview() {
       }
       index = Math.min(index + 2, fullText.length)
       setTyped(index)
-    }, 50)
+    }, 70)
     return () => window.clearInterval(id)
   }, [fullText.length, reduceMotion])
 
-  // Countdown clock.
   useEffect(() => {
     if (reduceMotion) return
     const id = window.setInterval(() => {
-      setSecondsLeft((prev) => (prev <= 0 ? 271 : prev - 1))
+      setSecondsLeft((prev) => (prev <= 0 ? 154 : prev - 1))
     }, 1000)
     return () => window.clearInterval(id)
   }, [reduceMotion])
 
-  // Opponent creeps up the test list, then stalls and restarts.
   useEffect(() => {
     if (reduceMotion) return
     const id = window.setInterval(() => {
       setOpponentTests((prev) => (prev >= TOTAL_TESTS - 1 ? 12 : prev + 1))
-    }, 2300)
+    }, 3500)
     return () => window.clearInterval(id)
   }, [reduceMotion])
 
@@ -83,24 +79,26 @@ export function BattlePreview() {
   const yourTests = Math.round((typed / fullText.length) * TOTAL_TESTS)
   const minutes = Math.floor(secondsLeft / 60)
   const seconds = secondsLeft % 60
-  const urgent = secondsLeft < 60
 
   return (
-    <div className="glass-strong relative overflow-hidden rounded-xl">
-      {/* Window chrome */}
-      <div className="relative z-10 flex items-center gap-2 border-b border-border/70 bg-secondary/40 px-4 py-3">
-        <span className="size-2.5 rounded-full bg-border" aria-hidden="true" />
-        <span className="size-2.5 rounded-full bg-border" aria-hidden="true" />
-        <span className="size-2.5 rounded-full bg-border" aria-hidden="true" />
-        <span className="ml-3 font-mono text-xs text-muted-foreground">room /</span>
-        <CopyCodeButton code={ROOM_CODE} />
+    <div className="relative overflow-hidden rounded-2xl border border-slate-200/90 bg-white shadow-sm dark:border-slate-800 dark:bg-slate-900">
+      {/* Window Header */}
+      <div className="relative z-10 flex items-center justify-between border-b border-slate-200/80 bg-slate-50/80 px-4 py-3 dark:border-slate-800 dark:bg-slate-950/60">
+        <div className="flex items-center gap-2">
+          <span className="size-2.5 rounded-full bg-slate-300 dark:bg-slate-700" aria-hidden="true" />
+          <span className="size-2.5 rounded-full bg-slate-300 dark:bg-slate-700" aria-hidden="true" />
+          <span className="size-2.5 rounded-full bg-slate-300 dark:bg-slate-700" aria-hidden="true" />
+          <span className="ml-3 font-mono text-xs text-slate-500">room /</span>
+          <CopyCodeButton code={ROOM_CODE} />
+        </div>
+        <span className="hidden font-mono text-xs text-slate-400 sm:inline">1v1 DSA Arena</span>
       </div>
 
-      <div className="relative z-10 grid gap-px bg-border/70 sm:grid-cols-2">
+      <div className="relative z-10 grid gap-px bg-slate-200/80 sm:grid-cols-2 dark:bg-slate-800/80">
         <PlayerPane
-          name="you"
-          status="Solving"
-          statusTone="marker"
+          name="YOU"
+          status="Solution"
+          statusTone="active"
           code={visibleText}
           caret={!reduceMotion}
           tests={yourTests}
@@ -109,7 +107,7 @@ export function BattlePreview() {
           tilt="-8deg"
         />
         <PlayerPane
-          name="opponent"
+          name="OPPONENT"
           status={`${opponentTests} / ${TOTAL_TESTS} tests passing`}
           statusTone="muted"
           code={OPPONENT_LINES.join('\n')}
@@ -120,14 +118,13 @@ export function BattlePreview() {
         />
       </div>
 
-      <div className="relative z-10 flex flex-wrap items-center justify-between gap-3 border-t border-border/70 px-5 py-4">
-        <p className="text-sm font-medium text-ink">Two Sum · Easy</p>
-        <p
-          className={cn(
-            'font-mono text-sm tabular-nums transition-colors',
-            urgent ? 'text-marker' : 'text-muted-foreground',
-          )}
-        >
+      {/* Card Footer */}
+      <div className="relative z-10 flex flex-wrap items-center justify-between gap-3 border-t border-slate-200/80 bg-slate-50/60 px-5 py-3.5 dark:border-slate-800 dark:bg-slate-950/40">
+        <div className="flex items-center gap-2">
+          <span className="inline-block size-2 rounded-full bg-slate-700 dark:bg-slate-300" />
+          <p className="text-xs font-semibold text-slate-800 sm:text-sm dark:text-slate-200">Two Sum · Easy</p>
+        </div>
+        <p className="font-mono text-xs tabular-nums text-slate-500 sm:text-sm">
           {minutes.toString().padStart(2, '0')}:{seconds.toString().padStart(2, '0')} left
         </p>
       </div>
@@ -147,7 +144,7 @@ function CopyCodeButton({ code }: { code: string }) {
     try {
       await navigator.clipboard.writeText(code)
     } catch {
-      // Clipboard can be blocked; still give the affordance feedback.
+      // Ignore
     }
     setCopied(true)
     if (timeout.current) window.clearTimeout(timeout.current)
@@ -158,22 +155,15 @@ function CopyCodeButton({ code }: { code: string }) {
     <button
       type="button"
       onClick={copy}
-      className="group/copy relative inline-flex items-center gap-1.5 overflow-hidden rounded-md border border-transparent px-2 py-1 font-mono text-xs text-ink transition-colors hover:border-border hover:bg-background/70"
+      className="group/copy cursor-pointer relative inline-flex items-center gap-1.5 rounded-md border border-slate-200 bg-white px-2 py-0.5 font-mono text-xs font-bold text-slate-800 transition-all hover:border-slate-400 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200"
     >
       {code}
       {copied ? (
-        <Check className="size-3 text-marker" aria-hidden="true" />
+        <Check className="size-3 text-slate-700 dark:text-slate-300" aria-hidden="true" />
       ) : (
         <Copy
-          className="size-3 text-muted-foreground transition-transform group-hover/copy:-translate-y-px group-hover/copy:text-ink"
+          className="size-3 text-slate-400 transition-transform group-hover/copy:scale-105"
           aria-hidden="true"
-        />
-      )}
-      <span className="sr-only">{copied ? 'Room code copied' : 'Copy room code'}</span>
-      {copied && (
-        <span
-          aria-hidden="true"
-          className="animate-sheen absolute inset-y-0 w-1/3 bg-marker/20 blur-sm"
         />
       )}
     </button>
@@ -193,7 +183,7 @@ function PlayerPane({
 }: {
   name: string
   status: string
-  statusTone: 'marker' | 'muted'
+  statusTone: 'active' | 'muted'
   code: string
   caret?: boolean
   tests: number
@@ -202,55 +192,50 @@ function PlayerPane({
   tilt: string
 }) {
   return (
-    <div className="group relative overflow-hidden bg-card/70 p-5 transition-colors duration-300 hover:bg-card">
+    <div className="group relative overflow-hidden bg-white p-6 transition-colors duration-300 dark:bg-slate-900">
       <DoodleBackdrop
         src={doodle}
         className={doodleClass}
         tilt={tilt}
-        opacity="opacity-[0.07]"
-        hoverOpacity="group-hover:opacity-[0.14]"
+        opacity="opacity-[0.03]"
+        hoverOpacity="group-hover:opacity-[0.06]"
       />
 
       <div className="relative z-10">
-        <div className="mb-4 flex items-center justify-between gap-3">
-          <p className="font-mono text-xs font-semibold uppercase tracking-wider text-ink">
+        <div className="mb-3 flex items-center justify-between gap-3">
+          <p className="font-mono text-xs font-bold tracking-wider text-slate-800 dark:text-slate-200">
             {name}
           </p>
-          <p
-            className={cn(
-              'text-xs font-medium tabular-nums transition-colors',
-              statusTone === 'marker' ? 'text-marker' : 'text-muted-foreground',
-            )}
-          >
+          <p className="text-xs font-semibold tabular-nums text-slate-600 dark:text-slate-400">
             {status}
           </p>
         </div>
 
-        {/* Test-case progress */}
+        {/* Thick Slate Gray progress bar */}
         <div
-          className="mb-4 h-1 w-full overflow-hidden rounded-full bg-border/70"
+          className="mb-4 h-2 w-full overflow-hidden rounded-full bg-slate-100 dark:bg-slate-800"
           role="progressbar"
           aria-valuenow={tests}
           aria-valuemin={0}
           aria-valuemax={TOTAL_TESTS}
-          aria-label={`${name} test cases passing`}
         >
           <div
             className={cn(
-              'h-full rounded-full transition-[width] duration-700 ease-out',
-              statusTone === 'marker' ? 'bg-marker' : 'bg-primary',
+              'h-full rounded-full transition-[width] duration-500 ease-out',
+              statusTone === 'active' ? 'bg-slate-700 dark:bg-slate-300' : 'bg-slate-600 dark:bg-slate-400',
             )}
             style={{ width: `${(tests / TOTAL_TESTS) * 100}%` }}
           />
         </div>
 
-        <pre className="min-h-[9.5rem] overflow-x-auto font-mono text-[11px] leading-relaxed text-muted-foreground transition-colors group-hover:text-ink/80 sm:text-xs">
+        {/* Fixed height code container (h-44) to prevent card resizing during typing */}
+        <pre className="h-44 overflow-x-auto font-mono text-[11px] leading-relaxed text-slate-600 transition-colors group-hover:text-slate-900 sm:text-xs dark:text-slate-400 dark:group-hover:text-slate-100">
           <code>
             {code}
             {caret && (
               <span
                 aria-hidden="true"
-                className="animate-caret ml-px inline-block h-3 w-1.5 translate-y-px bg-marker align-middle"
+                className="animate-caret ml-px inline-block h-3.5 w-1.5 translate-y-px bg-slate-800 dark:bg-slate-200 align-middle"
               />
             )}
           </code>

@@ -1,12 +1,14 @@
 import { useRef, useState } from 'react'
 import { ArrowRight, Loader2 } from 'lucide-react'
+import { useAuth } from '@/context/AuthContext'
 import { DoodleBackdrop } from '@/components/doodle-backdrop'
 import { cn } from '@/lib/utils'
 
 const CODE_LENGTH = 6
 
 export function JoinRoomForm() {
-  const [name, setName] = useState('')
+  const { user } = useAuth()
+  const [name, setName] = useState(user?.username || '')
   const [digits, setDigits] = useState<string[]>(Array(CODE_LENGTH).fill(''))
   const [error, setError] = useState<string | null>(null)
   const [status, setStatus] = useState<'idle' | 'joining' | 'joined'>('idle')

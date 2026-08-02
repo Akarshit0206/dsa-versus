@@ -1,46 +1,68 @@
-import { Link, useLocation } from 'react-router-dom'
-import { cn } from '@/lib/utils'
-
-const NAV_LINKS = [
-  { href: '/', label: 'Home', mobileLabel: 'Home' },
-  { href: '/join-room', label: 'Join a room', mobileLabel: 'Join' },
-]
+import { Link, useNavigate } from 'react-router'
+import { useAuth } from '@/context/AuthContext'
+import { LogOut, User as UserIcon } from 'lucide-react'
 
 export function SiteHeader() {
-  const location = useLocation()
+  const { user, logout } = useAuth()
+  const navigate = useNavigate()
+
+  async function handleLogout() {
+    try {
+      await logout()
+    } catch (error) {
+      console.error('Logout error:', error)
+    } finally {
+      navigate('/signin', { replace: true })
+    }
+  }
 
   return (
-    <header className="relative z-20 border-b border-border/70 bg-background/90 backdrop-blur">
-      <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between gap-6 px-5 sm:px-8">
+    <header className="relative z-20 border-b border-slate-200/80 bg-background/90 backdrop-blur dark:border-slate-800/80">
+      <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between gap-4 px-4 sm:px-8">
         <Link
           to="/"
-          className="text-xl font-extrabold tracking-tight text-ink"
+          className="cursor-pointer text-xl font-extrabold tracking-tight text-slate-900 transition-opacity hover:opacity-90 dark:text-slate-100"
           aria-label="AlgoDuel home"
         >
-          algoduel<span className="text-marker">*</span>
+          algoduel<span className="text-slate-400 dark:text-slate-500">*</span>
         </Link>
 
-        <nav className="flex items-center gap-1 sm:gap-2" aria-label="Main">
-          {NAV_LINKS.map((link) => (
-            <Link
-              key={link.href}
-              to={link.href}
-              className={cn(
-                'whitespace-nowrap rounded-md px-2.5 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-ink sm:px-3',
-                location.pathname === link.href && 'text-ink',
-              )}
-            >
-              <span className="sm:hidden">{link.mobileLabel}</span>
-              <span className="hidden sm:inline">{link.label}</span>
-            </Link>
-          ))}
-          <Link
-            to="/create-room"
-            className="ml-1 inline-flex h-9 items-center whitespace-nowrap rounded-md bg-primary px-4 text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90"
-          >
-            Create room
-          </Link>
-        </nav>
+        <div className="flex items-center gap-3">
+          {user ? (
+            <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2 rounded-full border border-slate-300 bg-slate-100/80 px-3 py-1 text-xs font-semibold text-slate-800 dark:border-slate-700 dark:bg-slate-800/80 dark:text-slate-200">
+                <span className="flex size-5 items-center justify-center rounded-full bg-slate-800 text-slate-100 dark:bg-slate-200 dark:text-slate-900">
+                  <UserIcon className="size-3" />
+                </span>
+                <span className="max-w-[120px] truncate sm:max-w-[160px]">{user.username}</span>
+              </div>
+
+              <button
+                type="button"
+                onClick={handleLogout}
+                title="Sign out"
+                className="cursor-pointer inline-flex h-8 w-8 items-center justify-center rounded-md text-slate-500 transition-colors hover:bg-slate-200 hover:text-slate-900 dark:hover:bg-slate-800 dark:hover:text-slate-100"
+              >
+                <LogOut className="size-4" />
+              </button>
+            </div>
+          ) : (
+            <div className="flex items-center gap-2">
+              <Link
+                to="/signin"
+                className="cursor-pointer rounded-md px-3 py-2 text-sm font-semibold text-slate-600 transition-colors hover:text-slate-900 dark:text-slate-300 dark:hover:text-slate-100"
+              >
+                Sign in
+              </Link>
+              <Link
+                to="/signup"
+                className="cursor-pointer rounded-md bg-slate-900 px-4 py-2 text-sm font-semibold text-white shadow-xs transition-opacity hover:bg-black dark:bg-slate-100 dark:text-slate-900 dark:hover:bg-white"
+              >
+                Sign up
+              </Link>
+            </div>
+          )}
+        </div>
       </div>
     </header>
   )

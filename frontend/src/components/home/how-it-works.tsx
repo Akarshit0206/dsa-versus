@@ -55,7 +55,7 @@ export function HowItWorks() {
               How a duel{' '}
               <span className="group relative inline-block">
                 works
-                <MarkerUnderline className="absolute -bottom-1.5 left-0 h-2.5 w-full origin-left transition-transform duration-500 ease-out group-hover:scale-x-105" />
+                <MarkerUnderline className="absolute -bottom-1.5 left-0 h-2.5 w-full origin-left text-slate-400 transition-transform duration-500 ease-out group-hover:scale-x-105 dark:text-slate-500" />
               </span>
             </h2>
             <p className="mt-6 text-pretty leading-relaxed text-muted-foreground">
@@ -79,16 +79,18 @@ export function HowItWorks() {
           {STEPS.map((item) => (
             <li
               key={item.step}
-              className="glass lift group relative overflow-hidden rounded-xl p-7"
+              className="glass-strong lift group relative cursor-pointer overflow-hidden rounded-xl border border-border/80 p-7 transition-all duration-300 hover:border-zinc-400/40 dark:hover:border-zinc-600/50"
             >
               <DoodleBackdrop
                 src={item.doodle}
                 className={item.doodleClass}
                 tilt={item.tilt}
+                opacity="opacity-[0.06]"
+                hoverOpacity="group-hover:opacity-[0.12]"
               />
 
               <div className="relative z-10">
-                <span className="inline-block font-mono text-sm font-semibold text-marker transition-transform duration-300 group-hover:-translate-y-0.5">
+                <span className="inline-block font-mono text-sm font-bold text-muted-foreground transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:text-ink">
                   {item.step}
                 </span>
                 <h3 className="mt-4 text-lg font-bold text-ink">{item.title}</h3>

@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router'
 import { ArrowRight } from 'lucide-react'
 import { DoodleBackdrop } from '@/components/doodle-backdrop'
 
@@ -50,7 +50,7 @@ export function CtaSection() {
         <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
           <Link
             to="/create-room"
-            className="group inline-flex h-12 w-full items-center justify-center gap-2 rounded-lg bg-primary px-7 text-sm font-semibold text-primary-foreground transition-[transform,box-shadow,opacity] duration-300 hover:-translate-y-0.5 hover:opacity-95 hover:shadow-[0_14px_30px_-14px_var(--primary)] active:translate-y-0 motion-reduce:hover:translate-y-0 sm:w-auto"
+            className="group cursor-pointer inline-flex h-12 w-full items-center justify-center gap-2 rounded-lg bg-primary px-7 text-sm font-semibold text-primary-foreground transition-[transform,box-shadow,opacity] duration-300 hover:-translate-y-0.5 hover:opacity-95 hover:shadow-md active:translate-y-0 motion-reduce:hover:translate-y-0 sm:w-auto"
           >
             Start a duel
             <ArrowRight
@@ -60,7 +60,7 @@ export function CtaSection() {
           </Link>
           <Link
             to="/join-room"
-            className="glass inline-flex h-12 w-full items-center justify-center rounded-lg px-7 text-sm font-semibold text-ink transition-[transform,border-color] duration-300 hover:-translate-y-0.5 hover:border-marker/40 motion-reduce:hover:translate-y-0 sm:w-auto"
+            className="glass cursor-pointer inline-flex h-12 w-full items-center justify-center rounded-lg px-7 text-sm font-semibold text-ink transition-[transform,border-color] duration-300 hover:-translate-y-0.5 hover:border-zinc-400/40 motion-reduce:hover:translate-y-0 sm:w-auto"
           >
             I have a code
           </Link>

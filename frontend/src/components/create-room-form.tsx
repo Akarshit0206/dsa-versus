@@ -1,6 +1,7 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router'
 import { ArrowRight, Check, Copy, RefreshCw } from 'lucide-react'
+import { useAuth } from '@/context/AuthContext'
 import { DoodleBackdrop } from '@/components/doodle-backdrop'
 import { cn } from '@/lib/utils'
 
@@ -29,7 +30,8 @@ function generateRoomCode() {
 }
 
 export function CreateRoomForm() {
-  const [name, setName] = useState('')
+  const { user } = useAuth()
+  const [name, setName] = useState(user?.username || '')
   const [difficulty, setDifficulty] = useState<string>('Medium')
   const [topic, setTopic] = useState<string>('Random')
   const [duration, setDuration] = useState<string>('15 min')

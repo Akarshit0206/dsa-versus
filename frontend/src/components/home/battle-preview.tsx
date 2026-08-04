@@ -155,14 +155,14 @@ function CopyCodeButton({ code }: { code: string }) {
     <button
       type="button"
       onClick={copy}
-      className="group/copy cursor-pointer relative inline-flex items-center gap-1.5 rounded-md border border-slate-200 bg-white px-2 py-0.5 font-mono text-xs font-bold text-slate-800 transition-all hover:border-slate-400 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200"
+      className="group/copy relative inline-flex shrink-0 cursor-pointer items-center gap-1.5 rounded-md border border-slate-200 bg-white px-2 py-0.5 font-mono text-xs font-bold text-slate-800 transition-all hover:border-slate-400 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200"
     >
       {code}
       {copied ? (
-        <Check className="size-3 text-slate-700 dark:text-slate-300" aria-hidden="true" />
+        <Check className="size-3 shrink-0 text-slate-700 dark:text-slate-300" aria-hidden="true" />
       ) : (
         <Copy
-          className="size-3 text-slate-400 transition-transform group-hover/copy:scale-105"
+          className="size-3 shrink-0 text-slate-400 transition-transform group-hover/copy:scale-105"
           aria-hidden="true"
         />
       )}

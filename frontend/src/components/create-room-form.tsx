@@ -89,7 +89,7 @@ export function CreateRoomForm() {
           <button
             type="button"
             onClick={handleCopy}
-            className="glass inline-flex h-12 items-center justify-center gap-2 rounded-lg px-5 text-sm font-semibold text-ink transition-[transform,border-color] duration-300 hover:-translate-y-0.5 hover:border-marker/50 motion-reduce:hover:translate-y-0 sm:h-16"
+            className="glass inline-flex h-12 w-full items-center justify-center gap-2 rounded-lg px-5 text-sm font-semibold text-ink transition-[transform,border-color] duration-300 hover:-translate-y-0.5 hover:border-marker/50 motion-reduce:hover:translate-y-0 sm:h-16 sm:w-36 sm:shrink-0"
           >
             {copied ? (
               <Check

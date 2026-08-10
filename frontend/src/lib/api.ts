@@ -20,7 +20,7 @@ export class ApiErrorResponse extends Error {
 
   constructor(statusCode: number, message: string, errors: string[] = []) {
     super(message)
-    this.name = 'ApiErrorResponse'
+    this.name = 'ApiErrorResponse' //why is this.name used here
     this.statusCode = statusCode
     this.errors = errors
   }
@@ -45,7 +45,7 @@ export async function apiRequest<T = unknown>(
     },
   })
 
-  let json: ApiResponseData<T> & { errors?: string[] }
+  let json: ApiResponseData<T> & { errors?: string[] } 
   try {
     json = await response.json()
   } catch {

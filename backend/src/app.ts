@@ -5,14 +5,13 @@ import http from "http";
 import {Server} from 'socket.io';
 import { authRouter } from "./routes/index.js";
 import { errorHandler } from "./middlewares/index.js";
-import { Socket } from "dgram";
 
 export const app= express();
 export const server= http.createServer(app);
 
 export const io= new Server(server, {
     cors:{
-        origin: process.env.CLIENT_URL,
+        origin: process.env.CLIENT_URL || ["http://localhost:5173", "http://127.0.0.1:5173"],
         credentials: true,
     }
 })

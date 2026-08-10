@@ -45,6 +45,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   async function login(identifier: string, password: string): Promise<UserProfile> {
     try {
+      // calling the backend api
       const res = await apiRequest<{ user: UserProfile }>('/api/auth/login', {
         method: 'POST',
         body: JSON.stringify({ identifier, password }),

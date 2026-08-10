@@ -16,7 +16,7 @@ export function SignInForm({ bannerMessage }: { bannerMessage?: string | null })
   const navigate = useNavigate()
   const [searchParams] = useSearchParams()
 
-  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: React.SubmitEvent<HTMLFormElement>) {
     event.preventDefault()
 
     if (!identifier.trim() || !password) {

@@ -22,7 +22,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     async function loadInitialUser() {
       try {
 
-        const res = await apiRequest<UserProfile>(`${API_URL}/auth/me`, { method: 'GET' })
+        const res = await apiRequest<UserProfile>(`/api/auth/me`, { method: 'GET' })
         if (res.data) {
           setUser(res.data)
           localStorage.setItem(STORAGE_KEY, JSON.stringify(res.data))
@@ -48,7 +48,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   async function login(identifier: string, password: string): Promise<UserProfile> {
     try {
       // calling the backend api
-      const res = await apiRequest<{ user: UserProfile }>(`${API_URL}/auth/login`, {
+      const res = await apiRequest<{ user: UserProfile }>(`/api/auth/login`, {
         method: 'POST',
         body: JSON.stringify({ identifier, password }),
       })
@@ -75,7 +75,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   async function register(username: string, email: string, password: string): Promise<UserProfile> {
     try {
-      const res = await apiRequest<UserProfile>(`${API_URL}/auth/register`, {
+      const res = await apiRequest<UserProfile>(`api/auth/register`, {
         method: 'POST',
         body: JSON.stringify({ username, email, password }),
       })
@@ -101,7 +101,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   async function logout(): Promise<void> {
     try {
-      await apiRequest(`${API_URL}/auth/logout`, { method: 'POST' })
+      await apiRequest(`api/auth/logout`, { method: 'POST' })
     } catch {
       // Ignore network errors on logout
     } finally {

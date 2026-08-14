@@ -11,17 +11,14 @@ export const server= http.createServer(app);
 
 export const io= new Server(server, {
     cors:{
-        origin: process.env.CLIENT_URL || ["http://localhost:5173", "http://127.0.0.1:5173"],
+        origin: process.env.CLIENT_URL as string || ["http://localhost:5173", "http://127.0.0.1:5173"],
         credentials: true,
     }
 })
 
-io.on("connection", (socket)=>{
-    console.log("Web socket connected");
-})
 //middlewares
 app.use(cors({
-    origin: process.env.CLIENT_URL,
+    origin: process.env.CLIENT_URL as string,
     credentials: true,
 }))
 

@@ -19,7 +19,7 @@ export function CreateRoomPage() {
         aria-hidden="true"
         width={320}
         height={320}
-        className="pointer-events-none absolute left-[3%] bottom-24 hidden h-auto w-40 -rotate-6 opacity-60 lg:block"
+        className="pointer-events-none absolute left-[3%] top-96 hidden h-auto w-40 -rotate-6 opacity-60 lg:block"
       />
 
       <div className="mx-auto w-full max-w-2xl">

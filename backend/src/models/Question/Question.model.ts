@@ -1,5 +1,5 @@
-import { Schema, model, Document } from "mongoose";
-import type { ITestCase, IQuestion, Language } from "./Question.types.js";
+import { Schema, model } from "mongoose";
+import type { ITestCase, IQuestion } from "./Question.types.js";
 
 const TestSchema = new Schema<ITestCase>(
   {
@@ -24,7 +24,7 @@ const QuestionSchema= new Schema<IQuestion>(
     description: { type: String, required: true },
     difficulty: {
       type: String,
-      enum: ["easy", "medium", "hard"],
+      enum: ["EASY", "MEDIUM", "HARD"],
       required: true,
       index: true,
     },

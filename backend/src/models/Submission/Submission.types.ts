@@ -1,21 +1,21 @@
-import {Types} from "mongoose";
+import { Types, Document } from "mongoose";
 
-type Verdict= 
-      "PENDING"
-    | "ACCEPTED"
-    | "WRONG ANSWER"
-    | "TLE"
-    | "MLE"
-    | "STACK OVERFLOW"
-    | "COMPILATION ERROR"
-    | "RUNTIME ERROR"
+type Verdict =
+  | "PENDING"
+  | "ACCEPTED"
+  | "WRONG ANSWER"
+  | "TLE"
+  | "MLE"
+  | "STACK OVERFLOW"
+  | "COMPILATION ERROR"
+  | "RUNTIME ERROR"
+  | "INTERNAL ERROR";
 
-type Status= "PENDING" | "JUDGED" | "FAILED";
-
+type Status = "PENDING" | "JUDGED" | "FAILED";
 
 interface ITestCaseResult {
   testCaseIndex: number; // maps back to Question.testCases[i]
-  isSample: boolean; // denormalized copy — controls what you're allowed to reveal to the user
+  isSample: boolean; // denormalized copy
   verdict: Verdict;
   stdout?: string;
   stderr?: string;
@@ -25,21 +25,28 @@ interface ITestCaseResult {
 }
 
 interface ISubmissionSchema extends Document {
-    questionId: Types.ObjectId;
-    userId: Types.ObjectId;
-    matchId?: Types.ObjectId;
-    languageId: number;
-    code: string;
+  questionId: Types.ObjectId;
+  userId: Types.ObjectId;
+  matchId?: Types.ObjectId;
+  languageId: number; // 71 | 54 | 62
+  code: string;
 
-    verdict: Verdict;
-    status: Status;
+  verdict: Verdict;
+  status: Status;
 
-    sampleTestCases: ITestCaseResult[];
-    failedTestCase?: ITestCaseResult;
+  sampleTestCases: ITestCaseResult[];
+  failedTestCase?: ITestCaseResult;
 
-    passedCount: number;
-    totalCount: number;
-    submittedAt: Date;
+  passedCount: number;
+  totalCount: number;
+
+  // Recorded for successful ("ACCEPTED") submissions
+  executionTime?: number; // seconds
+  memory?: number; // KB
+
+  submittedAt: Date;
+  createdAt: Date;
+  updatedAt: Date;
 }
 
-export type {ITestCaseResult, ISubmissionSchema};
+export type { Verdict, Status, ITestCaseResult, ISubmissionSchema };

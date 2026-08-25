@@ -43,15 +43,3 @@ export interface Room {
   createdAt: Date;
   expiresAt: Date;
 }
-
-export interface InMemoryMatch {
-  matchId: string;
-  roomCode: string;
-  player1: RoomPlayer;
-  player2: RoomPlayer;
-  config: RoomConfig;
-  assignedProblemIds: string[];
-  startedAt: Date;
-  durationInMinutes: number;
-  status: "in_progress" | "completed";
-}

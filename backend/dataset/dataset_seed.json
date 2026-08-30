@@ -1,0 +1,4299 @@
+[
+  {
+    "title": "Find the Highest Altitude",
+    "slug": "find-the-highest-altitude",
+    "description": "There is a biker going on a road trip. The road trip consists of n + 1 points at different altitudes. The biker starts his trip on point 0 with altitude 0. You are given an integer array gain of length n where gain[i] is the net gain in altitude between points i and i + 1 for all 0 <= i < n. Return the highest altitude of a point.",
+    "difficulty": "EASY",
+    "constraints": [
+      "1 <= gain.length <= 100",
+      "-100 <= gain[i] <= 100"
+    ],
+    "topics": [
+      "Array",
+      "Prefix Sum"
+    ],
+    "baseMemoryLimit": 256,
+    "baseTimeLimit": 1000,
+    "timeLimitMultiplier": {
+      "cpp": 1.0,
+      "java": 2.0,
+      "python": 3.0
+    },
+    "starterCode": {
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
+      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
+      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+    },
+    "testCases": [
+      {
+        "input": "{\"gain\": [-5, 1, 5, 0, -7]}",
+        "output": "1",
+        "isSample": true
+      },
+      {
+        "input": "{\"gain\": [-4, -3, -2, -1, 4, 3, 2]}",
+        "output": "0",
+        "isSample": true
+      },
+      {
+        "input": "{\"gain\": [10]}",
+        "output": "10",
+        "isSample": false
+      },
+      {
+        "input": "{\"gain\": [-10]}",
+        "output": "0",
+        "isSample": false
+      },
+      {
+        "input": "{\"gain\": [1, 2, 3, 4, 5]}",
+        "output": "15",
+        "isSample": false
+      },
+      {
+        "input": "{\"gain\": [-1, -2, -3, -4, -5]}",
+        "output": "0",
+        "isSample": false
+      },
+      {
+        "input": "{\"gain\": [0, 0, 0, 0]}",
+        "output": "0",
+        "isSample": false
+      },
+      {
+        "input": "{\"gain\": [5, -5, 10, -10, 15, -15]}",
+        "output": "15",
+        "isSample": false
+      }
+    ]
+  },
+  {
+    "title": "Check If Array Is Sorted and Rotated",
+    "slug": "check-if-array-is-sorted-and-rotated",
+    "description": "Given an array nums, return true if the array was originally sorted in non-decreasing order, then rotated some number of positions (including zero). Otherwise, return false. There may be duplicates in the original array.",
+    "difficulty": "EASY",
+    "constraints": [
+      "1 <= nums.length <= 100",
+      "1 <= nums[i] <= 100"
+    ],
+    "topics": [
+      "Array"
+    ],
+    "baseMemoryLimit": 256,
+    "baseTimeLimit": 1000,
+    "timeLimitMultiplier": {
+      "cpp": 1.0,
+      "java": 2.0,
+      "python": 3.0
+    },
+    "starterCode": {
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
+      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
+      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+    },
+    "testCases": [
+      {
+        "input": "{\"nums\": [3, 4, 5, 1, 2]}",
+        "output": "true",
+        "isSample": true
+      },
+      {
+        "input": "{\"nums\": [2, 1, 3, 4]}",
+        "output": "false",
+        "isSample": true
+      },
+      {
+        "input": "{\"nums\": [1, 2, 3]}",
+        "output": "true",
+        "isSample": false
+      },
+      {
+        "input": "{\"nums\": [1, 1, 1]}",
+        "output": "true",
+        "isSample": false
+      },
+      {
+        "input": "{\"nums\": [2, 2, 2, 1, 2]}",
+        "output": "true",
+        "isSample": false
+      },
+      {
+        "input": "{\"nums\": [6, 10, 6]}",
+        "output": "true",
+        "isSample": false
+      },
+      {
+        "input": "{\"nums\": [1, 3, 2]}",
+        "output": "false",
+        "isSample": false
+      },
+      {
+        "input": "{\"nums\": [10, 1, 2, 3, 4, 5, 6, 7, 8]}",
+        "output": "true",
+        "isSample": false
+      }
+    ]
+  },
+  {
+    "title": "Find the Width of Columns in a Grid",
+    "slug": "find-the-width-of-columns-in-a-grid",
+    "description": "You are given a 0-indexed m x n integer matrix grid. The width of a column is the maximum length of its integers represented as a string. Return an integer array ans of size n where ans[i] is the width of the i-th column.",
+    "difficulty": "EASY",
+    "constraints": [
+      "m == grid.length",
+      "n == grid[i].length",
+      "1 <= m, n <= 100",
+      "-10^9 <= grid[i][j] <= 10^9"
+    ],
+    "topics": [
+      "Array",
+      "Matrix"
+    ],
+    "baseMemoryLimit": 256,
+    "baseTimeLimit": 1000,
+    "timeLimitMultiplier": {
+      "cpp": 1.0,
+      "java": 2.0,
+      "python": 3.0
+    },
+    "starterCode": {
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
+      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
+      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+    },
+    "testCases": [
+      {
+        "input": "{\"grid\": [[1, 22, 333], [-10, 5, 9], [0, 0, 0]]}",
+        "output": "[3, 2, 3]",
+        "isSample": true
+      },
+      {
+        "input": "{\"grid\": [[-15, 1, 3], [15, 7, 12], [5, 6, -2]]}",
+        "output": "[3, 1, 2]",
+        "isSample": true
+      },
+      {
+        "input": "{\"grid\": [[0]]}",
+        "output": "[1]",
+        "isSample": false
+      },
+      {
+        "input": "{\"grid\": [[1000000000]]}",
+        "output": "[10]",
+        "isSample": false
+      },
+      {
+        "input": "{\"grid\": [[-1000000000]]}",
+        "output": "[11]",
+        "isSample": false
+      },
+      {
+        "input": "{\"grid\": [[1, 2], [3, 4]]}",
+        "output": "[1, 1]",
+        "isSample": false
+      },
+      {
+        "input": "{\"grid\": [[12, 345, 6789], [1, 2, 3]]}",
+        "output": "[2, 3, 4]",
+        "isSample": false
+      },
+      {
+        "input": "{\"grid\": [[-1, -2, -3]]}",
+        "output": "[2, 2, 2]",
+        "isSample": false
+      }
+    ]
+  },
+  {
+    "title": "Product of Array Except Self",
+    "slug": "product-of-array-except-self",
+    "description": "Given an integer array nums, return an array answer such that answer[i] is equal to the product of all the elements of nums except nums[i]. The product of any prefix or suffix of nums is guaranteed to fit in a 32-bit integer. You must write an algorithm that runs in O(n) time and without using the division operation.",
+    "difficulty": "MEDIUM",
+    "constraints": [
+      "2 <= nums.length <= 10^5",
+      "-30 <= nums[i] <= 30",
+      "The product of any prefix or suffix of nums is guaranteed to fit in a 32-bit integer."
+    ],
+    "topics": [
+      "Array",
+      "Prefix Sum"
+    ],
+    "baseMemoryLimit": 256,
+    "baseTimeLimit": 1500,
+    "timeLimitMultiplier": {
+      "cpp": 1.0,
+      "java": 2.0,
+      "python": 3.0
+    },
+    "starterCode": {
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
+      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
+      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+    },
+    "testCases": [
+      {
+        "input": "{\"nums\": [1, 2, 3, 4]}",
+        "output": "[24, 12, 8, 6]",
+        "isSample": true
+      },
+      {
+        "input": "{\"nums\": [-1, 1, 0, -3, 3]}",
+        "output": "[0, 0, 9, 0, 0]",
+        "isSample": true
+      },
+      {
+        "input": "{\"nums\": [1, 1]}",
+        "output": "[1, 1]",
+        "isSample": false
+      },
+      {
+        "input": "{\"nums\": [2, 3]}",
+        "output": "[3, 2]",
+        "isSample": false
+      },
+      {
+        "input": "{\"nums\": [0, 0]}",
+        "output": "[0, 0]",
+        "isSample": false
+      },
+      {
+        "input": "{\"nums\": [1, 2, 0]}",
+        "output": "[0, 0, 2]",
+        "isSample": false
+      },
+      {
+        "input": "{\"nums\": [-1, -1, -1, -1]}",
+        "output": "[-1, -1, -1, -1]",
+        "isSample": false
+      },
+      {
+        "input": "{\"nums\": [4, 5, 1, 8, 2]}",
+        "output": "[80, 64, 320, 40, 160]",
+        "isSample": false
+      }
+    ]
+  },
+  {
+    "title": "Subarray Sum Equals K",
+    "slug": "subarray-sum-equals-k",
+    "description": "Given an array of integers nums and an integer k, return the total number of subarrays whose sum equals to k. A subarray is a contiguous non-empty sequence of elements within an array.",
+    "difficulty": "MEDIUM",
+    "constraints": [
+      "1 <= nums.length <= 2 * 10^4",
+      "-1000 <= nums[i] <= 1000",
+      "-10^7 <= k <= 10^7"
+    ],
+    "topics": [
+      "Array",
+      "Hash Table",
+      "Prefix Sum"
+    ],
+    "baseMemoryLimit": 256,
+    "baseTimeLimit": 1500,
+    "timeLimitMultiplier": {
+      "cpp": 1.0,
+      "java": 2.0,
+      "python": 3.0
+    },
+    "starterCode": {
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
+      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
+      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+    },
+    "testCases": [
+      {
+        "input": "{\"nums\": [1, 1, 1], \"k\": 2}",
+        "output": "2",
+        "isSample": true
+      },
+      {
+        "input": "{\"nums\": [1, 2, 3], \"k\": 3}",
+        "output": "2",
+        "isSample": true
+      },
+      {
+        "input": "{\"nums\": [1], \"k\": 0}",
+        "output": "0",
+        "isSample": false
+      },
+      {
+        "input": "{\"nums\": [-1, -1, 1], \"k\": 0}",
+        "output": "1",
+        "isSample": false
+      },
+      {
+        "input": "{\"nums\": [1, -1, 1, -1], \"k\": 0}",
+        "output": "4",
+        "isSample": false
+      },
+      {
+        "input": "{\"nums\": [3, 4, 7, 2, -3, 1, 4, 2], \"k\": 7}",
+        "output": "4",
+        "isSample": false
+      },
+      {
+        "input": "{\"nums\": [100, 2, -2, 100], \"k\": 100}",
+        "output": "3",
+        "isSample": false
+      },
+      {
+        "input": "{\"nums\": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], \"k\": 0}",
+        "output": "55",
+        "isSample": false
+      }
+    ]
+  },
+  {
+    "title": "Container With Most Water",
+    "slug": "container-with-most-water",
+    "description": "You are given an integer array height of length n. There are n vertical lines drawn such that the two endpoints of the ith line are (i, 0) and (i, height[i]). Find two lines that together with the x-axis form a container, such that the container contains the most water. Return the maximum amount of water a container can store.",
+    "difficulty": "MEDIUM",
+    "constraints": [
+      "n == height.length",
+      "2 <= n <= 10^5",
+      "0 <= height[i] <= 10^4"
+    ],
+    "topics": [
+      "Array",
+      "Two Pointers",
+      "Greedy"
+    ],
+    "baseMemoryLimit": 256,
+    "baseTimeLimit": 1500,
+    "timeLimitMultiplier": {
+      "cpp": 1.0,
+      "java": 2.0,
+      "python": 3.0
+    },
+    "starterCode": {
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
+      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
+      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+    },
+    "testCases": [
+      {
+        "input": "{\"height\": [1, 8, 6, 2, 5, 4, 8, 3, 7]}",
+        "output": "49",
+        "isSample": true
+      },
+      {
+        "input": "{\"height\": [1, 1]}",
+        "output": "1",
+        "isSample": true
+      },
+      {
+        "input": "{\"height\": [4, 3, 2, 1, 4]}",
+        "output": "16",
+        "isSample": false
+      },
+      {
+        "input": "{\"height\": [1, 2, 1]}",
+        "output": "2",
+        "isSample": false
+      },
+      {
+        "input": "{\"height\": [1, 2, 4, 3]}",
+        "output": "4",
+        "isSample": false
+      },
+      {
+        "input": "{\"height\": [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]}",
+        "output": "25",
+        "isSample": false
+      },
+      {
+        "input": "{\"height\": [1, 1, 1, 1, 1, 1, 1, 1]}",
+        "output": "7",
+        "isSample": false
+      },
+      {
+        "input": "{\"height\": [2, 3, 4, 5, 18, 17, 6]}",
+        "output": "17",
+        "isSample": false
+      }
+    ]
+  },
+  {
+    "title": "Minimum Size Subarray Sum",
+    "slug": "minimum-size-subarray-sum",
+    "description": "Given an array of positive integers nums and a positive integer target, return the minimal length of a subarray whose sum is greater than or equal to target. If there is no such subarray, return 0 instead.",
+    "difficulty": "MEDIUM",
+    "constraints": [
+      "1 <= target <= 10^9",
+      "1 <= nums.length <= 10^5",
+      "1 <= nums[i] <= 10^4"
+    ],
+    "topics": [
+      "Array",
+      "Binary Search",
+      "Sliding Window",
+      "Prefix Sum"
+    ],
+    "baseMemoryLimit": 256,
+    "baseTimeLimit": 1500,
+    "timeLimitMultiplier": {
+      "cpp": 1.0,
+      "java": 2.0,
+      "python": 3.0
+    },
+    "starterCode": {
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
+      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
+      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+    },
+    "testCases": [
+      {
+        "input": "{\"target\": 7, \"nums\": [2, 3, 1, 2, 4, 3]}",
+        "output": "2",
+        "isSample": true
+      },
+      {
+        "input": "{\"target\": 4, \"nums\": [1, 4, 4]}",
+        "output": "1",
+        "isSample": true
+      },
+      {
+        "input": "{\"target\": 11, \"nums\": [1, 1, 1, 1, 1, 1, 1, 1]}",
+        "output": "0",
+        "isSample": false
+      },
+      {
+        "input": "{\"target\": 5, \"nums\": [2, 3, 1, 1, 1, 1, 1]}",
+        "output": "2",
+        "isSample": false
+      },
+      {
+        "input": "{\"target\": 15, \"nums\": [1, 2, 3, 4, 5]}",
+        "output": "5",
+        "isSample": false
+      },
+      {
+        "input": "{\"target\": 10, \"nums\": [10]}",
+        "output": "1",
+        "isSample": false
+      },
+      {
+        "input": "{\"target\": 100, \"nums\": [1, 2, 3, 4, 5]}",
+        "output": "0",
+        "isSample": false
+      },
+      {
+        "input": "{\"target\": 6, \"nums\": [1, 1, 1, 1, 1, 1]}",
+        "output": "6",
+        "isSample": false
+      }
+    ]
+  },
+  {
+    "title": "First Missing Positive",
+    "slug": "first-missing-positive",
+    "description": "Given an unsorted integer array nums. Return the smallest positive integer that is not present in nums. You must implement an algorithm that runs in O(n) time and uses O(1) auxiliary space.",
+    "difficulty": "HARD",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-2^31 <= nums[i] <= 2^31 - 1"
+    ],
+    "topics": [
+      "Array",
+      "Hash Table"
+    ],
+    "baseMemoryLimit": 256,
+    "baseTimeLimit": 2000,
+    "timeLimitMultiplier": {
+      "cpp": 1.0,
+      "java": 2.0,
+      "python": 3.0
+    },
+    "starterCode": {
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
+      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
+      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+    },
+    "testCases": [
+      {
+        "input": "{\"nums\": [1, 2, 0]}",
+        "output": "3",
+        "isSample": true
+      },
+      {
+        "input": "{\"nums\": [3, 4, -1, 1]}",
+        "output": "2",
+        "isSample": true
+      },
+      {
+        "input": "{\"nums\": [7, 8, 9, 11, 12]}",
+        "output": "1",
+        "isSample": false
+      },
+      {
+        "input": "{\"nums\": [1]}",
+        "output": "2",
+        "isSample": false
+      },
+      {
+        "input": "{\"nums\": [2]}",
+        "output": "1",
+        "isSample": false
+      },
+      {
+        "input": "{\"nums\": [-5, -10, 0, 1, 3, 4]}",
+        "output": "2",
+        "isSample": false
+      },
+      {
+        "input": "{\"nums\": [1, 2, 3, 4, 5]}",
+        "output": "6",
+        "isSample": false
+      },
+      {
+        "input": "{\"nums\": [1, 1, 1]}",
+        "output": "2",
+        "isSample": false
+      }
+    ]
+  },
+  {
+    "title": "Sliding Window Maximum",
+    "slug": "sliding-window-maximum",
+    "description": "You are given an array of integers nums, there is a sliding window of size k which is moving from the very left of the array to the very right. You can only see the k numbers in the window. Each time the sliding window moves right by one position. Return the max sliding window.",
+    "difficulty": "HARD",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^4 <= nums[i] <= 10^4",
+      "1 <= k <= nums.length"
+    ],
+    "topics": [
+      "Array",
+      "Queue",
+      "Sliding Window",
+      "Heap (Priority Queue)",
+      "Monotonic Queue"
+    ],
+    "baseMemoryLimit": 256,
+    "baseTimeLimit": 2000,
+    "timeLimitMultiplier": {
+      "cpp": 1.0,
+      "java": 2.0,
+      "python": 3.0
+    },
+    "starterCode": {
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
+      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
+      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+    },
+    "testCases": [
+      {
+        "input": "{\"nums\": [1, 3, -1, -3, 5, 3, 6, 7], \"k\": 3}",
+        "output": "[3, 3, 5, 5, 6, 7]",
+        "isSample": true
+      },
+      {
+        "input": "{\"nums\": [1], \"k\": 1}",
+        "output": "[1]",
+        "isSample": true
+      },
+      {
+        "input": "{\"nums\": [1, -1], \"k\": 1}",
+        "output": "[1, -1]",
+        "isSample": false
+      },
+      {
+        "input": "{\"nums\": [9, 11], \"k\": 2}",
+        "output": "[11]",
+        "isSample": false
+      },
+      {
+        "input": "{\"nums\": [4, -2], \"k\": 2}",
+        "output": "[4]",
+        "isSample": false
+      },
+      {
+        "input": "{\"nums\": [1, 3, 1, 2, 0, 5], \"k\": 3}",
+        "output": "[3, 3, 2, 5]",
+        "isSample": false
+      },
+      {
+        "input": "{\"nums\": [7, 2, 4], \"k\": 2}",
+        "output": "[7, 4]",
+        "isSample": false
+      },
+      {
+        "input": "{\"nums\": [1, 2, 3, 4, 5, 6, 7, 8], \"k\": 4}",
+        "output": "[4, 5, 6, 7, 8]",
+        "isSample": false
+      }
+    ]
+  },
+  {
+    "title": "Merge Strings Alternately",
+    "slug": "merge-strings-alternately",
+    "description": "You are given two strings word1 and word2. Merge the strings by adding letters in alternating order, starting with word1. If a string is longer than the other, append the additional letters onto the end of the merged string. Return the merged string.",
+    "difficulty": "EASY",
+    "constraints": [
+      "1 <= word1.length, word2.length <= 100",
+      "word1 and word2 consist of lowercase English letters."
+    ],
+    "topics": [
+      "Two Pointers",
+      "String"
+    ],
+    "baseMemoryLimit": 256,
+    "baseTimeLimit": 1000,
+    "timeLimitMultiplier": {
+      "cpp": 1.0,
+      "java": 1.5,
+      "python": 2.0
+    },
+    "starterCode": {
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
+      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
+      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+    },
+    "testCases": [
+      {
+        "input": "[\"abc\", \"pqr\"]",
+        "output": "\"apbqcr\"",
+        "isSample": true
+      },
+      {
+        "input": "[\"ab\", \"rs\"]",
+        "output": "\"arbs\"",
+        "isSample": true
+      },
+      {
+        "input": "[\"abcd\", \"pq\"]",
+        "output": "\"apbqcd\"",
+        "isSample": false
+      },
+      {
+        "input": "[\"a\", \"b\"]",
+        "output": "\"ab\"",
+        "isSample": false
+      },
+      {
+        "input": "[\"\", \"abc\"]",
+        "output": "\"abc\"",
+        "isSample": false
+      },
+      {
+        "input": "[\"xyz\", \"\"]",
+        "output": "\"xyz\"",
+        "isSample": false
+      },
+      {
+        "input": "[\"longstring\", \"s\"]",
+        "output": "\"lsoongstring\"",
+        "isSample": false
+      },
+      {
+        "input": "[\"a\", \"longstring\"]",
+        "output": "\"alongstring\"",
+        "isSample": false
+      }
+    ]
+  },
+  {
+    "title": "Check If Two String Arrays are Equivalent",
+    "slug": "check-if-two-string-arrays-are-equivalent",
+    "description": "Given two string arrays word1 and word2, return true if the two arrays represent the same string, and false otherwise. A string is represented by an array if the array elements concatenated in order forms the string.",
+    "difficulty": "EASY",
+    "constraints": [
+      "1 <= word1.length, word2.length <= 1000",
+      "1 <= word1[i].length, word2[i].length <= 1000",
+      "1 <= sum(word1[i].length), sum(word2[i].length) <= 10^4",
+      "word1[i] and word2[i] consist of lowercase English letters."
+    ],
+    "topics": [
+      "Array",
+      "String"
+    ],
+    "baseMemoryLimit": 256,
+    "baseTimeLimit": 1000,
+    "timeLimitMultiplier": {
+      "cpp": 1.0,
+      "java": 1.5,
+      "python": 2.0
+    },
+    "starterCode": {
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
+      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
+      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+    },
+    "testCases": [
+      {
+        "input": "[[\"ab\", \"c\"], [\"a\", \"bc\"]]",
+        "output": "true",
+        "isSample": true
+      },
+      {
+        "input": "[[\"a\", \"cb\"], [\"ab\", \"c\"]]",
+        "output": "false",
+        "isSample": true
+      },
+      {
+        "input": "[[\"abc\", \"d\", \"defg\"], [\"abcddefg\"]]",
+        "output": "true",
+        "isSample": false
+      },
+      {
+        "input": "[[\"a\"], [\"a\"]]",
+        "output": "true",
+        "isSample": false
+      },
+      {
+        "input": "[[\"a\", \"b\"], [\"ab\"]]",
+        "output": "true",
+        "isSample": false
+      },
+      {
+        "input": "[[\"ab\"], [\"a\", \"b\", \"c\"]]",
+        "output": "false",
+        "isSample": false
+      },
+      {
+        "input": "[[\"\"], [\"\"]]",
+        "output": "true",
+        "isSample": false
+      },
+      {
+        "input": "[[\"abc\"], [\"ab\", \"\"]]",
+        "output": "false",
+        "isSample": false
+      }
+    ]
+  },
+  {
+    "title": "Longest Common Prefix",
+    "slug": "longest-common-prefix",
+    "description": "Write a function to find the longest common prefix string amongst an array of strings. If there is no common prefix, return an empty string \"\".",
+    "difficulty": "EASY",
+    "constraints": [
+      "1 <= strs.length <= 200",
+      "0 <= strs[i].length <= 200",
+      "strs[i] consists of only lowercase English letters."
+    ],
+    "topics": [
+      "String",
+      "Trie"
+    ],
+    "baseMemoryLimit": 256,
+    "baseTimeLimit": 1000,
+    "timeLimitMultiplier": {
+      "cpp": 1.0,
+      "java": 1.5,
+      "python": 2.0
+    },
+    "starterCode": {
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
+      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
+      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+    },
+    "testCases": [
+      {
+        "input": "[[\"flower\",\"flow\",\"flight\"]]",
+        "output": "\"fl\"",
+        "isSample": true
+      },
+      {
+        "input": "[[\"dog\",\"racecar\",\"car\"]]",
+        "output": "\"\"",
+        "isSample": true
+      },
+      {
+        "input": "[[\"interspecies\",\"interstellar\",\"interstate\"]]",
+        "output": "\"inters\"",
+        "isSample": false
+      },
+      {
+        "input": "[[\"throne\",\"throne\"]]",
+        "output": "\"throne\"",
+        "isSample": false
+      },
+      {
+        "input": "[[\"a\"]]",
+        "output": "\"a\"",
+        "isSample": false
+      },
+      {
+        "input": "[[\"\",\"b\"]]",
+        "output": "\"\"",
+        "isSample": false
+      },
+      {
+        "input": "[[\"apple\",\"ape\",\"april\"]]",
+        "output": "\"ap\"",
+        "isSample": false
+      },
+      {
+        "input": "[[\"prefix\",\"prefixing\",\"pre\"]]",
+        "output": "\"pre\"",
+        "isSample": false
+      }
+    ]
+  },
+  {
+    "title": "Longest Substring Without Repeating Characters",
+    "slug": "longest-substring-without-repeating-characters",
+    "description": "Given a string s, find the length of the longest substring without repeating characters.",
+    "difficulty": "MEDIUM",
+    "constraints": [
+      "0 <= s.length <= 5 * 10^4",
+      "s consists of English letters, digits, symbols and spaces."
+    ],
+    "topics": [
+      "Hash Table",
+      "String",
+      "Sliding Window"
+    ],
+    "baseMemoryLimit": 256,
+    "baseTimeLimit": 1000,
+    "timeLimitMultiplier": {
+      "cpp": 1.0,
+      "java": 1.5,
+      "python": 2.0
+    },
+    "starterCode": {
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
+      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
+      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+    },
+    "testCases": [
+      {
+        "input": "[\"abcabcbb\"]",
+        "output": "3",
+        "isSample": true
+      },
+      {
+        "input": "[\"bbbbb\"]",
+        "output": "1",
+        "isSample": true
+      },
+      {
+        "input": "[\"pwwkew\"]",
+        "output": "3",
+        "isSample": false
+      },
+      {
+        "input": "[\"\"]",
+        "output": "0",
+        "isSample": false
+      },
+      {
+        "input": "[\"au\"]",
+        "output": "2",
+        "isSample": false
+      },
+      {
+        "input": "[\"dvdf\"]",
+        "output": "3",
+        "isSample": false
+      },
+      {
+        "input": "[\"abcdefg\"]",
+        "output": "7",
+        "isSample": false
+      },
+      {
+        "input": "[\"abba\"]",
+        "output": "2",
+        "isSample": false
+      }
+    ]
+  },
+  {
+    "title": "Group Anagrams",
+    "slug": "group-anagrams",
+    "description": "Given an array of strings strs, group the anagrams together. You can return the answer in any order. An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.",
+    "difficulty": "MEDIUM",
+    "constraints": [
+      "1 <= strs.length <= 10^4",
+      "0 <= strs[i].length <= 100",
+      "strs[i] consists of lowercase English letters."
+    ],
+    "topics": [
+      "Array",
+      "Hash Table",
+      "String",
+      "Sorting"
+    ],
+    "baseMemoryLimit": 256,
+    "baseTimeLimit": 1000,
+    "timeLimitMultiplier": {
+      "cpp": 1.0,
+      "java": 1.5,
+      "python": 2.0
+    },
+    "starterCode": {
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
+      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
+      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+    },
+    "testCases": [
+      {
+        "input": "[[\"eat\",\"tea\",\"tan\",\"ate\",\"nat\",\"bat\"]]",
+        "output": "[[\"bat\"],[\"nat\",\"tan\"],[\"ate\",\"eat\",\"tea\"]]",
+        "isSample": true
+      },
+      {
+        "input": "[[\"\"]]",
+        "output": "[[\"\"]]",
+        "isSample": true
+      },
+      {
+        "input": "[[\"a\"]]",
+        "output": "[[\"a\"]]",
+        "isSample": false
+      },
+      {
+        "input": "[[\"abc\",\"bca\",\"cab\",\"xyz\",\"zyx\"]]",
+        "output": "[[\"abc\",\"bca\",\"cab\"],[\"xyz\",\"zyx\"]]",
+        "isSample": false
+      },
+      {
+        "input": "[[\"rat\",\"tar\",\"art\"]]",
+        "output": "[[\"art\",\"rat\",\"tar\"]]",
+        "isSample": false
+      },
+      {
+        "input": "[[\"a\",\"b\",\"c\"]]",
+        "output": "[[\"a\"],[\"b\"],[\"c\"]]",
+        "isSample": false
+      },
+      {
+        "input": "[[\"ab\",\"ba\",\"ab\",\"ba\"]]",
+        "output": "[[\"ab\",\"ba\",\"ab\",\"ba\"]]",
+        "isSample": false
+      },
+      {
+        "input": "[[\"hello\",\"olleh\",\"world\"]]",
+        "output": "[[\"hello\",\"olleh\"],[\"world\"]]",
+        "isSample": false
+      }
+    ]
+  },
+  {
+    "title": "String to Integer (atoi)",
+    "slug": "string-to-integer-atoi",
+    "description": "Implement the myAtoi(string s) function, which converts a string to a 32-bit signed integer. The algorithm for myAtoi(string s) is as follows:\n1. Read in and ignore any leading whitespace.\n2. Check if the next character (if not already at the end of the string) is '-' or '+'. Read this character in if it is either. This determines if the final result is negative or positive respectively. Assume the result is positive if neither is present.\n3. Read in next the characters until the next non-digit character or the end of the input is reached. The rest of the string is ignored.\n4. Convert these digits into an integer (e.g. \"123\" -> 123, \"0032\" -> 32). If no digits were read, then the integer is 0. Change the sign as necessary (from Step 2).\n5. If the integer is out of the 32-bit signed integer range [-2^31, 2^31 - 1], then clamp the integer so that it remains in the range. Specifically, integers less than -2^31 should be clamped to -2^31, and integers greater than 2^31 - 1 should be clamped to 2^31 - 1.\n6. Return the integer as the final result.",
+    "difficulty": "MEDIUM",
+    "constraints": [
+      "0 <= s.length <= 200",
+      "s consists of English letters (lower-case and upper-case), digits (0-9), ' ', '+', '-', and '.'."
+    ],
+    "topics": [
+      "String"
+    ],
+    "baseMemoryLimit": 256,
+    "baseTimeLimit": 1000,
+    "timeLimitMultiplier": {
+      "cpp": 1.0,
+      "java": 1.5,
+      "python": 2.0
+    },
+    "starterCode": {
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
+      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
+      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+    },
+    "testCases": [
+      {
+        "input": "[\"42\"]",
+        "output": "42",
+        "isSample": true
+      },
+      {
+        "input": "[\"   -42\"]",
+        "output": "-42",
+        "isSample": true
+      },
+      {
+        "input": "[\"4193 with words\"]",
+        "output": "4193",
+        "isSample": false
+      },
+      {
+        "input": "[\"words and 987\"]",
+        "output": "0",
+        "isSample": false
+      },
+      {
+        "input": "[\"-91283472332\"]",
+        "output": "-2147483648",
+        "isSample": false
+      },
+      {
+        "input": "[\"91283472332\"]",
+        "output": "2147483647",
+        "isSample": false
+      },
+      {
+        "input": "[\"+1\"]",
+        "output": "1",
+        "isSample": false
+      },
+      {
+        "input": "[\"  +0 123\"]",
+        "output": "0",
+        "isSample": false
+      }
+    ]
+  },
+  {
+    "title": "Decode String",
+    "slug": "decode-string",
+    "description": "Given an encoded string, return its decoded string. The encoding rule is: k[encoded_string], where the encoded_string inside the square brackets is being repeated exactly k times. Note that k is guaranteed to be a positive integer. You may assume that the input string is always valid; there are no extra white spaces, square brackets are well-formed, etc. Furthermore, you may assume that the original data does not contain any digits and that digits are only for those repeat numbers, k. For example, there will not be input like 3a or 2[4].",
+    "difficulty": "MEDIUM",
+    "constraints": [
+      "1 <= s.length <= 30",
+      "s consists of lowercase English letters, digits, and square brackets '[]'.",
+      "s is guaranteed to be a valid input.",
+      "All the integers in s are in the range [1, 300]."
+    ],
+    "topics": [
+      "String",
+      "Stack",
+      "Recursion"
+    ],
+    "baseMemoryLimit": 256,
+    "baseTimeLimit": 1000,
+    "timeLimitMultiplier": {
+      "cpp": 1.0,
+      "java": 1.5,
+      "python": 2.0
+    },
+    "starterCode": {
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
+      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
+      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+    },
+    "testCases": [
+      {
+        "input": "[\"3[a]2[bc]\"]",
+        "output": "\"aaabcbc\"",
+        "isSample": true
+      },
+      {
+        "input": "[\"3[a2[c]]\"]",
+        "output": "\"accaccacc\"",
+        "isSample": true
+      },
+      {
+        "input": "[\"2[abc]3[cd]ef\"]",
+        "output": "\"abcabccdcdcdef\"",
+        "isSample": false
+      },
+      {
+        "input": "[\"abc3[cd]xyz\"]",
+        "output": "\"abccdcdcdxyz\"",
+        "isSample": false
+      },
+      {
+        "input": "[\"10[a]\"]",
+        "output": "\"aaaaaaaaaa\"",
+        "isSample": false
+      },
+      {
+        "input": "[\"2[2[abbb]c]\"]",
+        "output": "\"abbbabbbcabbbabbbc\"",
+        "isSample": false
+      },
+      {
+        "input": "[\"z\"]",
+        "output": "\"z\"",
+        "isSample": false
+      },
+      {
+        "input": "[\"2[a]3[b]4[c]\"]",
+        "output": "\"aabbbcccc\"",
+        "isSample": false
+      }
+    ]
+  },
+  {
+    "title": "Minimum Window Substring",
+    "slug": "minimum-window-substring",
+    "description": "Given two strings s and t of lengths m and n respectively, return the minimum window substring of s such that every character in t (including duplicates) is included in the window. If there is no such substring, return the empty string \"\". The test cases will be generated such that the answer is unique.",
+    "difficulty": "HARD",
+    "constraints": [
+      "m == s.length",
+      "n == t.length",
+      "1 <= m, n <= 10^5",
+      "s and t consist of uppercase and lowercase English letters."
+    ],
+    "topics": [
+      "Hash Table",
+      "String",
+      "Sliding Window"
+    ],
+    "baseMemoryLimit": 256,
+    "baseTimeLimit": 1500,
+    "timeLimitMultiplier": {
+      "cpp": 1.0,
+      "java": 1.5,
+      "python": 2.0
+    },
+    "starterCode": {
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
+      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
+      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+    },
+    "testCases": [
+      {
+        "input": "[\"ADOBECODEBANC\", \"ABC\"]",
+        "output": "\"BANC\"",
+        "isSample": true
+      },
+      {
+        "input": "[\"a\", \"a\"]",
+        "output": "\"a\"",
+        "isSample": true
+      },
+      {
+        "input": "[\"a\", \"aa\"]",
+        "output": "\"\"",
+        "isSample": false
+      },
+      {
+        "input": "[\"ab\", \"b\"]",
+        "output": "\"b\"",
+        "isSample": false
+      },
+      {
+        "input": "[\"aaabbbccc\", \"abc\"]",
+        "output": "\"abbbc\"",
+        "isSample": false
+      },
+      {
+        "input": "[\"donotpanic\", \"not\"]",
+        "output": "\"not\"",
+        "isSample": false
+      },
+      {
+        "input": "[\"coobfecbda\", \"abc\"]",
+        "output": "\"cbda\"",
+        "isSample": false
+      },
+      {
+        "input": "[\"a\", \"b\"]",
+        "output": "\"\"",
+        "isSample": false
+      }
+    ]
+  },
+  {
+    "title": "Shortest Palindrome",
+    "slug": "shortest-palindrome",
+    "description": "You are given a string s. You can convert s to a palindrome by adding characters in front of it. Find and return the shortest palindrome you can find by performing this transformation.",
+    "difficulty": "HARD",
+    "constraints": [
+      "0 <= s.length <= 5 * 10^4",
+      "s consists of lowercase English letters only."
+    ],
+    "topics": [
+      "String",
+      "Rolling Hash",
+      "String Matching",
+      "Hash Function"
+    ],
+    "baseMemoryLimit": 256,
+    "baseTimeLimit": 1000,
+    "timeLimitMultiplier": {
+      "cpp": 1.0,
+      "java": 1.5,
+      "python": 2.0
+    },
+    "starterCode": {
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
+      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
+      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+    },
+    "testCases": [
+      {
+        "input": "[\"aacecaaa\"]",
+        "output": "\"aaacecaaa\"",
+        "isSample": true
+      },
+      {
+        "input": "[\"abcd\"]",
+        "output": "\"dcbabcd\"",
+        "isSample": true
+      },
+      {
+        "input": "[\"\"]",
+        "output": "\"\"",
+        "isSample": false
+      },
+      {
+        "input": "[\"a\"]",
+        "output": "\"a\"",
+        "isSample": false
+      },
+      {
+        "input": "[\"abacaba\"]",
+        "output": "\"abacaba\"",
+        "isSample": false
+      },
+      {
+        "input": "[\"ba\"]",
+        "output": "\"aba\"",
+        "isSample": false
+      },
+      {
+        "input": "[\"abbac\"]",
+        "output": "\"cabbac\"",
+        "isSample": false
+      },
+      {
+        "input": "[\"amood\"]",
+        "output": "\"doomamood\"",
+        "isSample": false
+      }
+    ]
+  },
+  {
+    "title": "Find the Unique Winner",
+    "slug": "find-the-unique-winner",
+    "description": "Given an array of strings `votes`, find the candidate who received exactly one vote. If there are multiple such candidates, return the one that appeared first in the array. If no candidate received exactly one vote, return an empty string.",
+    "difficulty": "EASY",
+    "constraints": [
+      "1 <= votes.length <= 10^5",
+      "1 <= votes[i].length <= 10",
+      "votes[i] consists of lowercase and uppercase English letters."
+    ],
+    "topics": [
+      "Hash maps",
+      "String",
+      "Array"
+    ],
+    "baseMemoryLimit": 512,
+    "baseTimeLimit": 1000,
+    "timeLimitMultiplier": {
+      "cpp": 1.0,
+      "java": 1.5,
+      "python": 2.0
+    },
+    "starterCode": {
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
+      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
+      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+    },
+    "testCases": [
+      {
+        "input": "[[\"A\", \"B\", \"A\", \"C\", \"B\"]]",
+        "output": "\"C\"",
+        "isSample": true
+      },
+      {
+        "input": "[[\"A\", \"B\", \"C\"]]",
+        "output": "\"A\"",
+        "isSample": true
+      },
+      {
+        "input": "[[\"A\", \"A\", \"B\", \"B\"]]",
+        "output": "\"\"",
+        "isSample": false
+      },
+      {
+        "input": "[[\"X\"]]",
+        "output": "\"X\"",
+        "isSample": false
+      },
+      {
+        "input": "[[\"A\", \"B\", \"C\", \"D\", \"E\", \"F\", \"A\", \"B\", \"C\", \"D\", \"E\"]]",
+        "output": "\"F\"",
+        "isSample": false
+      },
+      {
+        "input": "[[\"apple\", \"banana\", \"apple\", \"orange\"]]",
+        "output": "\"banana\"",
+        "isSample": false
+      },
+      {
+        "input": "[[\"z\", \"y\", \"x\", \"y\", \"z\"]]",
+        "output": "\"x\"",
+        "isSample": false
+      },
+      {
+        "input": "[[\"a\", \"b\", \"a\", \"b\", \"c\", \"d\", \"c\", \"d\"]]",
+        "output": "\"\"",
+        "isSample": false
+      }
+    ]
+  },
+  {
+    "title": "K-Difference Pairs Existence",
+    "slug": "k-difference-pairs-existence",
+    "description": "Given an array of integers `nums` and an integer `k`, return `true` if there exist two distinct indices `i` and `j` such that `nums[i] - nums[j] == k` or `nums[j] - nums[i] == k`. Otherwise, return `false`.",
+    "difficulty": "EASY",
+    "constraints": [
+      "2 <= nums.length <= 10^5",
+      "-10^9 <= nums[i] <= 10^9",
+      "0 <= k <= 10^9"
+    ],
+    "topics": [
+      "Hash maps",
+      "Array"
+    ],
+    "baseMemoryLimit": 512,
+    "baseTimeLimit": 1000,
+    "timeLimitMultiplier": {
+      "cpp": 1.0,
+      "java": 1.5,
+      "python": 2.0
+    },
+    "starterCode": {
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
+      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
+      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+    },
+    "testCases": [
+      {
+        "input": "[[1, 5, 3, 4, 2], 3]",
+        "output": "true",
+        "isSample": true
+      },
+      {
+        "input": "[[1, 2, 3, 4, 5], 7]",
+        "output": "false",
+        "isSample": true
+      },
+      {
+        "input": "[[1, 3, 1, 5, 4], 0]",
+        "output": "true",
+        "isSample": false
+      },
+      {
+        "input": "[[1, 2, 4, 4, 5], 0]",
+        "output": "true",
+        "isSample": false
+      },
+      {
+        "input": "[[1, 2, 3], 0]",
+        "output": "false",
+        "isSample": false
+      },
+      {
+        "input": "[[-1, -2, -3], 1]",
+        "output": "true",
+        "isSample": false
+      },
+      {
+        "input": "[[1000000000, -1000000000], 2000000000]",
+        "output": "true",
+        "isSample": false
+      },
+      {
+        "input": "[[1, 10, 100, 1000], 9]",
+        "output": "true",
+        "isSample": false
+      }
+    ]
+  },
+  {
+    "title": "Most Frequent Digit Sum",
+    "slug": "most-frequent-digit-sum",
+    "description": "Given an array of integers `nums`, calculate the sum of digits for each number. Return the digit sum that occurs most frequently. If there is a tie, return the largest digit sum.",
+    "difficulty": "EASY",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "0 <= nums[i] <= 10^9"
+    ],
+    "topics": [
+      "Hash maps",
+      "Math",
+      "Array"
+    ],
+    "baseMemoryLimit": 512,
+    "baseTimeLimit": 1000,
+    "timeLimitMultiplier": {
+      "cpp": 1.0,
+      "java": 1.5,
+      "python": 2.0
+    },
+    "starterCode": {
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
+      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
+      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+    },
+    "testCases": [
+      {
+        "input": "[[12, 30, 21, 40]]",
+        "output": "3",
+        "isSample": true
+      },
+      {
+        "input": "[[9, 18, 27, 36, 45]]",
+        "output": "9",
+        "isSample": true
+      },
+      {
+        "input": "[[11, 20, 2, 13, 4]]",
+        "output": "2",
+        "isSample": false
+      },
+      {
+        "input": "[[15, 24, 33, 42, 51, 60]]",
+        "output": "6",
+        "isSample": false
+      },
+      {
+        "input": "[[19, 28, 37, 46]]",
+        "output": "10",
+        "isSample": false
+      },
+      {
+        "input": "[[0, 10, 100, 1000]]",
+        "output": "1",
+        "isSample": false
+      },
+      {
+        "input": "[[99, 99, 99]]",
+        "output": "18",
+        "isSample": false
+      },
+      {
+        "input": "[[123, 456, 789]]",
+        "output": "24",
+        "isSample": false
+      }
+    ]
+  },
+  {
+    "title": "Subarrays with Equal Odd and Even Count",
+    "slug": "subarrays-with-equal-odd-and-even-count",
+    "description": "Given an integer array `nums`, return the number of contiguous subarrays that contain an equal number of odd and even elements.",
+    "difficulty": "MEDIUM",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^9 <= nums[i] <= 10^9"
+    ],
+    "topics": [
+      "Hash maps",
+      "Prefix Sum",
+      "Array"
+    ],
+    "baseMemoryLimit": 512,
+    "baseTimeLimit": 1000,
+    "timeLimitMultiplier": {
+      "cpp": 1.0,
+      "java": 1.5,
+      "python": 2.0
+    },
+    "starterCode": {
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
+      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
+      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+    },
+    "testCases": [
+      {
+        "input": "[[1, 2, 3, 4]]",
+        "output": "4",
+        "isSample": true
+      },
+      {
+        "input": "[[1, 3, 5]]",
+        "output": "0",
+        "isSample": true
+      },
+      {
+        "input": "[[2, 4, 6, 8]]",
+        "output": "0",
+        "isSample": false
+      },
+      {
+        "input": "[[1, 2, 1, 2, 1, 2]]",
+        "output": "9",
+        "isSample": false
+      },
+      {
+        "input": "[[0, 1, 0, 1]]",
+        "output": "4",
+        "isSample": false
+      },
+      {
+        "input": "[[7, 8, 9]]",
+        "output": "2",
+        "isSample": false
+      },
+      {
+        "input": "[[1, 1, 1, 2, 2, 2]]",
+        "output": "3",
+        "isSample": false
+      },
+      {
+        "input": "[[2, 1, 2, 1, 2, 1, 2, 1]]",
+        "output": "16",
+        "isSample": false
+      }
+    ]
+  },
+  {
+    "title": "Group Anagrammatic Shifts",
+    "slug": "group-anagrammatic-shifts",
+    "description": "Given an array of strings `strs`, group them such that strings in the same group can be shifted (each character incremented by the same value modulo 26) to become anagrams of each other. Return the groups. The output groups should be sorted lexicographically, and the elements within each group should also be sorted lexicographically.",
+    "difficulty": "MEDIUM",
+    "constraints": [
+      "1 <= strs.length <= 1000",
+      "1 <= strs[i].length <= 100",
+      "strs[i] consists of lowercase English letters."
+    ],
+    "topics": [
+      "Hash maps",
+      "String",
+      "Sorting"
+    ],
+    "baseMemoryLimit": 512,
+    "baseTimeLimit": 1000,
+    "timeLimitMultiplier": {
+      "cpp": 1.0,
+      "java": 1.5,
+      "python": 2.0
+    },
+    "starterCode": {
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
+      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
+      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+    },
+    "testCases": [
+      {
+        "input": "[[\"abc\", \"bcd\", \"ace\", \"bdf\", \"xyz\"]]",
+        "output": "[[\"abc\",\"bcd\",\"xyz\"],[\"ace\",\"bdf\"]]",
+        "isSample": true
+      },
+      {
+        "input": "[[\"a\", \"b\", \"z\", \"ab\", \"bc\"]]",
+        "output": "[[\"a\",\"b\",\"z\"],[\"ab\",\"bc\"]]",
+        "isSample": true
+      },
+      {
+        "input": "[[\"am\", \"bn\", \"co\", \"dp\"]]",
+        "output": "[[\"am\",\"bn\",\"co\",\"dp\"]]",
+        "isSample": false
+      },
+      {
+        "input": "[[\"ab\", \"ba\", \"cd\", \"dc\"]]",
+        "output": "[[\"ab\",\"ba\",\"cd\",\"dc\"]]",
+        "isSample": false
+      },
+      {
+        "input": "[[\"aaa\", \"bbb\", \"ccc\"]]",
+        "output": "[[\"aaa\",\"bbb\",\"ccc\"]]",
+        "isSample": false
+      },
+      {
+        "input": "[[\"hello\", \"ifmmp\", \"world\"]]",
+        "output": "[[\"hello\",\"ifmmp\"],[\"world\"]]",
+        "isSample": false
+      },
+      {
+        "input": "[[\"a\", \"c\", \"d\", \"e\"]]",
+        "output": "[[\"a\",\"c\",\"d\",\"e\"]]",
+        "isSample": false
+      },
+      {
+        "input": "[[\"ab\", \"ac\", \"ad\"]]",
+        "output": "[[\"ab\"],[\"ac\"],[\"ad\"]]",
+        "isSample": false
+      }
+    ]
+  },
+  {
+    "title": "Longest Subarray with Equal Frequency",
+    "slug": "longest-subarray-with-equal-frequency",
+    "description": "Given an array of integers `nums`, find the maximum length of a contiguous subarray where all distinct elements in that subarray have the exact same frequency.",
+    "difficulty": "MEDIUM",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "1 <= nums[i] <= 10^5"
+    ],
+    "topics": [
+      "Hash maps",
+      "Sliding Window",
+      "Array"
+    ],
+    "baseMemoryLimit": 512,
+    "baseTimeLimit": 1500,
+    "timeLimitMultiplier": {
+      "cpp": 1.0,
+      "java": 1.5,
+      "python": 2.0
+    },
+    "starterCode": {
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
+      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
+      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+    },
+    "testCases": [
+      {
+        "input": "[[1, 2, 1, 2, 3]]",
+        "output": "4",
+        "isSample": true
+      },
+      {
+        "input": "[[1, 1, 2, 2, 3, 3]]",
+        "output": "6",
+        "isSample": true
+      },
+      {
+        "input": "[[1, 1, 1]]",
+        "output": "3",
+        "isSample": false
+      },
+      {
+        "input": "[[1, 2, 3, 4, 5]]",
+        "output": "5",
+        "isSample": false
+      },
+      {
+        "input": "[[1, 2, 2, 1, 3, 3]]",
+        "output": "6",
+        "isSample": false
+      },
+      {
+        "input": "[[1, 2, 3, 1, 2, 3, 4]]",
+        "output": "6",
+        "isSample": false
+      },
+      {
+        "input": "[[1, 2, 1, 3, 1, 4]]",
+        "output": "2",
+        "isSample": false
+      },
+      {
+        "input": "[[5, 5, 5, 5]]",
+        "output": "4",
+        "isSample": false
+      }
+    ]
+  },
+  {
+    "title": "Find Period of Fraction",
+    "slug": "find-period-of-fraction",
+    "description": "Given two integers representing the `numerator` and `denominator` of a fraction, return the length of the repeating fractional part. If the fractional part does not repeat, return 0.",
+    "difficulty": "MEDIUM",
+    "constraints": [
+      "1 <= numerator, denominator <= 10^5"
+    ],
+    "topics": [
+      "Hash maps",
+      "Math"
+    ],
+    "baseMemoryLimit": 512,
+    "baseTimeLimit": 1000,
+    "timeLimitMultiplier": {
+      "cpp": 1.0,
+      "java": 1.5,
+      "python": 2.0
+    },
+    "starterCode": {
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
+      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
+      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+    },
+    "testCases": [
+      {
+        "input": "[1, 3]",
+        "output": "1",
+        "isSample": true
+      },
+      {
+        "input": "[1, 2]",
+        "output": "0",
+        "isSample": true
+      },
+      {
+        "input": "[1, 7]",
+        "output": "6",
+        "isSample": false
+      },
+      {
+        "input": "[22, 7]",
+        "output": "6",
+        "isSample": false
+      },
+      {
+        "input": "[1, 6]",
+        "output": "1",
+        "isSample": false
+      },
+      {
+        "input": "[1, 11]",
+        "output": "2",
+        "isSample": false
+      },
+      {
+        "input": "[3, 8]",
+        "output": "0",
+        "isSample": false
+      },
+      {
+        "input": "[1, 17]",
+        "output": "16",
+        "isSample": false
+      }
+    ]
+  },
+  {
+    "title": "Max Points on a 2D Plane with Same Slope",
+    "slug": "max-points-on-a-2d-plane-with-same-slope",
+    "description": "Given an array of 2D points where `points[i] = [xi, yi]`, return the maximum number of points that lie on the same straight line.",
+    "difficulty": "HARD",
+    "constraints": [
+      "1 <= points.length <= 500",
+      "points[i].length == 2",
+      "-10^4 <= xi, yi <= 10^4",
+      "All points are unique."
+    ],
+    "topics": [
+      "Hash maps",
+      "Math",
+      "Geometry"
+    ],
+    "baseMemoryLimit": 512,
+    "baseTimeLimit": 1000,
+    "timeLimitMultiplier": {
+      "cpp": 1.0,
+      "java": 1.5,
+      "python": 2.0
+    },
+    "starterCode": {
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
+      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
+      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+    },
+    "testCases": [
+      {
+        "input": "[[[1,1],[2,2],[3,3]]]",
+        "output": "3",
+        "isSample": true
+      },
+      {
+        "input": "[[[1,1],[3,2],[5,3],[4,1],[2,3],[1,4]]]",
+        "output": "4",
+        "isSample": true
+      },
+      {
+        "input": "[[[1,1]]]",
+        "output": "1",
+        "isSample": false
+      },
+      {
+        "input": "[[[1,1],[2,2]]]",
+        "output": "2",
+        "isSample": false
+      },
+      {
+        "input": "[[[0,0],[1,1],[0,1],[1,0]]]",
+        "output": "2",
+        "isSample": false
+      },
+      {
+        "input": "[[[0,0],[1,0],[2,0],[3,0],[0,1],[0,2]]]",
+        "output": "4",
+        "isSample": false
+      },
+      {
+        "input": "[[[0,0],[1,1],[2,2],[3,3],[1,2],[2,4],[3,6]]]",
+        "output": "4",
+        "isSample": false
+      },
+      {
+        "input": "[[[1,1],[2,2],[3,3],[4,4],[5,5],[1,2],[2,3],[3,4]]]",
+        "output": "5",
+        "isSample": false
+      }
+    ]
+  },
+  {
+    "title": "Minimum Window Substring with Word Frequencies",
+    "slug": "minimum-window-substring-with-word-frequencies",
+    "description": "Given a string `s` and an array of strings `words` of the same length, return the minimum starting index of a substring in `s` that contains a permutation of all the words in `words` concatenated. If no such substring exists, return -1. If there are multiple such starting indices, return the smallest one.",
+    "difficulty": "HARD",
+    "constraints": [
+      "1 <= s.length <= 10^5",
+      "1 <= words.length <= 1000",
+      "1 <= words[i].length <= 20",
+      "All words in `words` have the same length.",
+      "s and words[i] consist of lowercase English letters."
+    ],
+    "topics": [
+      "Hash maps",
+      "Sliding Window",
+      "String"
+    ],
+    "baseMemoryLimit": 512,
+    "baseTimeLimit": 2000,
+    "timeLimitMultiplier": {
+      "cpp": 1.0,
+      "java": 1.5,
+      "python": 2.0
+    },
+    "starterCode": {
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
+      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
+      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+    },
+    "testCases": [
+      {
+        "input": "[\"barfoothefoobarman\", [\"foo\",\"bar\"]]",
+        "output": "0",
+        "isSample": true
+      },
+      {
+        "input": "[\"wordgoodgoodgoodword\", [\"word\",\"good\",\"best\",\"word\"]]",
+        "output": "-1",
+        "isSample": true
+      },
+      {
+        "input": "[\"barfoofoobarthefoobarman\", [\"bar\",\"foo\",\"the\"]]",
+        "output": "6",
+        "isSample": false
+      },
+      {
+        "input": "[\"wordgoodgoodgoodword\", [\"word\",\"good\",\"best\",\"good\"]]",
+        "output": "-1",
+        "isSample": false
+      },
+      {
+        "input": "[\"lingmindraboofooowingdingbarrwingcarerabybabarfoothefoobarman\", [\"fooo\",\"barr\",\"wing\",\"ding\"]]",
+        "output": "13",
+        "isSample": false
+      },
+      {
+        "input": "[\"aaaaaaaa\", [\"aa\",\"aa\"]]",
+        "output": "0",
+        "isSample": false
+      },
+      {
+        "input": "[\"catbatratcatbat\", [\"cat\",\"bat\"]]",
+        "output": "0",
+        "isSample": false
+      },
+      {
+        "input": "[\"ababaab\", [\"ab\",\"ba\"]]",
+        "output": "1",
+        "isSample": false
+      }
+    ]
+  },
+  {
+    "title": "Backspace String Compare",
+    "slug": "backspace-string-compare",
+    "description": "Given two strings s and t, return true if they are equal when both are typed into empty text editors. '#' means a backspace character.\n\nNote that after backspacing an empty text, the text will continue empty.",
+    "difficulty": "EASY",
+    "constraints": [
+      "1 <= s.length, t.length <= 200",
+      "s and t contain lowercase letters and '#' characters."
+    ],
+    "topics": [
+      "Stack",
+      "Two Pointers",
+      "String"
+    ],
+    "baseMemoryLimit": 256,
+    "baseTimeLimit": 1000,
+    "timeLimitMultiplier": {
+      "cpp": 1.0,
+      "java": 1.5,
+      "python": 2.0
+    },
+    "starterCode": {
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
+      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
+      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+    },
+    "testCases": [
+      {
+        "input": "{\"s\": \"ab#c\", \"t\": \"ad#c\"}",
+        "output": "true",
+        "isSample": true
+      },
+      {
+        "input": "{\"s\": \"ab##\", \"t\": \"c#d#\"}",
+        "output": "true",
+        "isSample": true
+      },
+      {
+        "input": "{\"s\": \"a#c\", \"t\": \"b\"}",
+        "output": "false",
+        "isSample": false
+      },
+      {
+        "input": "{\"s\": \"a##c\", \"t\": \"#a#c\"}",
+        "output": "true",
+        "isSample": false
+      },
+      {
+        "input": "{\"s\": \"xywrrmp\", \"t\": \"xywrrmu#p\"}",
+        "output": "true",
+        "isSample": false
+      },
+      {
+        "input": "{\"s\": \"bxj##tw\", \"t\": \"bxj###tw\"}",
+        "output": "false",
+        "isSample": false
+      },
+      {
+        "input": "{\"s\": \"nzp#o#g\", \"t\": \"b#nzp#o#g\"}",
+        "output": "true",
+        "isSample": false
+      },
+      {
+        "input": "{\"s\": \"#####\", \"t\": \"\"}",
+        "output": "true",
+        "isSample": false
+      }
+    ]
+  },
+  {
+    "title": "Baseball Game",
+    "slug": "baseball-game",
+    "description": "You are keeping the scores for a baseball game with strange rules. At the beginning of the game, you start with an empty record.\n\nYou are given a list of strings operations, where operations[i] is the i-th operation you must apply to the record and is one of the following:\n\n- An integer x: Record a new score of x.\n- '+': Record a new score that is the sum of the previous two scores.\n- 'D': Record a new score that is double the previous score.\n- 'C': Invalidate the previous score, removing it from the record.\n\nReturn the sum of all the scores on the record after applying all the operations.",
+    "difficulty": "EASY",
+    "constraints": [
+      "1 <= operations.length <= 1000",
+      "operations[i] is 'C', 'D', '+', or a string representing an integer in the range [-3 * 10^4, 3 * 10^4].",
+      "For '+' operation, there will always be at least two previous scores on the record.",
+      "For 'C' and 'D' operations, there will always be at least one previous score on the record."
+    ],
+    "topics": [
+      "Stack",
+      "Array",
+      "Simulation"
+    ],
+    "baseMemoryLimit": 256,
+    "baseTimeLimit": 1000,
+    "timeLimitMultiplier": {
+      "cpp": 1.0,
+      "java": 1.5,
+      "python": 2.0
+    },
+    "starterCode": {
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
+      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
+      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+    },
+    "testCases": [
+      {
+        "input": "{\"operations\": [\"5\",\"2\",\"C\",\"D\",\"+\"]}",
+        "output": "30",
+        "isSample": true
+      },
+      {
+        "input": "{\"operations\": [\"5\",\"-2\",\"4\",\"C\",\"D\",\"9\",\"+\",\"+\"]}",
+        "output": "27",
+        "isSample": true
+      },
+      {
+        "input": "{\"operations\": [\"1\",\"C\"]}",
+        "output": "0",
+        "isSample": false
+      },
+      {
+        "input": "{\"operations\": [\"10\",\"20\",\"30\",\"D\",\"+\"]}",
+        "output": "120",
+        "isSample": false
+      },
+      {
+        "input": "{\"operations\": [\"-5\",\"-10\",\"D\",\"C\",\"+\"]}",
+        "output": "-25",
+        "isSample": false
+      },
+      {
+        "input": "{\"operations\": [\"100\"]}",
+        "output": "100",
+        "isSample": false
+      },
+      {
+        "input": "{\"operations\": [\"5\",\"D\",\"D\",\"D\"]}",
+        "output": "75",
+        "isSample": false
+      },
+      {
+        "input": "{\"operations\": [\"1\",\"2\",\"+\",\"+\",\"C\"]}",
+        "output": "6",
+        "isSample": false
+      }
+    ]
+  },
+  {
+    "title": "Make The String Great",
+    "slug": "make-the-string-great",
+    "description": "Given a string s of lower and upper case English letters.\n\nA good string is a string which doesn't have two adjacent characters s[i] and s[i+1] where:\n- 0 <= i <= s.length - 2\n- s[i] is a lower-case letter and s[i+1] is the same letter but in upper-case or vice-versa.\n\nTo make the string good, you can choose two adjacent characters that make the string bad and remove them. You can keep doing this until the string becomes good.\n\nReturn the string after making it good. The answer is guaranteed to be unique under the given constraints.",
+    "difficulty": "EASY",
+    "constraints": [
+      "1 <= s.length <= 100",
+      "s contains only lower and upper case English letters."
+    ],
+    "topics": [
+      "Stack",
+      "String"
+    ],
+    "baseMemoryLimit": 256,
+    "baseTimeLimit": 1000,
+    "timeLimitMultiplier": {
+      "cpp": 1.0,
+      "java": 1.5,
+      "python": 2.0
+    },
+    "starterCode": {
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
+      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
+      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+    },
+    "testCases": [
+      {
+        "input": "{\"s\": \"leEeetcode\"}",
+        "output": "\"leetcode\"",
+        "isSample": true
+      },
+      {
+        "input": "{\"s\": \"abBAcC\"}",
+        "output": "\"\"",
+        "isSample": true
+      },
+      {
+        "input": "{\"s\": \"s\"}",
+        "output": "\"s\"",
+        "isSample": false
+      },
+      {
+        "input": "{\"s\": \"Pp\"}",
+        "output": "\"\"",
+        "isSample": false
+      },
+      {
+        "input": "{\"s\": \"kkKKkkKK\"}",
+        "output": "\"\"",
+        "isSample": false
+      },
+      {
+        "input": "{\"s\": \"mC\"}",
+        "output": "\"mC\"",
+        "isSample": false
+      },
+      {
+        "input": "{\"s\": \"abBAcCdDeE\"}",
+        "output": "\"\"",
+        "isSample": false
+      },
+      {
+        "input": "{\"s\": \"qVxXvQ\"}",
+        "output": "\"\"",
+        "isSample": false
+      }
+    ]
+  },
+  {
+    "title": "Daily Temperatures",
+    "slug": "daily-temperatures",
+    "description": "Given an array of integers temperatures represents the daily temperatures, return an array answer such that answer[i] is the number of days you have to wait after the i-th day to get a warmer temperature. If there is no future day for which this is possible, keep answer[i] == 0 instead.",
+    "difficulty": "MEDIUM",
+    "constraints": [
+      "1 <= temperatures.length <= 10^5",
+      "30 <= temperatures[i] <= 100"
+    ],
+    "topics": [
+      "Stack",
+      "Monotonic Stack",
+      "Array"
+    ],
+    "baseMemoryLimit": 256,
+    "baseTimeLimit": 1000,
+    "timeLimitMultiplier": {
+      "cpp": 1.0,
+      "java": 1.5,
+      "python": 2.0
+    },
+    "starterCode": {
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
+      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
+      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+    },
+    "testCases": [
+      {
+        "input": "{\"temperatures\": [73,74,75,71,69,72,76,73]}",
+        "output": "[1,1,4,2,1,1,0,0]",
+        "isSample": true
+      },
+      {
+        "input": "{\"temperatures\": [30,40,50,60]}",
+        "output": "[1,1,1,0]",
+        "isSample": true
+      },
+      {
+        "input": "{\"temperatures\": [30,30,30]}",
+        "output": "[0,0,0]",
+        "isSample": false
+      },
+      {
+        "input": "{\"temperatures\": [89,62,70,58,47,47,46,76,100,70]}",
+        "output": "[8,1,5,4,3,2,1,1,0,0]",
+        "isSample": false
+      },
+      {
+        "input": "{\"temperatures\": [50]}",
+        "output": "[0]",
+        "isSample": false
+      },
+      {
+        "input": "{\"temperatures\": [40,35,32,31,30]}",
+        "output": "[0,0,0,0,0]",
+        "isSample": false
+      },
+      {
+        "input": "{\"temperatures\": [30,31,32,33,34,35]}",
+        "output": "[1,1,1,1,1,0]",
+        "isSample": false
+      },
+      {
+        "input": "{\"temperatures\": [90,80,70,85,95]}",
+        "output": "[4,2,1,1,0]",
+        "isSample": false
+      }
+    ]
+  },
+  {
+    "title": "Simplify Path",
+    "slug": "simplify-path",
+    "description": "Given an absolute path for a Unix-style file system, simplify it.\n\nIn a Unix-style file system:\n- A period '.' refers to the current directory.\n- A double period '..' moves the directory up a level.\n- Multiple consecutive slashes (i.e. '//') are treated as a single slash '/'.\n- Any other format of periods (such as '...') are treated as file/directory names.\n\nThe simplified path should follow these rules:\n- The path must start with a single slash '/'.\n- Any two directories must be separated by a single slash '/'.\n- The path must not end with a trailing '/'.\n- The path must only contain the directories on the path from the root directory to the target file or directory (i.e., no period '.' or double period '..').\n\nReturn the simplified path.",
+    "difficulty": "MEDIUM",
+    "constraints": [
+      "1 <= path.length <= 3000",
+      "path consists of English letters, digits, period '.', slash '/' or '_'."
+    ],
+    "topics": [
+      "Stack",
+      "String"
+    ],
+    "baseMemoryLimit": 256,
+    "baseTimeLimit": 1000,
+    "timeLimitMultiplier": {
+      "cpp": 1.0,
+      "java": 1.5,
+      "python": 2.0
+    },
+    "starterCode": {
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
+      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
+      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+    },
+    "testCases": [
+      {
+        "input": "{\"path\": \"/home/\"}",
+        "output": "\"/home\"",
+        "isSample": true
+      },
+      {
+        "input": "{\"path\": \"/../\"}",
+        "output": "\"/\"",
+        "isSample": true
+      },
+      {
+        "input": "{\"path\": \"/home//foo/\"}",
+        "output": "\"/home/foo\"",
+        "isSample": false
+      },
+      {
+        "input": "{\"path\": \"/a/./b/../../c/\"}",
+        "output": "\"/c\"",
+        "isSample": false
+      },
+      {
+        "input": "{\"path\": \"/a/../../b/../c//.//\"}",
+        "output": "\"/c\"",
+        "isSample": false
+      },
+      {
+        "input": "{\"path\": \"/a//b////c/d/././..\"}",
+        "output": "\"/a/b/c\"",
+        "isSample": false
+      },
+      {
+        "input": "{\"path\": \"/...\"}",
+        "output": "\"/...\"",
+        "isSample": false
+      },
+      {
+        "input": "{\"path\": \"/..hidden\"}",
+        "output": "\"/..hidden\"",
+        "isSample": false
+      }
+    ]
+  },
+  {
+    "title": "Evaluate Reverse Polish Notation",
+    "slug": "evaluate-reverse-polish-notation",
+    "description": "You are given an array of strings tokens that represents an arithmetic expression in a Reverse Polish Notation.\n\nEvaluate the expression. Return an integer that represents the value of the expression.\n\nNote that:\n- The valid operators are '+', '-', '*', and '/'.\n- Each operand may be an integer or another expression.\n- The division between two integers always truncates toward zero.\n- There will not be any division by zero.\n- The input represents a valid arithmetic expression in reverse polish notation.",
+    "difficulty": "MEDIUM",
+    "constraints": [
+      "1 <= tokens.length <= 10^4",
+      "tokens[i] is either an operator ('+', '-', '*', or '/'), or an integer in the range [-200, 200]."
+    ],
+    "topics": [
+      "Stack",
+      "Array",
+      "Math"
+    ],
+    "baseMemoryLimit": 256,
+    "baseTimeLimit": 1000,
+    "timeLimitMultiplier": {
+      "cpp": 1.0,
+      "java": 1.5,
+      "python": 2.0
+    },
+    "starterCode": {
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
+      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
+      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+    },
+    "testCases": [
+      {
+        "input": "{\"tokens\": [\"2\",\"1\",\"+\",\"3\",\"*\"]}",
+        "output": "9",
+        "isSample": true
+      },
+      {
+        "input": "{\"tokens\": [\"4\",\"13\",\"5\",\"/\",\"+\"]}",
+        "output": "6",
+        "isSample": true
+      },
+      {
+        "input": "{\"tokens\": [\"10\",\"6\",\"9\",\"3\",\"+\",\"-11\",\"*\",\"/\",\"*\",\"17\",\"+\",\"5\",\"+\"]}",
+        "output": "22",
+        "isSample": false
+      },
+      {
+        "input": "{\"tokens\": [\"3\",\"-4\",\"+\"]}",
+        "output": "-1",
+        "isSample": false
+      },
+      {
+        "input": "{\"tokens\": [\"4\",\"-2\",\"/\"]}",
+        "output": "-2",
+        "isSample": false
+      },
+      {
+        "input": "{\"tokens\": [\"18\"]}",
+        "output": "18",
+        "isSample": false
+      },
+      {
+        "input": "{\"tokens\": [\"3\",\"4\",\"*\",\"5\",\"6\",\"*\",\"+\"]}",
+        "output": "42",
+        "isSample": false
+      },
+      {
+        "input": "{\"tokens\": [\"10\",\"5\",\"-\",\"2\",\"/\"]}",
+        "output": "2",
+        "isSample": false
+      }
+    ]
+  },
+  {
+    "title": "Online Stock Span",
+    "slug": "online-stock-span",
+    "description": "Design an algorithm that collects daily price quotes for some stock and returns the span of that stock's price for the current day.\n\nThe span of the stock's price in one day is the maximum number of consecutive days (starting from that day and going backward) for which the stock price was less than or equal to the price of that day.\n\nImplement the StockSpanner class:\n- StockSpanner() Initializes the object of the class.\n- int next(int price) Returns the span of the stock's price given that today's price is price.",
+    "difficulty": "MEDIUM",
+    "constraints": [
+      "1 <= price <= 10^5",
+      "At most 10^4 calls will be made to next."
+    ],
+    "topics": [
+      "Stack",
+      "Monotonic Stack",
+      "Design"
+    ],
+    "baseMemoryLimit": 256,
+    "baseTimeLimit": 1000,
+    "timeLimitMultiplier": {
+      "cpp": 1.0,
+      "java": 1.5,
+      "python": 2.0
+    },
+    "starterCode": {
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
+      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
+      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+    },
+    "testCases": [
+      {
+        "input": "{\"commands\": [\"StockSpanner\",\"next\",\"next\",\"next\",\"next\",\"next\",\"next\",\"next\"], \"arguments\": [[],[100],[80],[60],[70],[60],[75],[85]]}",
+        "output": "[null,1,1,1,2,1,4,6]",
+        "isSample": true
+      },
+      {
+        "input": "{\"commands\": [\"StockSpanner\",\"next\",\"next\",\"next\"], \"arguments\": [[],[10],[20],[30]]}",
+        "output": "[null,1,2,3]",
+        "isSample": true
+      },
+      {
+        "input": "{\"commands\": [\"StockSpanner\",\"next\",\"next\",\"next\"], \"arguments\": [[],[30],[20],[10]]}",
+        "output": "[null,1,1,1]",
+        "isSample": false
+      },
+      {
+        "input": "{\"commands\": [\"StockSpanner\",\"next\",\"next\",\"next\",\"next\"], \"arguments\": [[],[50],[50],[50],[50]]}",
+        "output": "[null,1,2,3,4]",
+        "isSample": false
+      },
+      {
+        "input": "{\"commands\": [\"StockSpanner\",\"next\"], \"arguments\": [[],[100000]]}",
+        "output": "[null,1]",
+        "isSample": false
+      },
+      {
+        "input": "{\"commands\": [\"StockSpanner\",\"next\",\"next\",\"next\",\"next\",\"next\"], \"arguments\": [[],[10],[5],[10],[5],[20]]}",
+        "output": "[null,1,1,3,1,5]",
+        "isSample": false
+      },
+      {
+        "input": "{\"commands\": [\"StockSpanner\",\"next\",\"next\",\"next\",\"next\"], \"arguments\": [[],[100],[90],[80],[120]]}",
+        "output": "[null,1,1,1,4]",
+        "isSample": false
+      },
+      {
+        "input": "{\"commands\": [\"StockSpanner\",\"next\",\"next\",\"next\",\"next\",\"next\"], \"arguments\": [[],[10],[20],[10],[20],[30]]}",
+        "output": "[null,1,2,1,4,5]",
+        "isSample": false
+      }
+    ]
+  },
+  {
+    "title": "Largest Rectangle in Histogram",
+    "slug": "largest-rectangle-in-histogram",
+    "description": "Given an array of integers heights representing the histogram's bar height where the width of each bar is 1, return the area of the largest rectangle in the histogram.",
+    "difficulty": "HARD",
+    "constraints": [
+      "1 <= heights.length <= 10^5",
+      "0 <= heights[i] <= 10^4"
+    ],
+    "topics": [
+      "Stack",
+      "Monotonic Stack",
+      "Array"
+    ],
+    "baseMemoryLimit": 256,
+    "baseTimeLimit": 1500,
+    "timeLimitMultiplier": {
+      "cpp": 1.0,
+      "java": 1.5,
+      "python": 2.0
+    },
+    "starterCode": {
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
+      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
+      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+    },
+    "testCases": [
+      {
+        "input": "{\"heights\": [2,1,5,6,2,3]}",
+        "output": "10",
+        "isSample": true
+      },
+      {
+        "input": "{\"heights\": [2,4]}",
+        "output": "4",
+        "isSample": true
+      },
+      {
+        "input": "{\"heights\": [1,1,1,1,1]}",
+        "output": "5",
+        "isSample": false
+      },
+      {
+        "input": "{\"heights\": [0,9]}",
+        "output": "9",
+        "isSample": false
+      },
+      {
+        "input": "{\"heights\": [2,1,2]}",
+        "output": "3",
+        "isSample": false
+      },
+      {
+        "input": "{\"heights\": [10,20,30,40]}",
+        "output": "60",
+        "isSample": false
+      },
+      {
+        "input": "{\"heights\": [4,3,2,1]}",
+        "output": "6",
+        "isSample": false
+      },
+      {
+        "input": "{\"heights\": [1,2,3,4,5,4,3,2,1]}",
+        "output": "15",
+        "isSample": false
+      }
+    ]
+  },
+  {
+    "title": "Maximum Units on a Truck",
+    "slug": "maximum-units-on-a-truck",
+    "description": "You are assigned to put some amount of boxes onto one truck. You are given a 2D array boxTypes, where boxTypes[i] = [numberOfBoxes_i, numberOfUnitsPerBox_i], and an integer truckSize. You want to maximize the total number of units. Return the maximum total number of units.",
+    "difficulty": "EASY",
+    "constraints": [
+      "1 <= boxTypes.length <= 1000",
+      "1 <= numberOfBoxes_i, numberOfUnitsPerBox_i <= 1000",
+      "1 <= truckSize <= 10^6"
+    ],
+    "topics": [
+      "Greedy",
+      "Sorting",
+      "Array"
+    ],
+    "baseMemoryLimit": 512,
+    "baseTimeLimit": 1000,
+    "timeLimitMultiplier": {
+      "cpp": 1.0,
+      "java": 1.5,
+      "python": 2.0
+    },
+    "starterCode": {
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
+      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
+      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+    },
+    "testCases": [
+      {
+        "input": "[[[1,3],[2,2],[3,1]], 4]",
+        "output": "8",
+        "isSample": true
+      },
+      {
+        "input": "[[[5,10],[2,5],[4,7],[3,9]], 10]",
+        "output": "91",
+        "isSample": true
+      },
+      {
+        "input": "[[[1,1]], 1]",
+        "output": "1",
+        "isSample": false
+      },
+      {
+        "input": "[[[10,100]], 5]",
+        "output": "500",
+        "isSample": false
+      },
+      {
+        "input": "[[[3,1],[3,2],[3,3]], 5]",
+        "output": "13",
+        "isSample": false
+      },
+      {
+        "input": "[[[1,5],[2,4],[3,3]], 10]",
+        "output": "17",
+        "isSample": false
+      },
+      {
+        "input": "[[[10,10],[10,20],[10,30]], 15]",
+        "output": "400",
+        "isSample": false
+      },
+      {
+        "input": "[[[1,10],[1,10],[1,10]], 2]",
+        "output": "20",
+        "isSample": false
+      }
+    ]
+  },
+  {
+    "title": "Minimum Sum of Four Digit Number After Splitting Digits",
+    "slug": "minimum-sum-of-four-digit-number-after-splitting-digits",
+    "description": "You are given a positive integer num consisting of exactly four digits. Split num into two new integers new1 and new2 by using the digits found in num. Leading zeros are allowed in new1 and new2, and all the digits found in num must be used. Return the minimum possible sum of new1 and new2.",
+    "difficulty": "EASY",
+    "constraints": [
+      "1000 <= num <= 9999"
+    ],
+    "topics": [
+      "Greedy",
+      "Sorting",
+      "Math"
+    ],
+    "baseMemoryLimit": 512,
+    "baseTimeLimit": 1000,
+    "timeLimitMultiplier": {
+      "cpp": 1.0,
+      "java": 1.5,
+      "python": 2.0
+    },
+    "starterCode": {
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
+      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
+      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+    },
+    "testCases": [
+      {
+        "input": "[2932]",
+        "output": "52",
+        "isSample": true
+      },
+      {
+        "input": "[4009]",
+        "output": "13",
+        "isSample": true
+      },
+      {
+        "input": "[1000]",
+        "output": "1",
+        "isSample": false
+      },
+      {
+        "input": "[9999]",
+        "output": "198",
+        "isSample": false
+      },
+      {
+        "input": "[1234]",
+        "output": "37",
+        "isSample": false
+      },
+      {
+        "input": "[5555]",
+        "output": "110",
+        "isSample": false
+      },
+      {
+        "input": "[8008]",
+        "output": "16",
+        "isSample": false
+      },
+      {
+        "input": "[1009]",
+        "output": "10",
+        "isSample": false
+      }
+    ]
+  },
+  {
+    "title": "Assign Cookies",
+    "slug": "assign-cookies",
+    "description": "Assume you are an awesome parent and want to give your children some cookies. But, you should give each child at most one cookie. Each child i has a greed factor g[i], and each cookie j has a size s[j]. If s[j] >= g[i], we can assign the cookie j to the child i. Your goal is to maximize the number of your content children and output the maximum number.",
+    "difficulty": "EASY",
+    "constraints": [
+      "1 <= g.length, s.length <= 3 * 10^4",
+      "1 <= g[i], s[j] <= 2^31 - 1"
+    ],
+    "topics": [
+      "Greedy",
+      "Sorting",
+      "Two Pointers",
+      "Array"
+    ],
+    "baseMemoryLimit": 512,
+    "baseTimeLimit": 1000,
+    "timeLimitMultiplier": {
+      "cpp": 1.0,
+      "java": 1.5,
+      "python": 2.0
+    },
+    "starterCode": {
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
+      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
+      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+    },
+    "testCases": [
+      {
+        "input": "[[1,2,3], [1,1]]",
+        "output": "1",
+        "isSample": true
+      },
+      {
+        "input": "[[1,2], [1,2,3]]",
+        "output": "2",
+        "isSample": true
+      },
+      {
+        "input": "[[3,4], [1,2,5]]",
+        "output": "1",
+        "isSample": false
+      },
+      {
+        "input": "[[10,20,30], [5,15,25,35]]",
+        "output": "3",
+        "isSample": false
+      },
+      {
+        "input": "[[1,2,3], []]",
+        "output": "0",
+        "isSample": false
+      },
+      {
+        "input": "[[], [1,2,3]]",
+        "output": "0",
+        "isSample": false
+      },
+      {
+        "input": "[[1,1,1], [1,1,1]]",
+        "output": "3",
+        "isSample": false
+      },
+      {
+        "input": "[[10], [9]]",
+        "output": "0",
+        "isSample": false
+      }
+    ]
+  },
+  {
+    "title": "Gas Station",
+    "slug": "gas-station",
+    "description": "There are n gas stations along a circular route, where the amount of gas at the i-th station is gas[i]. You have a car with an unlimited gas tank and it costs cost[i] of gas to travel from the i-th station to its next (i + 1)-th station. You begin the journey with an empty tank at one of the gas stations. Given two integer arrays gas and cost, return the starting gas station's index if you can travel around the circuit once in the clockwise direction, otherwise return -1. If there exists a solution, it is guaranteed to be unique.",
+    "difficulty": "MEDIUM",
+    "constraints": [
+      "n == gas.length == cost.length",
+      "1 <= n <= 10^5",
+      "0 <= gas[i], cost[i] <= 10^4"
+    ],
+    "topics": [
+      "Greedy",
+      "Array"
+    ],
+    "baseMemoryLimit": 512,
+    "baseTimeLimit": 1000,
+    "timeLimitMultiplier": {
+      "cpp": 1.0,
+      "java": 1.5,
+      "python": 2.0
+    },
+    "starterCode": {
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
+      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
+      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+    },
+    "testCases": [
+      {
+        "input": "[[1,2,3,4,5], [3,4,5,1,2]]",
+        "output": "3",
+        "isSample": true
+      },
+      {
+        "input": "[[2,3,4], [3,4,3]]",
+        "output": "-1",
+        "isSample": true
+      },
+      {
+        "input": "[[5,1,2,3,4], [4,4,1,5,1]]",
+        "output": "4",
+        "isSample": false
+      },
+      {
+        "input": "[[3,1,1], [1,2,2]]",
+        "output": "0",
+        "isSample": false
+      },
+      {
+        "input": "[[1,2], [2,1]]",
+        "output": "1",
+        "isSample": false
+      },
+      {
+        "input": "[[4], [5]]",
+        "output": "-1",
+        "isSample": false
+      },
+      {
+        "input": "[[5], [4]]",
+        "output": "0",
+        "isSample": false
+      },
+      {
+        "input": "[[2,2,2], [2,2,2]]",
+        "output": "0",
+        "isSample": false
+      }
+    ]
+  },
+  {
+    "title": "Non-overlapping Intervals",
+    "slug": "non-overlapping-intervals",
+    "description": "Given an array of intervals intervals where intervals[i] = [start_i, end_i], return the minimum number of intervals you need to remove to make the rest of the intervals non-overlapping.",
+    "difficulty": "MEDIUM",
+    "constraints": [
+      "1 <= intervals.length <= 10^5",
+      "intervals[i].length == 2",
+      "-5 * 10^4 <= start_i < end_i <= 5 * 10^4"
+    ],
+    "topics": [
+      "Greedy",
+      "Sorting",
+      "Array"
+    ],
+    "baseMemoryLimit": 512,
+    "baseTimeLimit": 1000,
+    "timeLimitMultiplier": {
+      "cpp": 1.0,
+      "java": 1.5,
+      "python": 2.0
+    },
+    "starterCode": {
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
+      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
+      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+    },
+    "testCases": [
+      {
+        "input": "[[[1,2],[2,3],[3,4],[1,3]]]",
+        "output": "1",
+        "isSample": true
+      },
+      {
+        "input": "[[[1,2],[1,2],[1,2]]]",
+        "output": "2",
+        "isSample": true
+      },
+      {
+        "input": "[[[1,2],[2,3]]]",
+        "output": "0",
+        "isSample": false
+      },
+      {
+        "input": "[[[1,100],[11,22],[1,11],[2,12]]]",
+        "output": "2",
+        "isSample": false
+      },
+      {
+        "input": "[[[1,2],[3,4],[5,6]]]",
+        "output": "0",
+        "isSample": false
+      },
+      {
+        "input": "[[[-50,-40],[-45,-35],[-30,-20]]]",
+        "output": "1",
+        "isSample": false
+      },
+      {
+        "input": "[[[1,10],[2,3],[3,4],[4,5]]]",
+        "output": "1",
+        "isSample": false
+      },
+      {
+        "input": "[[[1,5],[2,6],[3,7],[4,8]]]",
+        "output": "3",
+        "isSample": false
+      }
+    ]
+  },
+  {
+    "title": "Queue Reconstruction by Height",
+    "slug": "queue-reconstruction-by-height",
+    "description": "You are given an array of people, people, which are the attributes of some people in a queue (not necessarily in order). Each people[i] = [h_i, k_i] represents the i-th person of height h_i who has exactly k_i other people in front of them who have a height greater than or equal to h_i. Reconstruct and return the queue.",
+    "difficulty": "MEDIUM",
+    "constraints": [
+      "1 <= people.length <= 2000",
+      "0 <= h_i <= 10^6",
+      "0 <= k_i < people.length"
+    ],
+    "topics": [
+      "Greedy",
+      "Sorting",
+      "Array"
+    ],
+    "baseMemoryLimit": 512,
+    "baseTimeLimit": 1000,
+    "timeLimitMultiplier": {
+      "cpp": 1.0,
+      "java": 1.5,
+      "python": 2.0
+    },
+    "starterCode": {
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
+      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
+      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+    },
+    "testCases": [
+      {
+        "input": "[[[7,0],[4,4],[7,1],[5,0],[6,1],[5,2]]]",
+        "output": "[[5,0],[7,0],[5,2],[6,1],[4,4],[7,1]]",
+        "isSample": true
+      },
+      {
+        "input": "[[[6,0],[5,0],[4,0],[3,2],[2,2],[1,4]]]",
+        "output": "[[4,0],[5,0],[2,2],[3,2],[1,4],[6,0]]",
+        "isSample": true
+      },
+      {
+        "input": "[[[1,0]]]",
+        "output": "[[1,0]]",
+        "isSample": false
+      },
+      {
+        "input": "[[[2,0],[1,1]]]",
+        "output": "[[2,0],[1,1]]",
+        "isSample": false
+      },
+      {
+        "input": "[[[1,1],[2,0]]]",
+        "output": "[[2,0],[1,1]]",
+        "isSample": false
+      },
+      {
+        "input": "[[[5,0],[5,1],[5,2]]]",
+        "output": "[[5,0],[5,1],[5,2]]",
+        "isSample": false
+      },
+      {
+        "input": "[[[9,0],[7,0],[8,0],[7,1]]]",
+        "output": "[[7,0],[7,1],[8,0],[9,0]]",
+        "isSample": false
+      },
+      {
+        "input": "[[[3,0],[2,1],[1,2]]]",
+        "output": "[[3,0],[2,1],[1,2]]",
+        "isSample": false
+      }
+    ]
+  },
+  {
+    "title": "Task Scheduler",
+    "slug": "task-scheduler",
+    "description": "Given a characters array tasks, representing the tasks a CPU needs to do, where each character represents a unique task. Tasks could be done in any order. Each task is done in one unit of time. For each unit of time, the CPU could complete either one task or just be idle. However, there is a non-negative integer n that represents the cooldown period between two same tasks (the same letter in the array), that is that there must be at least n units of time between any two same tasks. Return the least number of units of time that the CPU will take to finish all the given tasks.",
+    "difficulty": "MEDIUM",
+    "constraints": [
+      "1 <= tasks.length <= 10^4",
+      "tasks[i] is upper-case English letter",
+      "0 <= n <= 100"
+    ],
+    "topics": [
+      "Greedy",
+      "Sorting",
+      "Array",
+      "Hash Table",
+      "Counting"
+    ],
+    "baseMemoryLimit": 512,
+    "baseTimeLimit": 1000,
+    "timeLimitMultiplier": {
+      "cpp": 1.0,
+      "java": 1.5,
+      "python": 2.0
+    },
+    "starterCode": {
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
+      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
+      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+    },
+    "testCases": [
+      {
+        "input": "[[\"A\",\"A\",\"A\",\"B\",\"B\",\"B\"], 2]",
+        "output": "8",
+        "isSample": true
+      },
+      {
+        "input": "[[\"A\",\"A\",\"A\",\"B\",\"B\",\"B\"], 0]",
+        "output": "6",
+        "isSample": true
+      },
+      {
+        "input": "[[\"A\",\"A\",\"A\",\"A\",\"A\",\"A\",\"B\",\"C\",\"D\",\"E\",\"F\",\"G\"], 2]",
+        "output": "16",
+        "isSample": false
+      },
+      {
+        "input": "[[\"A\",\"B\",\"C\",\"D\"], 2]",
+        "output": "4",
+        "isSample": false
+      },
+      {
+        "input": "[[\"A\",\"A\",\"B\",\"B\"], 3]",
+        "output": "5",
+        "isSample": false
+      },
+      {
+        "input": "[[\"A\"], 100]",
+        "output": "1",
+        "isSample": false
+      },
+      {
+        "input": "[[\"A\",\"A\",\"A\"], 1]",
+        "output": "5",
+        "isSample": false
+      },
+      {
+        "input": "[[\"A\",\"B\",\"A\",\"B\",\"A\",\"B\"], 3]",
+        "output": "10",
+        "isSample": false
+      }
+    ]
+  },
+  {
+    "title": "Candy",
+    "slug": "candy",
+    "description": "There are n children standing in a line. Each child is assigned a rating value given in the integer array ratings. You are giving candies to these children subjected to the following requirements: Each child must have at least one candy. Children with a higher rating get more candies than their neighbors. Return the minimum candies you must give.",
+    "difficulty": "HARD",
+    "constraints": [
+      "n == ratings.length",
+      "1 <= n <= 2 * 10^4",
+      "0 <= ratings[i] <= 2 * 10^4"
+    ],
+    "topics": [
+      "Greedy",
+      "Array"
+    ],
+    "baseMemoryLimit": 512,
+    "baseTimeLimit": 1000,
+    "timeLimitMultiplier": {
+      "cpp": 1.0,
+      "java": 1.5,
+      "python": 2.0
+    },
+    "starterCode": {
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
+      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
+      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+    },
+    "testCases": [
+      {
+        "input": "[[1,0,2]]",
+        "output": "5",
+        "isSample": true
+      },
+      {
+        "input": "[[1,2,2]]",
+        "output": "4",
+        "isSample": true
+      },
+      {
+        "input": "[[1,3,2,2,1]]",
+        "output": "7",
+        "isSample": false
+      },
+      {
+        "input": "[[1,2,87,87,87,2,1]]",
+        "output": "13",
+        "isSample": false
+      },
+      {
+        "input": "[[1,2,3,4,5]]",
+        "output": "15",
+        "isSample": false
+      },
+      {
+        "input": "[[5,4,3,2,1]]",
+        "output": "15",
+        "isSample": false
+      },
+      {
+        "input": "[[1,1,1,1]]",
+        "output": "4",
+        "isSample": false
+      },
+      {
+        "input": "[[1,6,10,8,7,3,2]]",
+        "output": "18",
+        "isSample": false
+      }
+    ]
+  },
+  {
+    "title": "Course Schedule III",
+    "slug": "course-schedule-iii",
+    "description": "There are n online courses you can take, represented by an array courses where courses[i] = [duration_i, lastDay_i]. You start on the 1st day. You cannot take two courses simultaneously. Return the maximum number of courses you can take.",
+    "difficulty": "HARD",
+    "constraints": [
+      "1 <= courses.length <= 10^4",
+      "1 <= duration_i, lastDay_i <= 10^4"
+    ],
+    "topics": [
+      "Greedy",
+      "Sorting",
+      "Priority Queue",
+      "Array"
+    ],
+    "baseMemoryLimit": 512,
+    "baseTimeLimit": 1500,
+    "timeLimitMultiplier": {
+      "cpp": 1.0,
+      "java": 1.5,
+      "python": 2.0
+    },
+    "starterCode": {
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
+      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
+      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+    },
+    "testCases": [
+      {
+        "input": "[[[100,200],[200,1300],[1000,1250],[2000,3200]]]",
+        "output": "3",
+        "isSample": true
+      },
+      {
+        "input": "[[[1,2]]]",
+        "output": "1",
+        "isSample": true
+      },
+      {
+        "input": "[[[3,2],[4,3]]]",
+        "output": "0",
+        "isSample": false
+      },
+      {
+        "input": "[[[5,5],[4,6],[2,6]]]",
+        "output": "2",
+        "isSample": false
+      },
+      {
+        "input": "[[[100,200],[200,1300],[1000,1250],[2000,3200],[300,1200]]]",
+        "output": "4",
+        "isSample": false
+      },
+      {
+        "input": "[[[5,15],[3,19],[6,7],[2,10],[5,16],[8,14],[10,11],[2,19]]]",
+        "output": "5",
+        "isSample": false
+      },
+      {
+        "input": "[[[10,12],[5,15],[10,16]]]",
+        "output": "2",
+        "isSample": false
+      },
+      {
+        "input": "[[[1,2],[2,3]]]",
+        "output": "2",
+        "isSample": false
+      }
+    ]
+  },
+  {
+    "title": "First Occurrence in Sorted Array",
+    "slug": "first-occurrence-in-sorted-array",
+    "description": "Given a sorted array of integers `nums` and a target value `target`, return the index of the first occurrence of `target`. If `target` is not present in the array, return -1.",
+    "difficulty": "EASY",
+    "constraints": [
+      "1 <= nums.length <= 10^5",
+      "-10^9 <= nums[i], target <= 10^9"
+    ],
+    "topics": [
+      "Array",
+      "Binary Search"
+    ],
+    "baseMemoryLimit": 256,
+    "baseTimeLimit": 1000,
+    "timeLimitMultiplier": {
+      "cpp": 1.0,
+      "java": 1.5,
+      "python": 2.0
+    },
+    "starterCode": {
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
+      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
+      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+    },
+    "testCases": [
+      {
+        "input": "[[1,2,2,2,3],2]",
+        "output": "1",
+        "isSample": true
+      },
+      {
+        "input": "[[1,2,3,4,5],6]",
+        "output": "-1",
+        "isSample": true
+      },
+      {
+        "input": "[[1,1,1,1,1],1]",
+        "output": "0",
+        "isSample": false
+      },
+      {
+        "input": "[[2],2]",
+        "output": "0",
+        "isSample": false
+      },
+      {
+        "input": "[[2],3]",
+        "output": "-1",
+        "isSample": false
+      },
+      {
+        "input": "[[1,3,5,7,9],5]",
+        "output": "2",
+        "isSample": false
+      },
+      {
+        "input": "[[1,3,5,7,9],1]",
+        "output": "0",
+        "isSample": false
+      },
+      {
+        "input": "[[1,3,5,7,9],9]",
+        "output": "4",
+        "isSample": false
+      }
+    ]
+  },
+  {
+    "title": "Sqrt(x)",
+    "slug": "sqrtx",
+    "description": "Given a non-negative integer `x`, return the square root of `x` rounded down to the nearest integer. The returned integer should be non-negative as well. You must not use any built-in exponent function or operator.",
+    "difficulty": "EASY",
+    "constraints": [
+      "0 <= x <= 2^31 - 1"
+    ],
+    "topics": [
+      "Math",
+      "Binary Search"
+    ],
+    "baseMemoryLimit": 256,
+    "baseTimeLimit": 1000,
+    "timeLimitMultiplier": {
+      "cpp": 1.0,
+      "java": 1.5,
+      "python": 2.0
+    },
+    "starterCode": {
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
+      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
+      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+    },
+    "testCases": [
+      {
+        "input": "[4]",
+        "output": "2",
+        "isSample": true
+      },
+      {
+        "input": "[8]",
+        "output": "2",
+        "isSample": true
+      },
+      {
+        "input": "[0]",
+        "output": "0",
+        "isSample": false
+      },
+      {
+        "input": "[1]",
+        "output": "1",
+        "isSample": false
+      },
+      {
+        "input": "[2]",
+        "output": "1",
+        "isSample": false
+      },
+      {
+        "input": "[2147483647]",
+        "output": "46340",
+        "isSample": false
+      },
+      {
+        "input": "[100]",
+        "output": "10",
+        "isSample": false
+      },
+      {
+        "input": "[99]",
+        "output": "9",
+        "isSample": false
+      }
+    ]
+  },
+  {
+    "title": "Search Insert Position",
+    "slug": "search-insert-position",
+    "description": "Given a sorted array of distinct integers and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order. You must write an algorithm with O(log n) runtime complexity.",
+    "difficulty": "EASY",
+    "constraints": [
+      "1 <= nums.length <= 10^4",
+      "-10^4 <= nums[i], target <= 10^4",
+      "nums contains distinct values sorted in ascending order."
+    ],
+    "topics": [
+      "Array",
+      "Binary Search"
+    ],
+    "baseMemoryLimit": 256,
+    "baseTimeLimit": 1000,
+    "timeLimitMultiplier": {
+      "cpp": 1.0,
+      "java": 1.5,
+      "python": 2.0
+    },
+    "starterCode": {
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
+      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
+      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+    },
+    "testCases": [
+      {
+        "input": "[[1,3,5,6],5]",
+        "output": "2",
+        "isSample": true
+      },
+      {
+        "input": "[[1,3,5,6],2]",
+        "output": "1",
+        "isSample": true
+      },
+      {
+        "input": "[[1,3,5,6],7]",
+        "output": "4",
+        "isSample": false
+      },
+      {
+        "input": "[[1,3,5,6],0]",
+        "output": "0",
+        "isSample": false
+      },
+      {
+        "input": "[[1],0]",
+        "output": "0",
+        "isSample": false
+      },
+      {
+        "input": "[[1],2]",
+        "output": "1",
+        "isSample": false
+      },
+      {
+        "input": "[[1,3],2]",
+        "output": "1",
+        "isSample": false
+      },
+      {
+        "input": "[[1,3,5,7,9,11],8]",
+        "output": "4",
+        "isSample": false
+      }
+    ]
+  },
+  {
+    "title": "Find Peak Element",
+    "slug": "find-peak-element",
+    "description": "A peak element is an element that is strictly greater than its neighbors. Given a 0-indexed integer array `nums`, find a peak element, and return its index. If the array contains multiple peaks, return the index to any of the peaks. You may imagine that `nums[-1] = nums[n] = -infinity`. In other words, an element is always considered to be strictly greater than a neighbor that is outside the array. You must write an algorithm that runs in O(log n) time.",
+    "difficulty": "MEDIUM",
+    "constraints": [
+      "1 <= nums.length <= 1000",
+      "-2^31 <= nums[i] <= 2^31 - 1",
+      "nums[i] != nums[i + 1] for all valid i."
+    ],
+    "topics": [
+      "Array",
+      "Binary Search"
+    ],
+    "baseMemoryLimit": 256,
+    "baseTimeLimit": 1000,
+    "timeLimitMultiplier": {
+      "cpp": 1.0,
+      "java": 1.5,
+      "python": 2.0
+    },
+    "starterCode": {
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
+      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
+      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+    },
+    "testCases": [
+      {
+        "input": "[[1,2,3,1]]",
+        "output": "2",
+        "isSample": true
+      },
+      {
+        "input": "[[1,2,1,3,5,6,4]]",
+        "output": "5",
+        "isSample": true
+      },
+      {
+        "input": "[[1]]",
+        "output": "0",
+        "isSample": false
+      },
+      {
+        "input": "[[1,2]]",
+        "output": "1",
+        "isSample": false
+      },
+      {
+        "input": "[[2,1]]",
+        "output": "0",
+        "isSample": false
+      },
+      {
+        "input": "[[1,2,3,4,5]]",
+        "output": "4",
+        "isSample": false
+      },
+      {
+        "input": "[[5,4,3,2,1]]",
+        "output": "0",
+        "isSample": false
+      },
+      {
+        "input": "[[1,3,2,1]]",
+        "output": "1",
+        "isSample": false
+      }
+    ]
+  },
+  {
+    "title": "Koko Eating Bananas",
+    "slug": "koko-eating-bananas",
+    "description": "Koko loves to eat bananas. There are `n` piles of bananas, the `i`-th pile has `piles[i]` bananas. The guards have gone and will come back in `h` hours. Koko can decide her bananas-per-hour eating speed of `k`. Each hour, she chooses some pile of bananas and eats `k` bananas from that pile. If the pile has less than `k` bananas, she eats all of them instead and will not eat any more bananas during this hour. Koko likes to eat slowly but still wants to finish eating all the bananas before the guards return. Return the minimum integer `k` such that she can eat all the bananas within `h` hours.",
+    "difficulty": "MEDIUM",
+    "constraints": [
+      "1 <= piles.length <= 10^4",
+      "piles.length <= h <= 10^9",
+      "1 <= piles[i] <= 10^9"
+    ],
+    "topics": [
+      "Array",
+      "Binary Search"
+    ],
+    "baseMemoryLimit": 256,
+    "baseTimeLimit": 2000,
+    "timeLimitMultiplier": {
+      "cpp": 1.0,
+      "java": 1.5,
+      "python": 2.0
+    },
+    "starterCode": {
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
+      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
+      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+    },
+    "testCases": [
+      {
+        "input": "[[3,6,7,11],8]",
+        "output": "4",
+        "isSample": true
+      },
+      {
+        "input": "[[30,11,23,4,20],5]",
+        "output": "30",
+        "isSample": true
+      },
+      {
+        "input": "[[30,11,23,4,20],6]",
+        "output": "23",
+        "isSample": false
+      },
+      {
+        "input": "[[312884469],312884469]",
+        "output": "1",
+        "isSample": false
+      },
+      {
+        "input": "[[1000000000],2]",
+        "output": "500000000",
+        "isSample": false
+      },
+      {
+        "input": "[[3,3,3],3]",
+        "output": "3",
+        "isSample": false
+      },
+      {
+        "input": "[[3,3,3],9]",
+        "output": "1",
+        "isSample": false
+      },
+      {
+        "input": "[[10,20,30],5]",
+        "output": "15",
+        "isSample": false
+      }
+    ]
+  },
+  {
+    "title": "Search in Rotated Sorted Array",
+    "slug": "search-in-rotated-sorted-array",
+    "description": "There is an integer array `nums` sorted in ascending order (with distinct values). Prior to being passed to your function, `nums` is possibly rotated at an unknown pivot index `k` (`1 <= k < nums.length`) such that the resulting array is `[nums[k], nums[k+1], ..., nums[n-1], nums[0], nums[1], ..., nums[k-1]]` (0-indexed). Given the array `nums` after the possible rotation and an integer `target`, return the index of `target` if it is in `nums`, or `-1` if it is not in `nums`. You must write an algorithm with O(log n) runtime complexity.",
+    "difficulty": "MEDIUM",
+    "constraints": [
+      "1 <= nums.length <= 5000",
+      "-10^4 <= nums[i], target <= 10^4",
+      "all values of nums are unique."
+    ],
+    "topics": [
+      "Array",
+      "Binary Search"
+    ],
+    "baseMemoryLimit": 256,
+    "baseTimeLimit": 1000,
+    "timeLimitMultiplier": {
+      "cpp": 1.0,
+      "java": 1.5,
+      "python": 2.0
+    },
+    "starterCode": {
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
+      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
+      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+    },
+    "testCases": [
+      {
+        "input": "[[4,5,6,7,0,1,2],0]",
+        "output": "4",
+        "isSample": true
+      },
+      {
+        "input": "[[4,5,6,7,0,1,2],3]",
+        "output": "-1",
+        "isSample": true
+      },
+      {
+        "input": "[[1],0]",
+        "output": "-1",
+        "isSample": false
+      },
+      {
+        "input": "[[1],1]",
+        "output": "0",
+        "isSample": false
+      },
+      {
+        "input": "[[3,1],1]",
+        "output": "1",
+        "isSample": false
+      },
+      {
+        "input": "[[5,1,3],5]",
+        "output": "0",
+        "isSample": false
+      },
+      {
+        "input": "[[4,5,6,7,8,1,2,3],8]",
+        "output": "4",
+        "isSample": false
+      },
+      {
+        "input": "[[8,9,1,2,3,4,5,6,7],2]",
+        "output": "3",
+        "isSample": false
+      }
+    ]
+  },
+  {
+    "title": "Capacity To Ship Packages Within D Days",
+    "slug": "capacity-to-ship-packages-within-d-days",
+    "description": "A conveyor belt has packages that must be shipped from one port to another within `days` days. The `i`-th package on the conveyor belt has a weight of `weights[i]`. Each day, we load the ship with packages on the conveyor belt (in the order given by `weights`). We may not load more weight than the maximum weight capacity of the ship. Return the least weight capacity of the ship that will result in all the packages on the conveyor belt being shipped within `days` days.",
+    "difficulty": "MEDIUM",
+    "constraints": [
+      "1 <= days <= weights.length <= 5 * 10^4",
+      "1 <= weights[i] <= 500"
+    ],
+    "topics": [
+      "Array",
+      "Binary Search"
+    ],
+    "baseMemoryLimit": 256,
+    "baseTimeLimit": 1500,
+    "timeLimitMultiplier": {
+      "cpp": 1.0,
+      "java": 1.5,
+      "python": 2.0
+    },
+    "starterCode": {
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
+      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
+      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+    },
+    "testCases": [
+      {
+        "input": "[[1,2,3,4,5,6,7,8,9,10],5]",
+        "output": "15",
+        "isSample": true
+      },
+      {
+        "input": "[[3,2,2,4,1,4],3]",
+        "output": "6",
+        "isSample": true
+      },
+      {
+        "input": "[[1,2,3,1,1],4]",
+        "output": "3",
+        "isSample": false
+      },
+      {
+        "input": "[[10],1]",
+        "output": "10",
+        "isSample": false
+      },
+      {
+        "input": "[[5,5,5,5,5],2]",
+        "output": "15",
+        "isSample": false
+      },
+      {
+        "input": "[[1,2,3,4,5],5]",
+        "output": "5",
+        "isSample": false
+      },
+      {
+        "input": "[[1,2,3,4,5],1]",
+        "output": "15",
+        "isSample": false
+      },
+      {
+        "input": "[[10,20,30,40,50],3]",
+        "output": "60",
+        "isSample": false
+      }
+    ]
+  },
+  {
+    "title": "Median of Two Sorted Arrays",
+    "slug": "median-of-two-sorted-arrays",
+    "description": "Given two sorted arrays `nums1` and `nums2` of size `m` and `n` respectively, return the median of the two sorted arrays. The overall run time complexity should be O(log (m+n)).",
+    "difficulty": "HARD",
+    "constraints": [
+      "nums1.length == m",
+      "nums2.length == n",
+      "0 <= m, n <= 1000",
+      "1 <= m + n <= 2000",
+      "-10^6 <= nums1[i], nums2[i] <= 10^6"
+    ],
+    "topics": [
+      "Array",
+      "Binary Search",
+      "Divide and Conquer"
+    ],
+    "baseMemoryLimit": 256,
+    "baseTimeLimit": 1000,
+    "timeLimitMultiplier": {
+      "cpp": 1.0,
+      "java": 1.5,
+      "python": 2.0
+    },
+    "starterCode": {
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
+      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
+      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+    },
+    "testCases": [
+      {
+        "input": "[[1,3],[2]]",
+        "output": "2.0",
+        "isSample": true
+      },
+      {
+        "input": "[[1,2],[3,4]]",
+        "output": "2.5",
+        "isSample": true
+      },
+      {
+        "input": "[[],[1]]",
+        "output": "1.0",
+        "isSample": false
+      },
+      {
+        "input": "[[2],[]]",
+        "output": "2.0",
+        "isSample": false
+      },
+      {
+        "input": "[[0,0],[0,0]]",
+        "output": "0.0",
+        "isSample": false
+      },
+      {
+        "input": "[[1,3,5],[2,4,6]]",
+        "output": "3.5",
+        "isSample": false
+      },
+      {
+        "input": "[[1,2,3],[4,5,6,7]]",
+        "output": "4.0",
+        "isSample": false
+      },
+      {
+        "input": "[[1,1,1],[1,1,1]]",
+        "output": "1.0",
+        "isSample": false
+      }
+    ]
+  },
+  {
+    "title": "Split Array Largest Sum",
+    "slug": "split-array-largest-sum",
+    "description": "Given an integer array `nums` and an integer `k`, split `nums` into `k` non-empty subarrays such that the largest sum of any subarray is minimized. Return the minimized largest sum of the split. A subarray is a contiguous part of the array.",
+    "difficulty": "HARD",
+    "constraints": [
+      "1 <= nums.length <= 1000",
+      "0 <= nums[i] <= 10^6",
+      "1 <= k <= min(50, nums.length)"
+    ],
+    "topics": [
+      "Array",
+      "Binary Search",
+      "Dynamic Programming",
+      "Greedy"
+    ],
+    "baseMemoryLimit": 256,
+    "baseTimeLimit": 1500,
+    "timeLimitMultiplier": {
+      "cpp": 1.0,
+      "java": 1.5,
+      "python": 2.0
+    },
+    "starterCode": {
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
+      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
+      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+    },
+    "testCases": [
+      {
+        "input": "[[7,2,5,10,8],2]",
+        "output": "18",
+        "isSample": true
+      },
+      {
+        "input": "[[1,2,3,4,5],2]",
+        "output": "9",
+        "isSample": true
+      },
+      {
+        "input": "[[1,4,4],3]",
+        "output": "4",
+        "isSample": false
+      },
+      {
+        "input": "[[10,20,30,40],1]",
+        "output": "100",
+        "isSample": false
+      },
+      {
+        "input": "[[10,20,30,40],4]",
+        "output": "40",
+        "isSample": false
+      },
+      {
+        "input": "[[5,5,5,5],2]",
+        "output": "10",
+        "isSample": false
+      },
+      {
+        "input": "[[1,2,3,4,5,6,7,8,9,10],5]",
+        "output": "15",
+        "isSample": false
+      },
+      {
+        "input": "[[1,100,1,100,1],2]",
+        "output": "102",
+        "isSample": false
+      }
+    ]
+  },
+  {
+    "title": "Min Cost to Reach Top with Variable Steps",
+    "slug": "min-cost-to-reach-top-with-variable-steps",
+    "description": "You are given an integer array cost where cost[i] is the cost of the i-th step on a staircase. Once you pay the cost, you can climb 1, 2, or 3 steps. You can start from index 0, index 1, or index 2. Return the minimum cost to reach the top of the floor (which is outside the array, index n).",
+    "difficulty": "EASY",
+    "constraints": [
+      "3 <= cost.length <= 1000",
+      "0 <= cost[i] <= 999"
+    ],
+    "topics": [
+      "Dynamic programming",
+      "Array"
+    ],
+    "baseMemoryLimit": 256,
+    "baseTimeLimit": 1000,
+    "timeLimitMultiplier": {
+      "cpp": 1.0,
+      "java": 1.5,
+      "python": 2.0
+    },
+    "starterCode": {
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
+      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
+      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+    },
+    "testCases": [
+      {
+        "input": "{\"cost\": [10, 15, 20]}",
+        "output": "10",
+        "isSample": true
+      },
+      {
+        "input": "{\"cost\": [1, 100, 1, 1, 1, 100, 1, 1, 100, 1]}",
+        "output": "3",
+        "isSample": true
+      },
+      {
+        "input": "{\"cost\": [5, 5, 5, 5]}",
+        "output": "5",
+        "isSample": false
+      },
+      {
+        "input": "{\"cost\": [1, 2, 3, 4, 5]}",
+        "output": "2",
+        "isSample": false
+      },
+      {
+        "input": "{\"cost\": [10, 20, 30, 40, 50, 60]}",
+        "output": "30",
+        "isSample": false
+      },
+      {
+        "input": "{\"cost\": [1, 1, 1]}",
+        "output": "1",
+        "isSample": false
+      },
+      {
+        "input": "{\"cost\": [10, 1, 1, 1, 10]}",
+        "output": "2",
+        "isSample": false
+      },
+      {
+        "input": "{\"cost\": [100, 100, 100, 100, 100, 100, 100]}",
+        "output": "200",
+        "isSample": false
+      }
+    ]
+  },
+  {
+    "title": "Max Energy Collector",
+    "slug": "max-energy-collector",
+    "description": "You are an energy collector walking along a straight line of n energy cells. The i-th cell contains energy[i] units of energy. You cannot collect energy from two adjacent cells because it will overload your collector. Return the maximum energy you can collect.",
+    "difficulty": "EASY",
+    "constraints": [
+      "1 <= energy.length <= 10^4",
+      "0 <= energy[i] <= 10^5"
+    ],
+    "topics": [
+      "Dynamic programming",
+      "Array"
+    ],
+    "baseMemoryLimit": 256,
+    "baseTimeLimit": 1000,
+    "timeLimitMultiplier": {
+      "cpp": 1.0,
+      "java": 1.5,
+      "python": 2.0
+    },
+    "starterCode": {
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
+      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
+      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+    },
+    "testCases": [
+      {
+        "input": "{\"energy\": [1, 2, 3, 1]}",
+        "output": "4",
+        "isSample": true
+      },
+      {
+        "input": "{\"energy\": [2, 7, 9, 3, 1]}",
+        "output": "12",
+        "isSample": true
+      },
+      {
+        "input": "{\"energy\": [5]}",
+        "output": "5",
+        "isSample": false
+      },
+      {
+        "input": "{\"energy\": [5, 10]}",
+        "output": "10",
+        "isSample": false
+      },
+      {
+        "input": "{\"energy\": [10, 1, 1, 10]}",
+        "output": "20",
+        "isSample": false
+      },
+      {
+        "input": "{\"energy\": [0, 0, 0, 0]}",
+        "output": "0",
+        "isSample": false
+      },
+      {
+        "input": "{\"energy\": [100, 200, 300, 400, 500]}",
+        "output": "900",
+        "isSample": false
+      },
+      {
+        "input": "{\"energy\": [5, 2, 1, 9, 10, 2]}",
+        "output": "16",
+        "isSample": false
+      }
+    ]
+  },
+  {
+    "title": "Minimum Steps to One",
+    "slug": "minimum-steps-to-one",
+    "description": "Given a positive integer n, you can perform any of the following operations in each step: 1. Subtract 1 from n. 2. If n is divisible by 2, divide n by 2. 3. If n is divisible by 3, divide n by 3. Return the minimum number of steps to reduce n to 1.",
+    "difficulty": "EASY",
+    "constraints": [
+      "1 <= n <= 10^5"
+    ],
+    "topics": [
+      "Dynamic programming"
+    ],
+    "baseMemoryLimit": 256,
+    "baseTimeLimit": 1000,
+    "timeLimitMultiplier": {
+      "cpp": 1.0,
+      "java": 1.5,
+      "python": 2.0
+    },
+    "starterCode": {
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
+      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
+      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+    },
+    "testCases": [
+      {
+        "input": "{\"n\": 1}",
+        "output": "0",
+        "isSample": true
+      },
+      {
+        "input": "{\"n\": 4}",
+        "output": "2",
+        "isSample": true
+      },
+      {
+        "input": "{\"n\": 7}",
+        "output": "3",
+        "isSample": false
+      },
+      {
+        "input": "{\"n\": 10}",
+        "output": "3",
+        "isSample": false
+      },
+      {
+        "input": "{\"n\": 15}",
+        "output": "4",
+        "isSample": false
+      },
+      {
+        "input": "{\"n\": 28}",
+        "output": "4",
+        "isSample": false
+      },
+      {
+        "input": "{\"n\": 100}",
+        "output": "7",
+        "isSample": false
+      },
+      {
+        "input": "{\"n\": 2}",
+        "output": "1",
+        "isSample": false
+      }
+    ]
+  },
+  {
+    "title": "Max Profit from Non-Overlapping Tasks",
+    "slug": "max-profit-non-overlapping-tasks",
+    "description": "You are given n tasks, where each task i has a startTime[i], endTime[i], and profit[i]. You want to select a subset of tasks such that no two tasks in the subset overlap in time (if a task ends at time X and another starts at time X, they do not overlap). Return the maximum profit you can achieve.",
+    "difficulty": "MEDIUM",
+    "constraints": [
+      "1 <= startTime.length == endTime.length == profit.length <= 10^4",
+      "1 <= startTime[i] < endTime[i] <= 10^5",
+      "1 <= profit[i] <= 10^4"
+    ],
+    "topics": [
+      "Dynamic programming",
+      "Sorting",
+      "Binary Search"
+    ],
+    "baseMemoryLimit": 256,
+    "baseTimeLimit": 2000,
+    "timeLimitMultiplier": {
+      "cpp": 1.0,
+      "java": 1.5,
+      "python": 2.0
+    },
+    "starterCode": {
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
+      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
+      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+    },
+    "testCases": [
+      {
+        "input": "{\"startTime\": [1,2,3,3], \"endTime\": [3,4,5,6], \"profit\": [50,10,40,70]}",
+        "output": "120",
+        "isSample": true
+      },
+      {
+        "input": "{\"startTime\": [1,2,3,4,6], \"endTime\": [3,5,10,6,9], \"profit\": [20,20,100,70,60]}",
+        "output": "150",
+        "isSample": true
+      },
+      {
+        "input": "{\"startTime\": [1,1,1], \"endTime\": [2,3,4], \"profit\": [5,6,4]}",
+        "output": "6",
+        "isSample": false
+      },
+      {
+        "input": "{\"startTime\": [1,3,5], \"endTime\": [2,4,6], \"profit\": [10,20,30]}",
+        "output": "60",
+        "isSample": false
+      },
+      {
+        "input": "{\"startTime\": [2,5], \"endTime\": [3,6], \"profit\": [10,15]}",
+        "output": "25",
+        "isSample": false
+      },
+      {
+        "input": "{\"startTime\": [1,2,5,6], \"endTime\": [3,5,7,8], \"profit\": [10,20,30,40]}",
+        "output": "60",
+        "isSample": false
+      },
+      {
+        "input": "{\"startTime\": [1], \"endTime\": [2], \"profit\": [100]}",
+        "output": "100",
+        "isSample": false
+      },
+      {
+        "input": "{\"startTime\": [1,2,3], \"endTime\": [4,5,6], \"profit\": [10,10,10]}",
+        "output": "10",
+        "isSample": false
+      }
+    ]
+  },
+  {
+    "title": "Grid Path with Maximum Gold",
+    "slug": "grid-path-maximum-gold",
+    "description": "You are given an m x n grid of integers representing gold coins in each cell. You start at the top-left corner (0, 0) and want to reach the bottom-right corner (m-1, n-1). From any cell (r, c), you can only move to (r+1, c) or (r, c+1). However, some cells contain obstacles represented by -1, which you cannot step on. If a cell has a positive value, you collect that much gold. If you cannot reach the bottom-right corner, return -1.",
+    "difficulty": "MEDIUM",
+    "constraints": [
+      "m == grid.length",
+      "n == grid[i].length",
+      "1 <= m, n <= 100",
+      "-1 <= grid[i][j] <= 10^4"
+    ],
+    "topics": [
+      "Dynamic programming",
+      "Matrix"
+    ],
+    "baseMemoryLimit": 256,
+    "baseTimeLimit": 1000,
+    "timeLimitMultiplier": {
+      "cpp": 1.0,
+      "java": 1.5,
+      "python": 2.0
+    },
+    "starterCode": {
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
+      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
+      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+    },
+    "testCases": [
+      {
+        "input": "{\"grid\": [[0,2,2],[1,-1,2],[1,1,1]]}",
+        "output": "7",
+        "isSample": true
+      },
+      {
+        "input": "{\"grid\": [[0,1],[-1,0]]}",
+        "output": "-1",
+        "isSample": true
+      },
+      {
+        "input": "{\"grid\": [[5]]}",
+        "output": "5",
+        "isSample": false
+      },
+      {
+        "input": "{\"grid\": [[1,2,3],[4,5,6],[7,8,9]]}",
+        "output": "29",
+        "isSample": false
+      },
+      {
+        "input": "{\"grid\": [[1,-1],[1,1]]}",
+        "output": "3",
+        "isSample": false
+      },
+      {
+        "input": "{\"grid\": [[1,1],[-1,1]]}",
+        "output": "3",
+        "isSample": false
+      },
+      {
+        "input": "{\"grid\": [[1,-1],[-1,1]]}",
+        "output": "-1",
+        "isSample": false
+      },
+      {
+        "input": "{\"grid\": [[1,2,3,4],[5,6,7,8]]}",
+        "output": "27",
+        "isSample": false
+      }
+    ]
+  },
+  {
+    "title": "Target Sum Subsets",
+    "slug": "target-sum-subsets",
+    "description": "You are given an integer array nums and an integer target. You want to build an expression using all the integers in nums by assigning either a '+' or '-' sign before each integer, and then concatenating them. Return the number of different expressions that evaluate to target.",
+    "difficulty": "MEDIUM",
+    "constraints": [
+      "1 <= nums.length <= 20",
+      "0 <= nums[i] <= 1000",
+      "0 <= sum(nums[i]) <= 1000",
+      "-1000 <= target <= 1000"
+    ],
+    "topics": [
+      "Dynamic programming",
+      "Array"
+    ],
+    "baseMemoryLimit": 256,
+    "baseTimeLimit": 1000,
+    "timeLimitMultiplier": {
+      "cpp": 1.0,
+      "java": 1.5,
+      "python": 2.0
+    },
+    "starterCode": {
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
+      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
+      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+    },
+    "testCases": [
+      {
+        "input": "{\"nums\": [1,1,1,1,1], \"target\": 3}",
+        "output": "5",
+        "isSample": true
+      },
+      {
+        "input": "{\"nums\": [1], \"target\": 1}",
+        "output": "1",
+        "isSample": true
+      },
+      {
+        "input": "{\"nums\": [1,2,3], \"target\": 0}",
+        "output": "2",
+        "isSample": false
+      },
+      {
+        "input": "{\"nums\": [1,1], \"target\": 0}",
+        "output": "2",
+        "isSample": false
+      },
+      {
+        "input": "{\"nums\": [1,2,1], \"target\": 0}",
+        "output": "2",
+        "isSample": false
+      },
+      {
+        "input": "{\"nums\": [1,2,3,4,5], \"target\": 5}",
+        "output": "3",
+        "isSample": false
+      },
+      {
+        "input": "{\"nums\": [100], \"target\": -100}",
+        "output": "1",
+        "isSample": false
+      },
+      {
+        "input": "{\"nums\": [1,2,5], \"target\": 10}",
+        "output": "0",
+        "isSample": false
+      }
+    ]
+  },
+  {
+    "title": "Bounded Difference Longest Increasing Subsequence",
+    "slug": "bounded-difference-lis",
+    "description": "Given an integer array nums and an integer k, return the length of the longest subsequence of nums which is strictly increasing, and the absolute difference between any two adjacent elements in the subsequence is at most k.",
+    "difficulty": "MEDIUM",
+    "constraints": [
+      "1 <= nums.length <= 10^4",
+      "1 <= nums[i] <= 10^5",
+      "1 <= k <= 10^5"
+    ],
+    "topics": [
+      "Dynamic programming",
+      "Array"
+    ],
+    "baseMemoryLimit": 256,
+    "baseTimeLimit": 1500,
+    "timeLimitMultiplier": {
+      "cpp": 1.0,
+      "java": 1.5,
+      "python": 2.0
+    },
+    "starterCode": {
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
+      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
+      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+    },
+    "testCases": [
+      {
+        "input": "{\"nums\": [1,5,2,4,3,7,8], \"k\": 2}",
+        "output": "5",
+        "isSample": true
+      },
+      {
+        "input": "{\"nums\": [1,2,3,4,5], \"k\": 1}",
+        "output": "5",
+        "isSample": true
+      },
+      {
+        "input": "{\"nums\": [10,20,30], \"k\": 5}",
+        "output": "1",
+        "isSample": false
+      },
+      {
+        "input": "{\"nums\": [1,3,2,5,4,7,6], \"k\": 2}",
+        "output": "6",
+        "isSample": false
+      },
+      {
+        "input": "{\"nums\": [5,4,3,2,1], \"k\": 2}",
+        "output": "1",
+        "isSample": false
+      },
+      {
+        "input": "{\"nums\": [1,1,1], \"k\": 1}",
+        "output": "1",
+        "isSample": false
+      },
+      {
+        "input": "{\"nums\": [1,2,5,8,9], \"k\": 3}",
+        "output": "4",
+        "isSample": false
+      },
+      {
+        "input": "{\"nums\": [1,10,2,11,3,12], \"k\": 1}",
+        "output": "3",
+        "isSample": false
+      }
+    ]
+  },
+  {
+    "title": "Minimum Cost to Merge Stones",
+    "slug": "minimum-cost-to-merge-stones-dp",
+    "description": "There are n piles of stones arranged in a row. The i-th pile has stones[i] stones. A move consists of merging exactly k consecutive piles into one pile, and the cost of this move is equal to the total number of stones in these k piles. Find the minimum cost to merge all piles of stones into one pile. If it is impossible, return -1.",
+    "difficulty": "HARD",
+    "constraints": [
+      "1 <= stones.length <= 30",
+      "2 <= k <= 30",
+      "1 <= stones[i] <= 100"
+    ],
+    "topics": [
+      "Dynamic programming",
+      "Array"
+    ],
+    "baseMemoryLimit": 256,
+    "baseTimeLimit": 2000,
+    "timeLimitMultiplier": {
+      "cpp": 1.0,
+      "java": 1.5,
+      "python": 2.0
+    },
+    "starterCode": {
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
+      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
+      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+    },
+    "testCases": [
+      {
+        "input": "{\"stones\": [3,2,4,1], \"k\": 2}",
+        "output": "20",
+        "isSample": true
+      },
+      {
+        "input": "{\"stones\": [3,2,4,1], \"k\": 3}",
+        "output": "-1",
+        "isSample": true
+      },
+      {
+        "input": "{\"stones\": [3,5,1,2,6], \"k\": 3}",
+        "output": "25",
+        "isSample": true
+      },
+      {
+        "input": "{\"stones\": [1,2,3], \"k\": 2}",
+        "output": "9",
+        "isSample": false
+      },
+      {
+        "input": "{\"stones\": [1,2,3,4,5], \"k\": 3}",
+        "output": "21",
+        "isSample": false
+      },
+      {
+        "input": "{\"stones\": [1], \"k\": 2}",
+        "output": "0",
+        "isSample": false
+      },
+      {
+        "input": "{\"stones\": [1,2], \"k\": 3}",
+        "output": "-1",
+        "isSample": false
+      },
+      {
+        "input": "{\"stones\": [2,4,3,1,5], \"k\": 2}",
+        "output": "34",
+        "isSample": false
+      }
+    ]
+  },
+  {
+    "title": "Digit DP: Divisible Digit Sums",
+    "slug": "divisible-digit-sums",
+    "description": "Given two integers low and high, and an integer k, return the count of integers in the range [low, high] (inclusive) such that the sum of their digits is divisible by k.",
+    "difficulty": "HARD",
+    "constraints": [
+      "1 <= low <= high <= 10^12",
+      "1 <= k <= 100"
+    ],
+    "topics": [
+      "Dynamic programming",
+      "Math"
+    ],
+    "baseMemoryLimit": 256,
+    "baseTimeLimit": 2000,
+    "timeLimitMultiplier": {
+      "cpp": 1.0,
+      "java": 1.5,
+      "python": 2.0
+    },
+    "starterCode": {
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
+      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
+      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+    },
+    "testCases": [
+      {
+        "input": "{\"low\": 1, \"high\": 20, \"k\": 3}",
+        "output": "6",
+        "isSample": true
+      },
+      {
+        "input": "{\"low\": 10, \"high\": 19, \"k\": 5}",
+        "output": "2",
+        "isSample": true
+      },
+      {
+        "input": "{\"low\": 1, \"high\": 10, \"k\": 1}",
+        "output": "10",
+        "isSample": false
+      },
+      {
+        "input": "{\"low\": 100, \"high\": 100, \"k\": 1}",
+        "output": "1",
+        "isSample": false
+      },
+      {
+        "input": "{\"low\": 1, \"high\": 100, \"k\": 9}",
+        "output": "11",
+        "isSample": false
+      },
+      {
+        "input": "{\"low\": 50, \"high\": 60, \"k\": 7}",
+        "output": "2",
+        "isSample": false
+      },
+      {
+        "input": "{\"low\": 1, \"high\": 1000, \"k\": 25}",
+        "output": "6",
+        "isSample": false
+      },
+      {
+        "input": "{\"low\": 10, \"high\": 100, \"k\": 11}",
+        "output": "8",
+        "isSample": false
+      }
+    ]
+  }
+]

@@ -18,7 +18,7 @@ const FORMAT_PRESETS: Record<Exclude<RoomFormat, 'custom'>, FormatInfo> = {
     name: 'blitz',
     label: 'Blitz',
     rules: [
-      'Game Time: 20 minutes total',
+      'Game Time: 20 minutes',
       'Total Questions: 2 problems',
       'Difficulty Breakdown: 1 Easy, 1 Medium',
       'Speed-focused duel testing rapid implementation',
@@ -28,7 +28,7 @@ const FORMAT_PRESETS: Record<Exclude<RoomFormat, 'custom'>, FormatInfo> = {
     name: 'standard',
     label: 'Standard',
     rules: [
-      'Game Time: 45 minutes total',
+      'Game Time: 45 minutes',
       'Total Questions: 3 problems',
       'Difficulty Breakdown: 1 Easy, 2 Medium',
       'Balanced competitive match testing core algorithms',
@@ -38,7 +38,7 @@ const FORMAT_PRESETS: Record<Exclude<RoomFormat, 'custom'>, FormatInfo> = {
     name: 'classic',
     label: 'Classic',
     rules: [
-      'Game Time: 60 minutes total',
+      'Game Time: 60 minutes',
       'Total Questions: 3 problems',
       'Difficulty Breakdown: 1 Easy, 1 Medium, 1 Hard',
       'Endurance duel testing deep problem solving and optimization',
@@ -47,14 +47,13 @@ const FORMAT_PRESETS: Record<Exclude<RoomFormat, 'custom'>, FormatInfo> = {
 }
 
 const AVAILABLE_TOPICS = [
-  'Arrays',
-  'Strings',
-  'Hash maps',
-  'Linked lists',
-  'Stacks & queues',
-  'Trees',
-  'Graphs',
-  'Dynamic programming',
+  "Arrays",
+  "Strings",
+  "Hash maps",
+  "Stacks & queues",
+  "Greedy",
+  "Binary Search",
+  "Dynamic programming"
 ] as const
 
 const CODE_ALPHABET = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789'
@@ -84,7 +83,7 @@ export function CreateRoomForm() {
   const [copied, setCopied] = useState(false)
 
   const totalCustomQuestions = easyCount + mediumCount + hardCount
-  const isCustomValid =
+  const isFormValid =
     format !== 'custom' ||
     (customDuration >= 10 &&
       customDuration <= 60 &&
@@ -111,9 +110,9 @@ export function CreateRoomForm() {
     setSelectedTopics([])
   }
 
-  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+  function handleSubmit(event: React.SubmitEvent<HTMLFormElement>) {
     event.preventDefault()
-    if (!isCustomValid) return
+    if (!isFormValid) return
     setRoomCode(generateRoomCode())
     setCopied(false)
   }
@@ -299,7 +298,7 @@ export function CreateRoomForm() {
               </h4>
               <span className={cn(
                 "text-[11px] font-mono font-bold px-2 py-0.5 rounded-full transition-colors duration-200",
-                isCustomValid ? "bg-secondary text-ink" : "bg-destructive/10 text-destructive"
+                isFormValid ? "bg-secondary text-ink" : "bg-destructive/10 text-destructive"
               )}>
                 Questions: {totalCustomQuestions} / 3
               </span>
@@ -341,7 +340,7 @@ export function CreateRoomForm() {
 
               {/* Reserved Error/Info Line (Prevents Layout Shift) */}
               <div className="h-5 mt-2.5 flex items-center">
-                {!isCustomValid ? (
+                {!isFormValid ? (
                   <p className="text-xs text-destructive font-semibold flex items-center gap-1.5">
                     <AlertCircle className="size-3.5 shrink-0" />
                     <span>Select between 1 and 3 total questions.</span>
@@ -408,7 +407,7 @@ export function CreateRoomForm() {
         {/* Create Button */}
         <button
           type="submit"
-          disabled={!isCustomValid}
+          disabled={!isFormValid}
           className="group/submit inline-flex h-12 w-full items-center justify-center gap-2 rounded-lg bg-primary px-7 text-sm font-semibold text-primary-foreground transition-[transform,box-shadow,opacity] duration-300 hover:-translate-y-0.5 hover:opacity-95 hover:shadow-[0_14px_30px_-14px_var(--primary)] active:translate-y-0 disabled:opacity-50 disabled:pointer-events-none motion-reduce:hover:translate-y-0"
         >
           Create room

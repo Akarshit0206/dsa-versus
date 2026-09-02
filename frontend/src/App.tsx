@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router'
 import { AuthProvider } from '@/context/AuthContext'
+import { SocketProvider } from './context/SocketContext'
 import { ProtectedRoute } from '@/components/ProtectedRoute'
 import { SiteLayout } from '@/components/layout/SiteLayout'
 import { HomePage } from '@/pages/HomePage'
@@ -11,6 +12,7 @@ import { SignUpPage } from '@/pages/SignUpPage'
 export default function App() {
   return (
     <AuthProvider>
+      <SocketProvider>
       <BrowserRouter>
         <Routes>
           <Route element={<SiteLayout />}>
@@ -36,6 +38,7 @@ export default function App() {
           </Route>
         </Routes>
       </BrowserRouter>
+      </SocketProvider>
     </AuthProvider>
   )
 }

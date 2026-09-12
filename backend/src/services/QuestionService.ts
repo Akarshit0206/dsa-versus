@@ -27,20 +27,23 @@ export class QuestionService {
       }
 
       // 4. Randomly sample 'req.count' questions matching criteria from MongoDB
-      const sampled = await QuestionModel.aggregate<IQuestion>([
+      let sampled = await QuestionModel.aggregate<IQuestion>([
         { $match: matchCriteria },
         { $sample: { size: req.count } },
       ]);
 
-      // 5. Ensure enough questions were returned from DB
-      if (sampled.length < req.count) {
-        const topicInfo =
-          config.topics && config.topics.length > 0
-            ? `for topics [${config.topics.join(", ")}]`
-            : "across all topics";
+      // 5. Fallback: If not enough questions found for specific topics, sample across all topics for this difficulty
+      if (sampled.length < req.count && config.topics && config.topics.length > 0) {
+        sampled = await QuestionModel.aggregate<IQuestion>([
+          { $match: { difficulty: req.difficulty } },
+          { $sample: { size: req.count } },
+        ]);
+      }
 
+      // 6. Ensure enough questions were returned
+      if (sampled.length < req.count) {
         throw new Error(
-          `NOT_ENOUGH_QUESTIONS: Insufficient ${req.difficulty} questions found ${topicInfo}.`
+          `NOT_ENOUGH_QUESTIONS: Insufficient ${req.difficulty} questions found in database.`
         );
       }
 

@@ -5,6 +5,8 @@ import type {
   PlayerStats,
   QuestionProgress,
   UpdateProgressInput,
+  PublicQuestion,
+  PublicTestCase,
 } from "./MatchManager.types.js";
 
 import { QuestionService } from "../services/QuestionService.js";
@@ -15,6 +17,42 @@ export class MatchManager {
 
   constructor() {
     this.activeMatches = new Map();
+  }
+
+  /**
+   * Helper to sanitize questions: only expose public/sample test cases
+   */
+  private _sanitizeQuestions(questions: any[]): PublicQuestion[] {
+    return questions.map((q) => {
+      let starterCode: Record<string, string> = {};
+      if (q.starterCode) {
+        if (q.starterCode instanceof Map) {
+          starterCode = Object.fromEntries(q.starterCode);
+        } else if (typeof q.starterCode === "object") {
+          starterCode = { ...q.starterCode };
+        }
+      }
+
+      const publicTestCases: PublicTestCase[] = (q.testCases || [])
+        .filter((tc: any) => tc.isSample)
+        .map((tc: any) => ({
+          input: tc.input,
+          output: tc.output,
+          isSample: true,
+        }));
+
+      return {
+        _id: q._id.toString(),
+        title: q.title,
+        slug: q.slug,
+        difficulty: q.difficulty,
+        description: q.description,
+        constraints: q.constraints || [],
+        topics: q.topics || [],
+        starterCode,
+        testCases: publicTestCases,
+      };
+    });
   }
 
   /**
@@ -29,16 +67,18 @@ export class MatchManager {
       throw new Error("MATCH_ALREADY_STARTED: Room is already in an active or completed match.");
     }
 
-    if (!Types.ObjectId.isValid(room.host.userId)) {
-      throw new Error("INVALID_USER_ID: Host userId is not a valid Mongoose ObjectId.");
-    }
-    if (!Types.ObjectId.isValid(room.guest.userId)) {
-      throw new Error("INVALID_USER_ID: Guest userId is not a valid Mongoose ObjectId.");
-    }
+    const hostObjectId = Types.ObjectId.isValid(room.host.userId)
+      ? new Types.ObjectId(room.host.userId)
+      : new Types.ObjectId();
+
+    const guestObjectId = Types.ObjectId.isValid(room.guest.userId)
+      ? new Types.ObjectId(room.guest.userId)
+      : new Types.ObjectId();
     
     // 1. Fetch real sampled questions for the match from DB via QuestionService
     const selectedQuestions = await QuestionService.selectQuestionsForMatch(room.config);
     const questionIds = selectedQuestions.map((q) => q._id as Types.ObjectId);
+    const sanitizedQuestions = this._sanitizeQuestions(selectedQuestions);
 
     // Update room status
     room.status = "active";
@@ -58,14 +98,14 @@ export class MatchManager {
 
     // 4. Construct Player1 and Player2 Stats (aligned 1-to-1 with DB Match schema)
     const player1Stats: PlayerStats = {
-      player: new Types.ObjectId(room.host.userId),
+      player: hostObjectId,
       questionProgress: initialProgress.map((p) => ({ ...p })),
       totalTestCasesPassed: 0,
       timeTaken: -1,
     };
 
     const player2Stats: PlayerStats = {
-      player: new Types.ObjectId(room.guest.userId),
+      player: guestObjectId,
       questionProgress: initialProgress.map((p) => ({ ...p })),
       totalTestCasesPassed: 0,
       timeTaken: -1,
@@ -90,6 +130,7 @@ export class MatchManager {
       player1Stats,
       player2Stats,
       questions: questionIds,
+      questionsData: sanitizedQuestions,
       durationInMinutes: room.config.timeLimitInMinutes,
       startedAt: new Date(),
       endedAt: null,
@@ -106,6 +147,58 @@ export class MatchManager {
    */
   public getMatch(matchId: string): InMemoryMatch | undefined {
     return this.activeMatches.get(matchId);
+  }
+
+  /**
+   * Get an active match with sanitized questions, hydrating from DB if needed
+   */
+  public async getMatchWithQuestions(matchId: string): Promise<InMemoryMatch | undefined> {
+    let match = this.activeMatches.get(matchId);
+    if (match && match.questionsData && match.questionsData.length > 0) {
+      return match;
+    }
+
+    if (Types.ObjectId.isValid(matchId)) {
+      const dbMatch = await MatchModel.findById(matchId).populate("questions").lean();
+      if (dbMatch) {
+        const populatedQuestions = (dbMatch.questions as any[]) || [];
+        const sanitizedQuestions = this._sanitizeQuestions(populatedQuestions);
+
+        if (!match) {
+          const hydratedMatch: InMemoryMatch = {
+            matchId,
+            roomCode: "ARENA",
+            player1: {
+              userId: (dbMatch.player1Stats as any).player?.toString() || "",
+              displayName: "Player 1",
+              socketId: "",
+              isConnected: true,
+            },
+            player2: {
+              userId: (dbMatch.player2Stats as any).player?.toString() || "",
+              displayName: "Player 2",
+              socketId: "",
+              isConnected: true,
+            },
+            player1Stats: dbMatch.player1Stats,
+            player2Stats: dbMatch.player2Stats,
+            questions: dbMatch.questions.map((q: any) => q._id || q),
+            questionsData: sanitizedQuestions,
+            durationInMinutes: dbMatch.duration,
+            startedAt: (dbMatch as any).createdAt || new Date(),
+            endedAt: dbMatch.endedAt,
+            winner: dbMatch.winner,
+            status: dbMatch.endedAt ? "completed" : "in_progress",
+          };
+          this.activeMatches.set(matchId, hydratedMatch);
+          return hydratedMatch;
+        } else {
+          match.questionsData = sanitizedQuestions;
+          return match;
+        }
+      }
+    }
+    return match;
   }
 
   /**

@@ -5,6 +5,24 @@ import type { IPlayerStats, IQuestionProgress } from "../models/Match/Match.Type
 export interface QuestionProgress extends IQuestionProgress {}
 export interface PlayerStats extends IPlayerStats {}
 
+export interface PublicTestCase {
+  input: string;
+  output: string;
+  isSample: boolean;
+}
+
+export interface PublicQuestion {
+  _id: string;
+  title: string;
+  slug?: string;
+  difficulty: "EASY" | "MEDIUM" | "HARD";
+  description: string;
+  constraints: string[];
+  topics: string[];
+  starterCode?: Record<string, string>;
+  testCases: PublicTestCase[];
+}
+
 export interface InMemoryMatch {
   matchId: string; // Valid Mongoose ObjectId string
   roomCode: string;
@@ -13,6 +31,7 @@ export interface InMemoryMatch {
   player1Stats: PlayerStats;
   player2Stats: PlayerStats;
   questions: Types.ObjectId[];
+  questionsData?: PublicQuestion[];
   durationInMinutes: number;
   startedAt: Date;
   endedAt?: Date | null;

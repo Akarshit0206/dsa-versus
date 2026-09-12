@@ -164,7 +164,7 @@ export const logoutUser: RequestHandler = async(req, res) => {
             }
         },
         {
-            new: true
+            returnDocument: 'after'
         }
     )
 

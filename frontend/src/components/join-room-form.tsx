@@ -1,17 +1,21 @@
 import { useRef, useState } from 'react'
+import { useNavigate } from 'react-router'
 import { ArrowRight, Loader2 } from 'lucide-react'
 import { useAuth } from '@/context/AuthContext'
+import { useRoomSocket } from '@/hooks/useRoomSocket'
 import { DoodleBackdrop } from '@/components/doodle-backdrop'
 import { cn } from '@/lib/utils'
 
 const CODE_LENGTH = 6
 
 export function JoinRoomForm() {
+  const navigate = useNavigate()
   const { user } = useAuth()
+  const { joinRoom, isLoading, error: socketError } = useRoomSocket()
+
   const [name, setName] = useState(user?.username || '')
   const [digits, setDigits] = useState<string[]>(Array(CODE_LENGTH).fill(''))
   const [error, setError] = useState<string | null>(null)
-  const [status, setStatus] = useState<'idle' | 'joining' | 'joined'>('idle')
   const inputsRef = useRef<Array<HTMLInputElement | null>>([])
 
   const code = digits.join('')
@@ -57,7 +61,7 @@ export function JoinRoomForm() {
     }
   }
 
-  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault()
 
     if (code.length < CODE_LENGTH) {
@@ -66,9 +70,16 @@ export function JoinRoomForm() {
     }
 
     setError(null)
-    setStatus('joining')
-    setTimeout(() => setStatus('joined'), 1200)
+    try {
+      const room = await joinRoom(code, name.trim() || undefined)
+      // Navigate straight into the real-time shared Room Lobby!
+      navigate(`/room/${room.code}`)
+    } catch (err: any) {
+      setError(err.message || 'Failed to join room.')
+    }
   }
+
+  const displayError = error || socketError
 
   return (
     <form
@@ -125,48 +136,37 @@ export function JoinRoomForm() {
                 autoComplete="off"
                 maxLength={CODE_LENGTH}
                 aria-label={`Room code character ${index + 1}`}
-                aria-invalid={Boolean(error)}
+                aria-invalid={Boolean(displayError)}
                 className={cn(
                   'h-14 w-full rounded-lg border bg-background/70 text-center font-mono text-xl font-bold uppercase text-ink outline-none sm:h-16 sm:text-2xl',
                   'transition-[border-color,box-shadow,transform,background-color] duration-200 ease-out',
                   'hover:border-ring/70 focus:-translate-y-0.5 focus:border-marker focus:bg-background focus:shadow-[0_0_0_3px_color-mix(in_oklab,var(--marker)_16%,transparent)] motion-reduce:focus:translate-y-0',
                   digit ? 'border-ink/40 bg-background' : 'border-input',
-                  error && 'border-destructive/60',
+                  displayError && 'border-destructive/60',
                 )}
               />
             ))}
           </div>
 
-          {error ? (
+          {displayError ? (
             <p
               role="alert"
               className="mt-3 text-sm font-medium text-destructive motion-safe:animate-in motion-safe:fade-in motion-safe:slide-in-from-top-1"
             >
-              {error}
+              {displayError}
             </p>
           ) : null}
         </fieldset>
 
-        {status === 'joined' ? (
-          <div className="glass rounded-lg px-5 py-4 motion-safe:animate-in motion-safe:fade-in motion-safe:slide-in-from-bottom-2 motion-safe:duration-500">
-            <p className="text-sm font-semibold text-ink">
-              Joined room <span className="font-mono">{code}</span>
-            </p>
-            <p className="mt-1.5 text-sm text-muted-foreground">
-              Waiting for the host to start the first round.
-            </p>
-          </div>
-        ) : null}
-
         <button
           type="submit"
-          disabled={status === 'joining'}
+          disabled={isLoading}
           className="group/join inline-flex h-12 w-full items-center justify-center gap-2 rounded-lg bg-primary px-7 text-sm font-semibold text-primary-foreground transition-[transform,box-shadow,opacity] duration-300 hover:-translate-y-0.5 hover:opacity-95 hover:shadow-[0_14px_30px_-14px_var(--primary)] active:translate-y-0 disabled:translate-y-0 disabled:opacity-70 motion-reduce:hover:translate-y-0"
         >
-          {status === 'joining' ? (
+          {isLoading ? (
             <>
               <Loader2 className="size-4 animate-spin" aria-hidden="true" />
-              Joining room
+              Joining room...
             </>
           ) : (
             <>

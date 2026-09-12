@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useState, useMemo, type ReactNode } from 'react'
-import { Socket } from 'socket.io-client'
+import type { Socket } from 'socket.io-client'
 import { socket } from '@/socket/socket'
 import { useAuth } from '@/context/AuthContext'
 
@@ -30,7 +30,7 @@ export function SocketProvider({ children }: { children: ReactNode }) {
       }
     }
 
-    function onDisconnect(reason: Socket.DisconnectReason) {
+    function onDisconnect(reason: string) {
       setIsConnected(false)
       setSocketId(null)
       if (import.meta.env.DEV) {

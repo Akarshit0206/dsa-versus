@@ -8,6 +8,8 @@ import { CreateRoomPage } from '@/pages/CreateRoomPage'
 import { JoinRoomPage } from '@/pages/JoinRoomPage'
 import { SignInPage } from '@/pages/SignInPage'
 import { SignUpPage } from '@/pages/SignUpPage'
+import { RoomLobbyPage } from '@/pages/RoomLobbyPage'
+import { MatchPage } from '@/pages/MatchPage'
 
 export default function App() {
   return (
@@ -32,6 +34,22 @@ export default function App() {
               element={
                 <ProtectedRoute>
                   <JoinRoomPage />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/room/:code"
+              element={
+                <ProtectedRoute>
+                  <RoomLobbyPage />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/match/:matchId"
+              element={
+                <ProtectedRoute>
+                  <MatchPage />
                 </ProtectedRoute>
               }
             />

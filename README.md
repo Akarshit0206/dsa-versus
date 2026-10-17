@@ -18,7 +18,7 @@
 - [Key Features](#-key-features)
 - [System Architecture](#-system-architecture)
 - [WebSocket Lifecycle & Event Protocol](#-websocket-lifecycle--event-protocol)
-- [Judge0 Code Execution Architecture (Planned)](#-judge0-code-execution-architecture-planned)
+- [Piston Sandbox Code Execution Architecture](#-piston-sandbox-code-execution-architecture)
 - [Database Schema & State Management](#-database-schema--state-management)
 - [Tech Stack](#-tech-stack)
 - [Project Directory Structure](#-project-directory-structure)
@@ -84,9 +84,9 @@ The platform provides a browser-based, IDE-grade coding experience powered by Mo
                ┌───────────────┴───────────────┐
                ▼                               ▼
      ┌───────────────────┐           ┌───────────────────┐
-     │  MongoDB Database │           │ Judge0 CE Sandbox │
-     │ (Users, Matches,  │           │   (Planned RCE)   │
-     │  Questions, Seeds)│           │ (Isolated Docker) │
+     │  MongoDB Database │           │  Piston Sandbox   │
+     │ (Users, Matches,  │           │   (Isolated RCE)  │
+     │  Questions, Seeds)│           │ (Public / Docker) │
      └───────────────────┘           └───────────────────┘
 ```
 
@@ -151,16 +151,16 @@ sequenceDiagram
 
 ---
 
-## ⚖️ Judge0 Code Execution Architecture (Planned)
+## ⚡ Piston Sandbox Code Execution Architecture
 
-To ensure secure, sandboxed, and tamper-proof evaluation of user submissions, AlgoDuel will integrate **Judge0 CE (Community Edition)**.
+To ensure secure, sandboxed, high-performance, and tamper-proof evaluation of user submissions, AlgoDuel integrates the **Piston RCE Sandbox**.
 
 ```
                     ┌───────────────────────────┐
                     │ Client: Code Submission   │
                     │ (Source Code, Lang, Match)│
                     └─────────────┬─────────────┘
-                                  │ POST /api/submissions
+                                  │ POST /api/submissions/submit
                                   ▼
                     ┌───────────────────────────┐
                     │      AlgoDuel Backend     │
@@ -168,27 +168,27 @@ To ensure secure, sandboxed, and tamper-proof evaluation of user submissions, Al
                     └─────────────┬─────────────┘
                                   │
          ┌────────────────────────┴────────────────────────┐
-         │ Batch Submission (Source Code + Test Cases)      │
+         │ Sequential Testcase Execution (Code + Stdin)    │
          ▼                                                 ▼
 ┌─────────────────────────────────────────────────────────────┐
-│                    Judge0 CE Execution Grid                 │
+│                   Piston Sandbox RCE Grid                   │
 │                                                             │
 │   ┌─────────────────────┐       ┌───────────────────────┐   │
-│   │ Docker Sandbox      │       │ Linux cgroups &       │   │
-│   │ - Isolated Network  │       │ rlimits (CPU/RAM cap) │   │
-│   │ - Ephemeral Worker  │       │ Language Multipliers  │   │
+│   │ Docker / Public API │       │ Process Sandboxing    │   │
+│   │ - Stateless Worker  │       │ - Timeouts (SIGKILL)  │   │
+│   │ - Multi-Language    │       │ - Py 3.10, C++, Java  │   │
 │   └─────────────────────┘       └───────────────────────┘   │
 └─────────────────────────────┬───────────────────────────────┘
                               │
                     Verdict / Metrics
-            (Accepted, TLE, MLE, Compilation Error)
+            (Accepted, Wrong Answer, TLE, Compilation Error)
                               │
                               ▼
                     ┌───────────────────────────┐
                     │      AlgoDuel Backend     │
-                    │ Update Match & Broadcast  │
+                    │ Update Match & Check Win  │
                     └─────────────┬─────────────┘
-                                  │ match:progress_updated
+                                  │ match:progress_updated / match:ended
                                   ▼
                     ┌───────────────────────────┐
                     │  Duelists receive verdict │
@@ -196,21 +196,22 @@ To ensure secure, sandboxed, and tamper-proof evaluation of user submissions, Al
                     └───────────────────────────┘
 ```
 
-### Planned Implementation Details
+### Implementation Details
 
 1. **Submission Pipeline:**
-   - User submits code via Monaco Editor.
-   - Backend queries full evaluation test cases (both public sample and hidden edge cases) from MongoDB.
-   - Backend dispatches batch jobs to Judge0 via REST API (`POST /submissions/batch`).
+   - User writes and tests code in the Monaco Editor against sample test cases via `/api/submissions/run`.
+   - On final submission via `/api/submissions/submit`, the backend loads both public and hidden test cases from MongoDB.
+   - The backend passes the code and each test case's standard input to Piston (`POST /api/v2/execute`).
 2. **Security & Sandboxing:**
-   - Isolated Docker containers for every submission.
-   - Blocked network egress to prevent arbitrary network requests.
-   - Strict Linux cgroups limits on memory (e.g. 256MB) and execution wall-time (e.g. 2s).
-3. **Language-Specific Resource Multipliers:**
-   - Dynamic multiplier scaling configured per question (e.g., Python `3.0x` time limit relative to C++ `1.0x`).
-4. **Grading & Live Broadcast:**
-   - Output tokens compared against expected test outputs.
-   - Passed test case tallies are ingested by `MatchManager` and broadcast via `match:progress_updated`.
+   - Stateless, isolated process sandboxing with network egress restrictions.
+   - Built-in execution timeout guards against infinite loops, returning a `TLE` (Time Limit Exceeded) verdict on process kill.
+3. **Multi-Language Support:**
+   - Full support for **Python 3**, **C++ (GCC)**, and **Java (OpenJDK)**.
+4. **Instant Match Resolution & Live Broadcast:**
+   - Normalized stdout tokens are compared with expected outputs.
+   - Results update `player1Stats` and `player2Stats` in `MatchManager`.
+   - If a duelist solves all questions, `matchManager.finalizeMatch()` records the winner in MongoDB and broadcasts `match:ended` to display the victory screen immediately.
+
 
 ---
 
@@ -243,6 +244,7 @@ To ensure secure, sandboxed, and tamper-proof evaluation of user submissions, Al
 ### Backend
 - **Runtime:** Node.js + TypeScript (`tsx` dev runner, `tsc` build)
 - **Framework:** Express 5
+- **Code Execution:** Piston RCE Sandbox (Stateless containerized evaluation for Python, C++, Java)
 - **Real-Time:** Socket.io v4
 - **Database & ODM:** MongoDB + Mongoose 9
 - **Authentication:** JWT (JSON Web Tokens) + `bcrypt` + `cookie-parser`
@@ -388,14 +390,8 @@ node dataset/generate_dataset.js
 
 ## 🗺️ Roadmap
 
-- [ ] **Judge0 CE Integration:** Sandboxed, isolated remote code evaluation for Python, C++, and Java.
+- [x] **Piston Sandbox Integration:** Isolated multi-language code evaluation (Python, C++, Java) with instant match winner resolution.
 - [ ] **Ranked / ELO Matchmaking:** Skill-based queue system pairing players of similar ratings.
 - [ ] **Spectator Mode:** Real-time dual code stream for tournaments and viewers.
 - [ ] **Audio/Chat Channels:** Low-latency in-game text or voice reaction channels.
 - [ ] **Match Replays & Code Diffs:** Post-game analytics comparing time complexities and solution styles side-by-side.
-
----
-
-## 📄 License
-
-This project is licensed under the **ISC License**.

@@ -69,6 +69,15 @@ const generateAccessAndRefreshToken= async (userId: mongoose.Types.ObjectId) =>{
     }
 }
 
+export const getCookieOptions = () => {
+    const isProduction = process.env.NODE_ENV === "production";
+    return {
+        httpOnly: true,
+        secure: isProduction,
+        sameSite: (isProduction ? "none" : "lax") as "none" | "lax",
+    };
+};
+
 //controller functions
 export const registerUser: RequestHandler= async (req, res, next)=>{
     const {username, email, password} = req.body;
@@ -134,11 +143,7 @@ export const loginUser: RequestHandler= async (req, res, next)=>{
 
     const loggedInUser= await User.findById(user._id).select("-password -refreshToken");
 
-    const options = {
-        httpOnly: true,
-        secure: process.env.NODE_ENV === "production",
-        sameSite: "strict" as const,
-    }
+    const options = getCookieOptions();
 
     res
     .status(200)
@@ -168,11 +173,7 @@ export const logoutUser: RequestHandler = async(req, res) => {
         }
     )
 
-    const options = {
-        httpOnly: true,
-        secure: process.env.NODE_ENV === "production",
-        sameSite: "strict" as const,
-    }
+    const options = getCookieOptions();
 
     return res
     .status(200)

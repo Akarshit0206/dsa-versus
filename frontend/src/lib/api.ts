@@ -1,3 +1,5 @@
+import { API_URL } from '../config/env'
+
 export interface UserProfile {
   _id: string
   username: string
@@ -30,7 +32,9 @@ export async function apiRequest<T = unknown>(
   endpoint: string,
   options: RequestInit = {}
 ): Promise<ApiResponseData<T>> {
-  const url = endpoint.startsWith('/') ? endpoint : `/${endpoint}`
+  const normalizedPath = endpoint.startsWith('/') ? endpoint : `/${endpoint}`
+  const baseUrl = API_URL ? API_URL.replace(/\/$/, '') : ''
+  const url = endpoint.startsWith('http') ? endpoint : `${baseUrl}${normalizedPath}`
 
   const defaultHeaders: Record<string, string> = {
     'Content-Type': 'application/json',

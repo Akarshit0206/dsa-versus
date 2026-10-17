@@ -15,14 +15,17 @@
     "baseMemoryLimit": 256,
     "baseTimeLimit": 1000,
     "timeLimitMultiplier": {
-      "cpp": 1.0,
-      "java": 2.0,
-      "python": 3.0
+      "cpp": 1,
+      "java": 2,
+      "python": 3
     },
     "starterCode": {
-      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
-      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
-      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+      "54": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    int largestAltitude(vector<int>& gain) {\n        \n    }\n};\n",
+      "62": "import java.util.*;\n\nclass Solution {\n    public int largestAltitude(int[] gain) {\n        \n    }\n}\n",
+      "71": "class Solution:\n    def largestAltitude(self, gain: list[int]) -> int:\n        pass\n",
+      "python": "class Solution:\n    def largestAltitude(self, gain: list[int]) -> int:\n        pass\n",
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    int largestAltitude(vector<int>& gain) {\n        \n    }\n};\n",
+      "java": "import java.util.*;\n\nclass Solution {\n    public int largestAltitude(int[] gain) {\n        \n    }\n}\n"
     },
     "testCases": [
       {
@@ -82,14 +85,17 @@
     "baseMemoryLimit": 256,
     "baseTimeLimit": 1000,
     "timeLimitMultiplier": {
-      "cpp": 1.0,
-      "java": 2.0,
-      "python": 3.0
+      "cpp": 1,
+      "java": 2,
+      "python": 3
     },
     "starterCode": {
-      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
-      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
-      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+      "54": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    bool check(vector<int>& nums) {\n        \n    }\n};\n",
+      "62": "import java.util.*;\n\nclass Solution {\n    public boolean check(int[] nums) {\n        \n    }\n}\n",
+      "71": "class Solution:\n    def check(self, nums: list[int]) -> bool:\n        pass\n",
+      "python": "class Solution:\n    def check(self, nums: list[int]) -> bool:\n        pass\n",
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    bool check(vector<int>& nums) {\n        \n    }\n};\n",
+      "java": "import java.util.*;\n\nclass Solution {\n    public boolean check(int[] nums) {\n        \n    }\n}\n"
     },
     "testCases": [
       {
@@ -152,14 +158,17 @@
     "baseMemoryLimit": 256,
     "baseTimeLimit": 1000,
     "timeLimitMultiplier": {
-      "cpp": 1.0,
-      "java": 2.0,
-      "python": 3.0
+      "cpp": 1,
+      "java": 2,
+      "python": 3
     },
     "starterCode": {
-      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
-      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
-      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+      "54": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    vector<int> findColumnWidth(vector<vector<int>>& grid) {\n        \n    }\n};\n",
+      "62": "import java.util.*;\n\nclass Solution {\n    public int[] findColumnWidth(int[][] grid) {\n        \n    }\n}\n",
+      "71": "class Solution:\n    def findColumnWidth(self, grid: list[list[int]]) -> list[int]:\n        pass\n",
+      "python": "class Solution:\n    def findColumnWidth(self, grid: list[list[int]]) -> list[int]:\n        pass\n",
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    vector<int> findColumnWidth(vector<vector<int>>& grid) {\n        \n    }\n};\n",
+      "java": "import java.util.*;\n\nclass Solution {\n    public int[] findColumnWidth(int[][] grid) {\n        \n    }\n}\n"
     },
     "testCases": [
       {
@@ -221,14 +230,17 @@
     "baseMemoryLimit": 256,
     "baseTimeLimit": 1500,
     "timeLimitMultiplier": {
-      "cpp": 1.0,
-      "java": 2.0,
-      "python": 3.0
+      "cpp": 1,
+      "java": 2,
+      "python": 3
     },
     "starterCode": {
-      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
-      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
-      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+      "54": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    vector<int> productExceptSelf(vector<int>& nums) {\n        \n    }\n};\n",
+      "62": "import java.util.*;\n\nclass Solution {\n    public int[] productExceptSelf(int[] nums) {\n        \n    }\n}\n",
+      "71": "class Solution:\n    def productExceptSelf(self, nums: list[int]) -> list[int]:\n        pass\n",
+      "python": "class Solution:\n    def productExceptSelf(self, nums: list[int]) -> list[int]:\n        pass\n",
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    vector<int> productExceptSelf(vector<int>& nums) {\n        \n    }\n};\n",
+      "java": "import java.util.*;\n\nclass Solution {\n    public int[] productExceptSelf(int[] nums) {\n        \n    }\n}\n"
     },
     "testCases": [
       {
@@ -291,14 +303,17 @@
     "baseMemoryLimit": 256,
     "baseTimeLimit": 1500,
     "timeLimitMultiplier": {
-      "cpp": 1.0,
-      "java": 2.0,
-      "python": 3.0
+      "cpp": 1,
+      "java": 2,
+      "python": 3
     },
     "starterCode": {
-      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
-      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
-      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+      "54": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    int subarraySum(vector<int>& nums, int k) {\n        \n    }\n};\n",
+      "62": "import java.util.*;\n\nclass Solution {\n    public int subarraySum(int[] nums, int k) {\n        \n    }\n}\n",
+      "71": "class Solution:\n    def subarraySum(self, nums: list[int], k: int) -> int:\n        pass\n",
+      "python": "class Solution:\n    def subarraySum(self, nums: list[int], k: int) -> int:\n        pass\n",
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    int subarraySum(vector<int>& nums, int k) {\n        \n    }\n};\n",
+      "java": "import java.util.*;\n\nclass Solution {\n    public int subarraySum(int[] nums, int k) {\n        \n    }\n}\n"
     },
     "testCases": [
       {
@@ -333,7 +348,7 @@
       },
       {
         "input": "{\"nums\": [100, 2, -2, 100], \"k\": 100}",
-        "output": "3",
+        "output": "4",
         "isSample": false
       },
       {
@@ -361,14 +376,17 @@
     "baseMemoryLimit": 256,
     "baseTimeLimit": 1500,
     "timeLimitMultiplier": {
-      "cpp": 1.0,
-      "java": 2.0,
-      "python": 3.0
+      "cpp": 1,
+      "java": 2,
+      "python": 3
     },
     "starterCode": {
-      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
-      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
-      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+      "54": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    int maxArea(vector<int>& height) {\n        \n    }\n};\n",
+      "62": "import java.util.*;\n\nclass Solution {\n    public int maxArea(int[] height) {\n        \n    }\n}\n",
+      "71": "class Solution:\n    def maxArea(self, height: list[int]) -> int:\n        pass\n",
+      "python": "class Solution:\n    def maxArea(self, height: list[int]) -> int:\n        pass\n",
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    int maxArea(vector<int>& height) {\n        \n    }\n};\n",
+      "java": "import java.util.*;\n\nclass Solution {\n    public int maxArea(int[] height) {\n        \n    }\n}\n"
     },
     "testCases": [
       {
@@ -432,14 +450,17 @@
     "baseMemoryLimit": 256,
     "baseTimeLimit": 1500,
     "timeLimitMultiplier": {
-      "cpp": 1.0,
-      "java": 2.0,
-      "python": 3.0
+      "cpp": 1,
+      "java": 2,
+      "python": 3
     },
     "starterCode": {
-      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
-      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
-      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+      "54": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    int minSubArrayLen(int target, vector<int>& nums) {\n        \n    }\n};\n",
+      "62": "import java.util.*;\n\nclass Solution {\n    public int minSubArrayLen(int target, int[] nums) {\n        \n    }\n}\n",
+      "71": "class Solution:\n    def minSubArrayLen(self, target: int, nums: list[int]) -> int:\n        pass\n",
+      "python": "class Solution:\n    def minSubArrayLen(self, target: int, nums: list[int]) -> int:\n        pass\n",
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    int minSubArrayLen(int target, vector<int>& nums) {\n        \n    }\n};\n",
+      "java": "import java.util.*;\n\nclass Solution {\n    public int minSubArrayLen(int target, int[] nums) {\n        \n    }\n}\n"
     },
     "testCases": [
       {
@@ -500,14 +521,17 @@
     "baseMemoryLimit": 256,
     "baseTimeLimit": 2000,
     "timeLimitMultiplier": {
-      "cpp": 1.0,
-      "java": 2.0,
-      "python": 3.0
+      "cpp": 1,
+      "java": 2,
+      "python": 3
     },
     "starterCode": {
-      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
-      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
-      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+      "54": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    int firstMissingPositive(vector<int>& nums) {\n        \n    }\n};\n",
+      "62": "import java.util.*;\n\nclass Solution {\n    public int firstMissingPositive(int[] nums) {\n        \n    }\n}\n",
+      "71": "class Solution:\n    def firstMissingPositive(self, nums: list[int]) -> int:\n        pass\n",
+      "python": "class Solution:\n    def firstMissingPositive(self, nums: list[int]) -> int:\n        pass\n",
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    int firstMissingPositive(vector<int>& nums) {\n        \n    }\n};\n",
+      "java": "import java.util.*;\n\nclass Solution {\n    public int firstMissingPositive(int[] nums) {\n        \n    }\n}\n"
     },
     "testCases": [
       {
@@ -572,14 +596,17 @@
     "baseMemoryLimit": 256,
     "baseTimeLimit": 2000,
     "timeLimitMultiplier": {
-      "cpp": 1.0,
-      "java": 2.0,
-      "python": 3.0
+      "cpp": 1,
+      "java": 2,
+      "python": 3
     },
     "starterCode": {
-      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
-      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
-      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+      "54": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    vector<int> maxSlidingWindow(vector<int>& nums, int k) {\n        \n    }\n};\n",
+      "62": "import java.util.*;\n\nclass Solution {\n    public int[] maxSlidingWindow(int[] nums, int k) {\n        \n    }\n}\n",
+      "71": "class Solution:\n    def maxSlidingWindow(self, nums: list[int], k: int) -> list[int]:\n        pass\n",
+      "python": "class Solution:\n    def maxSlidingWindow(self, nums: list[int], k: int) -> list[int]:\n        pass\n",
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    vector<int> maxSlidingWindow(vector<int>& nums, int k) {\n        \n    }\n};\n",
+      "java": "import java.util.*;\n\nclass Solution {\n    public int[] maxSlidingWindow(int[] nums, int k) {\n        \n    }\n}\n"
     },
     "testCases": [
       {
@@ -640,53 +667,56 @@
     "baseMemoryLimit": 256,
     "baseTimeLimit": 1000,
     "timeLimitMultiplier": {
-      "cpp": 1.0,
+      "cpp": 1,
       "java": 1.5,
-      "python": 2.0
+      "python": 2
     },
     "starterCode": {
-      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
-      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
-      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+      "54": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    string mergeAlternately(string& word1, string& word2) {\n        \n    }\n};\n",
+      "62": "import java.util.*;\n\nclass Solution {\n    public String mergeAlternately(String word1, String word2) {\n        \n    }\n}\n",
+      "71": "class Solution:\n    def mergeAlternately(self, word1: str, word2: str) -> str:\n        pass\n",
+      "python": "class Solution:\n    def mergeAlternately(self, word1: str, word2: str) -> str:\n        pass\n",
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    string mergeAlternately(string& word1, string& word2) {\n        \n    }\n};\n",
+      "java": "import java.util.*;\n\nclass Solution {\n    public String mergeAlternately(String word1, String word2) {\n        \n    }\n}\n"
     },
     "testCases": [
       {
-        "input": "[\"abc\", \"pqr\"]",
+        "input": "{\"word1\":\"abc\",\"word2\":\"pqr\"}",
         "output": "\"apbqcr\"",
         "isSample": true
       },
       {
-        "input": "[\"ab\", \"rs\"]",
+        "input": "{\"word1\":\"ab\",\"word2\":\"rs\"}",
         "output": "\"arbs\"",
         "isSample": true
       },
       {
-        "input": "[\"abcd\", \"pq\"]",
+        "input": "{\"word1\":\"abcd\",\"word2\":\"pq\"}",
         "output": "\"apbqcd\"",
         "isSample": false
       },
       {
-        "input": "[\"a\", \"b\"]",
+        "input": "{\"word1\":\"a\",\"word2\":\"b\"}",
         "output": "\"ab\"",
         "isSample": false
       },
       {
-        "input": "[\"\", \"abc\"]",
+        "input": "{\"word1\":\"\",\"word2\":\"abc\"}",
         "output": "\"abc\"",
         "isSample": false
       },
       {
-        "input": "[\"xyz\", \"\"]",
+        "input": "{\"word1\":\"xyz\",\"word2\":\"\"}",
         "output": "\"xyz\"",
         "isSample": false
       },
       {
-        "input": "[\"longstring\", \"s\"]",
-        "output": "\"lsoongstring\"",
+        "input": "{\"word1\":\"longstring\",\"word2\":\"s\"}",
+        "output": "\"lsongstring\"",
         "isSample": false
       },
       {
-        "input": "[\"a\", \"longstring\"]",
+        "input": "{\"word1\":\"a\",\"word2\":\"longstring\"}",
         "output": "\"alongstring\"",
         "isSample": false
       }
@@ -710,53 +740,56 @@
     "baseMemoryLimit": 256,
     "baseTimeLimit": 1000,
     "timeLimitMultiplier": {
-      "cpp": 1.0,
+      "cpp": 1,
       "java": 1.5,
-      "python": 2.0
+      "python": 2
     },
     "starterCode": {
-      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
-      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
-      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+      "54": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    bool arrayStringsAreEqual(vector<string>& word1, vector<string>& word2) {\n        \n    }\n};\n",
+      "62": "import java.util.*;\n\nclass Solution {\n    public boolean arrayStringsAreEqual(String[] word1, String[] word2) {\n        \n    }\n}\n",
+      "71": "class Solution:\n    def arrayStringsAreEqual(self, word1: list[str], word2: list[str]) -> bool:\n        pass\n",
+      "python": "class Solution:\n    def arrayStringsAreEqual(self, word1: list[str], word2: list[str]) -> bool:\n        pass\n",
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    bool arrayStringsAreEqual(vector<string>& word1, vector<string>& word2) {\n        \n    }\n};\n",
+      "java": "import java.util.*;\n\nclass Solution {\n    public boolean arrayStringsAreEqual(String[] word1, String[] word2) {\n        \n    }\n}\n"
     },
     "testCases": [
       {
-        "input": "[[\"ab\", \"c\"], [\"a\", \"bc\"]]",
+        "input": "{\"word1\":[\"ab\",\"c\"],\"word2\":[\"a\",\"bc\"]}",
         "output": "true",
         "isSample": true
       },
       {
-        "input": "[[\"a\", \"cb\"], [\"ab\", \"c\"]]",
+        "input": "{\"word1\":[\"a\",\"cb\"],\"word2\":[\"ab\",\"c\"]}",
         "output": "false",
         "isSample": true
       },
       {
-        "input": "[[\"abc\", \"d\", \"defg\"], [\"abcddefg\"]]",
+        "input": "{\"word1\":[\"abc\",\"d\",\"defg\"],\"word2\":[\"abcddefg\"]}",
         "output": "true",
         "isSample": false
       },
       {
-        "input": "[[\"a\"], [\"a\"]]",
+        "input": "{\"word1\":[\"a\"],\"word2\":[\"a\"]}",
         "output": "true",
         "isSample": false
       },
       {
-        "input": "[[\"a\", \"b\"], [\"ab\"]]",
+        "input": "{\"word1\":[\"a\",\"b\"],\"word2\":[\"ab\"]}",
         "output": "true",
         "isSample": false
       },
       {
-        "input": "[[\"ab\"], [\"a\", \"b\", \"c\"]]",
+        "input": "{\"word1\":[\"ab\"],\"word2\":[\"a\",\"b\",\"c\"]}",
         "output": "false",
         "isSample": false
       },
       {
-        "input": "[[\"\"], [\"\"]]",
+        "input": "{\"word1\":[\"\"],\"word2\":[\"\"]}",
         "output": "true",
         "isSample": false
       },
       {
-        "input": "[[\"abc\"], [\"ab\", \"\"]]",
+        "input": "{\"word1\":[\"abc\"],\"word2\":[\"ab\",\"\"]}",
         "output": "false",
         "isSample": false
       }
@@ -779,53 +812,56 @@
     "baseMemoryLimit": 256,
     "baseTimeLimit": 1000,
     "timeLimitMultiplier": {
-      "cpp": 1.0,
+      "cpp": 1,
       "java": 1.5,
-      "python": 2.0
+      "python": 2
     },
     "starterCode": {
-      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
-      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
-      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+      "54": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    string longestCommonPrefix(vector<string>& strs) {\n        \n    }\n};\n",
+      "62": "import java.util.*;\n\nclass Solution {\n    public String longestCommonPrefix(String[] strs) {\n        \n    }\n}\n",
+      "71": "class Solution:\n    def longestCommonPrefix(self, strs: list[str]) -> str:\n        pass\n",
+      "python": "class Solution:\n    def longestCommonPrefix(self, strs: list[str]) -> str:\n        pass\n",
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    string longestCommonPrefix(vector<string>& strs) {\n        \n    }\n};\n",
+      "java": "import java.util.*;\n\nclass Solution {\n    public String longestCommonPrefix(String[] strs) {\n        \n    }\n}\n"
     },
     "testCases": [
       {
-        "input": "[[\"flower\",\"flow\",\"flight\"]]",
+        "input": "{\"strs\":[\"flower\",\"flow\",\"flight\"]}",
         "output": "\"fl\"",
         "isSample": true
       },
       {
-        "input": "[[\"dog\",\"racecar\",\"car\"]]",
+        "input": "{\"strs\":[\"dog\",\"racecar\",\"car\"]}",
         "output": "\"\"",
         "isSample": true
       },
       {
-        "input": "[[\"interspecies\",\"interstellar\",\"interstate\"]]",
+        "input": "{\"strs\":[\"interspecies\",\"interstellar\",\"interstate\"]}",
         "output": "\"inters\"",
         "isSample": false
       },
       {
-        "input": "[[\"throne\",\"throne\"]]",
+        "input": "{\"strs\":[\"throne\",\"throne\"]}",
         "output": "\"throne\"",
         "isSample": false
       },
       {
-        "input": "[[\"a\"]]",
+        "input": "{\"strs\":[\"a\"]}",
         "output": "\"a\"",
         "isSample": false
       },
       {
-        "input": "[[\"\",\"b\"]]",
+        "input": "{\"strs\":[\"\",\"b\"]}",
         "output": "\"\"",
         "isSample": false
       },
       {
-        "input": "[[\"apple\",\"ape\",\"april\"]]",
+        "input": "{\"strs\":[\"apple\",\"ape\",\"april\"]}",
         "output": "\"ap\"",
         "isSample": false
       },
       {
-        "input": "[[\"prefix\",\"prefixing\",\"pre\"]]",
+        "input": "{\"strs\":[\"prefix\",\"prefixing\",\"pre\"]}",
         "output": "\"pre\"",
         "isSample": false
       }
@@ -848,53 +884,56 @@
     "baseMemoryLimit": 256,
     "baseTimeLimit": 1000,
     "timeLimitMultiplier": {
-      "cpp": 1.0,
+      "cpp": 1,
       "java": 1.5,
-      "python": 2.0
+      "python": 2
     },
     "starterCode": {
-      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
-      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
-      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+      "54": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    int lengthOfLongestSubstring(string& s) {\n        \n    }\n};\n",
+      "62": "import java.util.*;\n\nclass Solution {\n    public int lengthOfLongestSubstring(String s) {\n        \n    }\n}\n",
+      "71": "class Solution:\n    def lengthOfLongestSubstring(self, s: str) -> int:\n        pass\n",
+      "python": "class Solution:\n    def lengthOfLongestSubstring(self, s: str) -> int:\n        pass\n",
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    int lengthOfLongestSubstring(string& s) {\n        \n    }\n};\n",
+      "java": "import java.util.*;\n\nclass Solution {\n    public int lengthOfLongestSubstring(String s) {\n        \n    }\n}\n"
     },
     "testCases": [
       {
-        "input": "[\"abcabcbb\"]",
+        "input": "{\"s\":\"abcabcbb\"}",
         "output": "3",
         "isSample": true
       },
       {
-        "input": "[\"bbbbb\"]",
+        "input": "{\"s\":\"bbbbb\"}",
         "output": "1",
         "isSample": true
       },
       {
-        "input": "[\"pwwkew\"]",
+        "input": "{\"s\":\"pwwkew\"}",
         "output": "3",
         "isSample": false
       },
       {
-        "input": "[\"\"]",
+        "input": "{\"s\":\"\"}",
         "output": "0",
         "isSample": false
       },
       {
-        "input": "[\"au\"]",
+        "input": "{\"s\":\"au\"}",
         "output": "2",
         "isSample": false
       },
       {
-        "input": "[\"dvdf\"]",
+        "input": "{\"s\":\"dvdf\"}",
         "output": "3",
         "isSample": false
       },
       {
-        "input": "[\"abcdefg\"]",
+        "input": "{\"s\":\"abcdefg\"}",
         "output": "7",
         "isSample": false
       },
       {
-        "input": "[\"abba\"]",
+        "input": "{\"s\":\"abba\"}",
         "output": "2",
         "isSample": false
       }
@@ -919,53 +958,56 @@
     "baseMemoryLimit": 256,
     "baseTimeLimit": 1000,
     "timeLimitMultiplier": {
-      "cpp": 1.0,
+      "cpp": 1,
       "java": 1.5,
-      "python": 2.0
+      "python": 2
     },
     "starterCode": {
-      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
-      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
-      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+      "54": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    vector<vector<string>> groupAnagrams(vector<string>& strs) {\n        \n    }\n};\n",
+      "62": "import java.util.*;\n\nclass Solution {\n    public List<List<String>> groupAnagrams(String[] strs) {\n        \n    }\n}\n",
+      "71": "class Solution:\n    def groupAnagrams(self, strs: list[str]) -> list[list[str]]:\n        pass\n",
+      "python": "class Solution:\n    def groupAnagrams(self, strs: list[str]) -> list[list[str]]:\n        pass\n",
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    vector<vector<string>> groupAnagrams(vector<string>& strs) {\n        \n    }\n};\n",
+      "java": "import java.util.*;\n\nclass Solution {\n    public List<List<String>> groupAnagrams(String[] strs) {\n        \n    }\n}\n"
     },
     "testCases": [
       {
-        "input": "[[\"eat\",\"tea\",\"tan\",\"ate\",\"nat\",\"bat\"]]",
+        "input": "{\"strs\":[\"eat\",\"tea\",\"tan\",\"ate\",\"nat\",\"bat\"]}",
         "output": "[[\"bat\"],[\"nat\",\"tan\"],[\"ate\",\"eat\",\"tea\"]]",
         "isSample": true
       },
       {
-        "input": "[[\"\"]]",
+        "input": "{\"strs\":[\"\"]}",
         "output": "[[\"\"]]",
         "isSample": true
       },
       {
-        "input": "[[\"a\"]]",
+        "input": "{\"strs\":[\"a\"]}",
         "output": "[[\"a\"]]",
         "isSample": false
       },
       {
-        "input": "[[\"abc\",\"bca\",\"cab\",\"xyz\",\"zyx\"]]",
+        "input": "{\"strs\":[\"abc\",\"bca\",\"cab\",\"xyz\",\"zyx\"]}",
         "output": "[[\"abc\",\"bca\",\"cab\"],[\"xyz\",\"zyx\"]]",
         "isSample": false
       },
       {
-        "input": "[[\"rat\",\"tar\",\"art\"]]",
+        "input": "{\"strs\":[\"rat\",\"tar\",\"art\"]}",
         "output": "[[\"art\",\"rat\",\"tar\"]]",
         "isSample": false
       },
       {
-        "input": "[[\"a\",\"b\",\"c\"]]",
+        "input": "{\"strs\":[\"a\",\"b\",\"c\"]}",
         "output": "[[\"a\"],[\"b\"],[\"c\"]]",
         "isSample": false
       },
       {
-        "input": "[[\"ab\",\"ba\",\"ab\",\"ba\"]]",
+        "input": "{\"strs\":[\"ab\",\"ba\",\"ab\",\"ba\"]}",
         "output": "[[\"ab\",\"ba\",\"ab\",\"ba\"]]",
         "isSample": false
       },
       {
-        "input": "[[\"hello\",\"olleh\",\"world\"]]",
+        "input": "{\"strs\":[\"hello\",\"olleh\",\"world\"]}",
         "output": "[[\"hello\",\"olleh\"],[\"world\"]]",
         "isSample": false
       }
@@ -986,53 +1028,56 @@
     "baseMemoryLimit": 256,
     "baseTimeLimit": 1000,
     "timeLimitMultiplier": {
-      "cpp": 1.0,
+      "cpp": 1,
       "java": 1.5,
-      "python": 2.0
+      "python": 2
     },
     "starterCode": {
-      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
-      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
-      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+      "54": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    int myAtoi(string& s) {\n        \n    }\n};\n",
+      "62": "import java.util.*;\n\nclass Solution {\n    public int myAtoi(String s) {\n        \n    }\n}\n",
+      "71": "class Solution:\n    def myAtoi(self, s: str) -> int:\n        pass\n",
+      "python": "class Solution:\n    def myAtoi(self, s: str) -> int:\n        pass\n",
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    int myAtoi(string& s) {\n        \n    }\n};\n",
+      "java": "import java.util.*;\n\nclass Solution {\n    public int myAtoi(String s) {\n        \n    }\n}\n"
     },
     "testCases": [
       {
-        "input": "[\"42\"]",
+        "input": "{\"s\":\"42\"}",
         "output": "42",
         "isSample": true
       },
       {
-        "input": "[\"   -42\"]",
+        "input": "{\"s\":\"   -42\"}",
         "output": "-42",
         "isSample": true
       },
       {
-        "input": "[\"4193 with words\"]",
+        "input": "{\"s\":\"4193 with words\"}",
         "output": "4193",
         "isSample": false
       },
       {
-        "input": "[\"words and 987\"]",
+        "input": "{\"s\":\"words and 987\"}",
         "output": "0",
         "isSample": false
       },
       {
-        "input": "[\"-91283472332\"]",
+        "input": "{\"s\":\"-91283472332\"}",
         "output": "-2147483648",
         "isSample": false
       },
       {
-        "input": "[\"91283472332\"]",
+        "input": "{\"s\":\"91283472332\"}",
         "output": "2147483647",
         "isSample": false
       },
       {
-        "input": "[\"+1\"]",
+        "input": "{\"s\":\"+1\"}",
         "output": "1",
         "isSample": false
       },
       {
-        "input": "[\"  +0 123\"]",
+        "input": "{\"s\":\"  +0 123\"}",
         "output": "0",
         "isSample": false
       }
@@ -1057,53 +1102,56 @@
     "baseMemoryLimit": 256,
     "baseTimeLimit": 1000,
     "timeLimitMultiplier": {
-      "cpp": 1.0,
+      "cpp": 1,
       "java": 1.5,
-      "python": 2.0
+      "python": 2
     },
     "starterCode": {
-      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
-      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
-      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+      "54": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    string decodeString(string& s) {\n        \n    }\n};\n",
+      "62": "import java.util.*;\n\nclass Solution {\n    public String decodeString(String s) {\n        \n    }\n}\n",
+      "71": "class Solution:\n    def decodeString(self, s: str) -> str:\n        pass\n",
+      "python": "class Solution:\n    def decodeString(self, s: str) -> str:\n        pass\n",
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    string decodeString(string& s) {\n        \n    }\n};\n",
+      "java": "import java.util.*;\n\nclass Solution {\n    public String decodeString(String s) {\n        \n    }\n}\n"
     },
     "testCases": [
       {
-        "input": "[\"3[a]2[bc]\"]",
+        "input": "{\"s\":\"3[a]2[bc]\"}",
         "output": "\"aaabcbc\"",
         "isSample": true
       },
       {
-        "input": "[\"3[a2[c]]\"]",
+        "input": "{\"s\":\"3[a2[c]]\"}",
         "output": "\"accaccacc\"",
         "isSample": true
       },
       {
-        "input": "[\"2[abc]3[cd]ef\"]",
+        "input": "{\"s\":\"2[abc]3[cd]ef\"}",
         "output": "\"abcabccdcdcdef\"",
         "isSample": false
       },
       {
-        "input": "[\"abc3[cd]xyz\"]",
+        "input": "{\"s\":\"abc3[cd]xyz\"}",
         "output": "\"abccdcdcdxyz\"",
         "isSample": false
       },
       {
-        "input": "[\"10[a]\"]",
+        "input": "{\"s\":\"10[a]\"}",
         "output": "\"aaaaaaaaaa\"",
         "isSample": false
       },
       {
-        "input": "[\"2[2[abbb]c]\"]",
+        "input": "{\"s\":\"2[2[abbb]c]\"}",
         "output": "\"abbbabbbcabbbabbbc\"",
         "isSample": false
       },
       {
-        "input": "[\"z\"]",
+        "input": "{\"s\":\"z\"}",
         "output": "\"z\"",
         "isSample": false
       },
       {
-        "input": "[\"2[a]3[b]4[c]\"]",
+        "input": "{\"s\":\"2[a]3[b]4[c]\"}",
         "output": "\"aabbbcccc\"",
         "isSample": false
       }
@@ -1128,53 +1176,56 @@
     "baseMemoryLimit": 256,
     "baseTimeLimit": 1500,
     "timeLimitMultiplier": {
-      "cpp": 1.0,
+      "cpp": 1,
       "java": 1.5,
-      "python": 2.0
+      "python": 2
     },
     "starterCode": {
-      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
-      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
-      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+      "54": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    string minWindow(string& s, string& t) {\n        \n    }\n};\n",
+      "62": "import java.util.*;\n\nclass Solution {\n    public String minWindow(String s, String t) {\n        \n    }\n}\n",
+      "71": "class Solution:\n    def minWindow(self, s: str, t: str) -> str:\n        pass\n",
+      "python": "class Solution:\n    def minWindow(self, s: str, t: str) -> str:\n        pass\n",
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    string minWindow(string& s, string& t) {\n        \n    }\n};\n",
+      "java": "import java.util.*;\n\nclass Solution {\n    public String minWindow(String s, String t) {\n        \n    }\n}\n"
     },
     "testCases": [
       {
-        "input": "[\"ADOBECODEBANC\", \"ABC\"]",
+        "input": "{\"s\":\"ADOBECODEBANC\",\"t\":\"ABC\"}",
         "output": "\"BANC\"",
         "isSample": true
       },
       {
-        "input": "[\"a\", \"a\"]",
+        "input": "{\"s\":\"a\",\"t\":\"a\"}",
         "output": "\"a\"",
         "isSample": true
       },
       {
-        "input": "[\"a\", \"aa\"]",
+        "input": "{\"s\":\"a\",\"t\":\"aa\"}",
         "output": "\"\"",
         "isSample": false
       },
       {
-        "input": "[\"ab\", \"b\"]",
+        "input": "{\"s\":\"ab\",\"t\":\"b\"}",
         "output": "\"b\"",
         "isSample": false
       },
       {
-        "input": "[\"aaabbbccc\", \"abc\"]",
+        "input": "{\"s\":\"aaabbbccc\",\"t\":\"abc\"}",
         "output": "\"abbbc\"",
         "isSample": false
       },
       {
-        "input": "[\"donotpanic\", \"not\"]",
+        "input": "{\"s\":\"donotpanic\",\"t\":\"not\"}",
         "output": "\"not\"",
         "isSample": false
       },
       {
-        "input": "[\"coobfecbda\", \"abc\"]",
+        "input": "{\"s\":\"coobfecbda\",\"t\":\"abc\"}",
         "output": "\"cbda\"",
         "isSample": false
       },
       {
-        "input": "[\"a\", \"b\"]",
+        "input": "{\"s\":\"a\",\"t\":\"b\"}",
         "output": "\"\"",
         "isSample": false
       }
@@ -1198,53 +1249,56 @@
     "baseMemoryLimit": 256,
     "baseTimeLimit": 1000,
     "timeLimitMultiplier": {
-      "cpp": 1.0,
+      "cpp": 1,
       "java": 1.5,
-      "python": 2.0
+      "python": 2
     },
     "starterCode": {
-      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
-      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
-      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+      "54": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    string shortestPalindrome(string& s) {\n        \n    }\n};\n",
+      "62": "import java.util.*;\n\nclass Solution {\n    public String shortestPalindrome(String s) {\n        \n    }\n}\n",
+      "71": "class Solution:\n    def shortestPalindrome(self, s: str) -> str:\n        pass\n",
+      "python": "class Solution:\n    def shortestPalindrome(self, s: str) -> str:\n        pass\n",
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    string shortestPalindrome(string& s) {\n        \n    }\n};\n",
+      "java": "import java.util.*;\n\nclass Solution {\n    public String shortestPalindrome(String s) {\n        \n    }\n}\n"
     },
     "testCases": [
       {
-        "input": "[\"aacecaaa\"]",
+        "input": "{\"s\":\"aacecaaa\"}",
         "output": "\"aaacecaaa\"",
         "isSample": true
       },
       {
-        "input": "[\"abcd\"]",
+        "input": "{\"s\":\"abcd\"}",
         "output": "\"dcbabcd\"",
         "isSample": true
       },
       {
-        "input": "[\"\"]",
+        "input": "{\"s\":\"\"}",
         "output": "\"\"",
         "isSample": false
       },
       {
-        "input": "[\"a\"]",
+        "input": "{\"s\":\"a\"}",
         "output": "\"a\"",
         "isSample": false
       },
       {
-        "input": "[\"abacaba\"]",
+        "input": "{\"s\":\"abacaba\"}",
         "output": "\"abacaba\"",
         "isSample": false
       },
       {
-        "input": "[\"ba\"]",
+        "input": "{\"s\":\"ba\"}",
         "output": "\"aba\"",
         "isSample": false
       },
       {
-        "input": "[\"abbac\"]",
+        "input": "{\"s\":\"abbac\"}",
         "output": "\"cabbac\"",
         "isSample": false
       },
       {
-        "input": "[\"amood\"]",
+        "input": "{\"s\":\"amood\"}",
         "output": "\"doomamood\"",
         "isSample": false
       }
@@ -1268,53 +1322,56 @@
     "baseMemoryLimit": 512,
     "baseTimeLimit": 1000,
     "timeLimitMultiplier": {
-      "cpp": 1.0,
+      "cpp": 1,
       "java": 1.5,
-      "python": 2.0
+      "python": 2
     },
     "starterCode": {
-      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
-      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
-      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+      "54": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    string findTheWinner(vector<string>& votes) {\n        \n    }\n};\n",
+      "62": "import java.util.*;\n\nclass Solution {\n    public String findTheWinner(String[] votes) {\n        \n    }\n}\n",
+      "71": "class Solution:\n    def findTheWinner(self, votes: list[str]) -> str:\n        pass\n",
+      "python": "class Solution:\n    def findTheWinner(self, votes: list[str]) -> str:\n        pass\n",
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    string findTheWinner(vector<string>& votes) {\n        \n    }\n};\n",
+      "java": "import java.util.*;\n\nclass Solution {\n    public String findTheWinner(String[] votes) {\n        \n    }\n}\n"
     },
     "testCases": [
       {
-        "input": "[[\"A\", \"B\", \"A\", \"C\", \"B\"]]",
+        "input": "{\"votes\":[\"A\",\"B\",\"A\",\"C\",\"B\"]}",
         "output": "\"C\"",
         "isSample": true
       },
       {
-        "input": "[[\"A\", \"B\", \"C\"]]",
+        "input": "{\"votes\":[\"A\",\"B\",\"C\"]}",
         "output": "\"A\"",
         "isSample": true
       },
       {
-        "input": "[[\"A\", \"A\", \"B\", \"B\"]]",
+        "input": "{\"votes\":[\"A\",\"A\",\"B\",\"B\"]}",
         "output": "\"\"",
         "isSample": false
       },
       {
-        "input": "[[\"X\"]]",
+        "input": "{\"votes\":[\"X\"]}",
         "output": "\"X\"",
         "isSample": false
       },
       {
-        "input": "[[\"A\", \"B\", \"C\", \"D\", \"E\", \"F\", \"A\", \"B\", \"C\", \"D\", \"E\"]]",
+        "input": "{\"votes\":[\"A\",\"B\",\"C\",\"D\",\"E\",\"F\",\"A\",\"B\",\"C\",\"D\",\"E\"]}",
         "output": "\"F\"",
         "isSample": false
       },
       {
-        "input": "[[\"apple\", \"banana\", \"apple\", \"orange\"]]",
+        "input": "{\"votes\":[\"apple\",\"banana\",\"apple\",\"orange\"]}",
         "output": "\"banana\"",
         "isSample": false
       },
       {
-        "input": "[[\"z\", \"y\", \"x\", \"y\", \"z\"]]",
+        "input": "{\"votes\":[\"z\",\"y\",\"x\",\"y\",\"z\"]}",
         "output": "\"x\"",
         "isSample": false
       },
       {
-        "input": "[[\"a\", \"b\", \"a\", \"b\", \"c\", \"d\", \"c\", \"d\"]]",
+        "input": "{\"votes\":[\"a\",\"b\",\"a\",\"b\",\"c\",\"d\",\"c\",\"d\"]}",
         "output": "\"\"",
         "isSample": false
       }
@@ -1337,53 +1394,56 @@
     "baseMemoryLimit": 512,
     "baseTimeLimit": 1000,
     "timeLimitMultiplier": {
-      "cpp": 1.0,
+      "cpp": 1,
       "java": 1.5,
-      "python": 2.0
+      "python": 2
     },
     "starterCode": {
-      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
-      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
-      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+      "54": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    bool findPairs(vector<int>& nums, int k) {\n        \n    }\n};\n",
+      "62": "import java.util.*;\n\nclass Solution {\n    public boolean findPairs(int[] nums, int k) {\n        \n    }\n}\n",
+      "71": "class Solution:\n    def findPairs(self, nums: list[int], k: int) -> bool:\n        pass\n",
+      "python": "class Solution:\n    def findPairs(self, nums: list[int], k: int) -> bool:\n        pass\n",
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    bool findPairs(vector<int>& nums, int k) {\n        \n    }\n};\n",
+      "java": "import java.util.*;\n\nclass Solution {\n    public boolean findPairs(int[] nums, int k) {\n        \n    }\n}\n"
     },
     "testCases": [
       {
-        "input": "[[1, 5, 3, 4, 2], 3]",
+        "input": "{\"nums\":[1,5,3,4,2],\"k\":3}",
         "output": "true",
         "isSample": true
       },
       {
-        "input": "[[1, 2, 3, 4, 5], 7]",
+        "input": "{\"nums\":[1,2,3,4,5],\"k\":7}",
         "output": "false",
         "isSample": true
       },
       {
-        "input": "[[1, 3, 1, 5, 4], 0]",
+        "input": "{\"nums\":[1,3,1,5,4],\"k\":0}",
         "output": "true",
         "isSample": false
       },
       {
-        "input": "[[1, 2, 4, 4, 5], 0]",
+        "input": "{\"nums\":[1,2,4,4,5],\"k\":0}",
         "output": "true",
         "isSample": false
       },
       {
-        "input": "[[1, 2, 3], 0]",
+        "input": "{\"nums\":[1,2,3],\"k\":0}",
         "output": "false",
         "isSample": false
       },
       {
-        "input": "[[-1, -2, -3], 1]",
+        "input": "{\"nums\":[-1,-2,-3],\"k\":1}",
         "output": "true",
         "isSample": false
       },
       {
-        "input": "[[1000000000, -1000000000], 2000000000]",
+        "input": "{\"nums\":[1000000000,-1000000000],\"k\":2000000000}",
         "output": "true",
         "isSample": false
       },
       {
-        "input": "[[1, 10, 100, 1000], 9]",
+        "input": "{\"nums\":[1,10,100,1000],\"k\":9}",
         "output": "true",
         "isSample": false
       }
@@ -1406,53 +1466,56 @@
     "baseMemoryLimit": 512,
     "baseTimeLimit": 1000,
     "timeLimitMultiplier": {
-      "cpp": 1.0,
+      "cpp": 1,
       "java": 1.5,
-      "python": 2.0
+      "python": 2
     },
     "starterCode": {
-      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
-      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
-      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+      "54": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    int mostFrequentDigitSum(vector<int>& nums) {\n        \n    }\n};\n",
+      "62": "import java.util.*;\n\nclass Solution {\n    public int mostFrequentDigitSum(int[] nums) {\n        \n    }\n}\n",
+      "71": "class Solution:\n    def mostFrequentDigitSum(self, nums: list[int]) -> int:\n        pass\n",
+      "python": "class Solution:\n    def mostFrequentDigitSum(self, nums: list[int]) -> int:\n        pass\n",
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    int mostFrequentDigitSum(vector<int>& nums) {\n        \n    }\n};\n",
+      "java": "import java.util.*;\n\nclass Solution {\n    public int mostFrequentDigitSum(int[] nums) {\n        \n    }\n}\n"
     },
     "testCases": [
       {
-        "input": "[[12, 30, 21, 40]]",
+        "input": "{\"nums\":[12,30,21,40]}",
         "output": "3",
         "isSample": true
       },
       {
-        "input": "[[9, 18, 27, 36, 45]]",
+        "input": "{\"nums\":[9,18,27,36,45]}",
         "output": "9",
         "isSample": true
       },
       {
-        "input": "[[11, 20, 2, 13, 4]]",
+        "input": "{\"nums\":[11,20,2,13,4]}",
         "output": "2",
         "isSample": false
       },
       {
-        "input": "[[15, 24, 33, 42, 51, 60]]",
+        "input": "{\"nums\":[15,24,33,42,51,60]}",
         "output": "6",
         "isSample": false
       },
       {
-        "input": "[[19, 28, 37, 46]]",
+        "input": "{\"nums\":[19,28,37,46]}",
         "output": "10",
         "isSample": false
       },
       {
-        "input": "[[0, 10, 100, 1000]]",
+        "input": "{\"nums\":[0,10,100,1000]}",
         "output": "1",
         "isSample": false
       },
       {
-        "input": "[[99, 99, 99]]",
+        "input": "{\"nums\":[99,99,99]}",
         "output": "18",
         "isSample": false
       },
       {
-        "input": "[[123, 456, 789]]",
+        "input": "{\"nums\":[123,456,789]}",
         "output": "24",
         "isSample": false
       }
@@ -1475,53 +1538,56 @@
     "baseMemoryLimit": 512,
     "baseTimeLimit": 1000,
     "timeLimitMultiplier": {
-      "cpp": 1.0,
+      "cpp": 1,
       "java": 1.5,
-      "python": 2.0
+      "python": 2
     },
     "starterCode": {
-      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
-      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
-      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+      "54": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    int findMaxLength(vector<int>& nums) {\n        \n    }\n};\n",
+      "62": "import java.util.*;\n\nclass Solution {\n    public int findMaxLength(int[] nums) {\n        \n    }\n}\n",
+      "71": "class Solution:\n    def findMaxLength(self, nums: list[int]) -> int:\n        pass\n",
+      "python": "class Solution:\n    def findMaxLength(self, nums: list[int]) -> int:\n        pass\n",
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    int findMaxLength(vector<int>& nums) {\n        \n    }\n};\n",
+      "java": "import java.util.*;\n\nclass Solution {\n    public int findMaxLength(int[] nums) {\n        \n    }\n}\n"
     },
     "testCases": [
       {
-        "input": "[[1, 2, 3, 4]]",
+        "input": "{\"nums\":[1,2,3,4]}",
         "output": "4",
         "isSample": true
       },
       {
-        "input": "[[1, 3, 5]]",
+        "input": "{\"nums\":[1,3,5]}",
         "output": "0",
         "isSample": true
       },
       {
-        "input": "[[2, 4, 6, 8]]",
+        "input": "{\"nums\":[2,4,6,8]}",
         "output": "0",
         "isSample": false
       },
       {
-        "input": "[[1, 2, 1, 2, 1, 2]]",
+        "input": "{\"nums\":[1,2,1,2,1,2]}",
         "output": "9",
         "isSample": false
       },
       {
-        "input": "[[0, 1, 0, 1]]",
+        "input": "{\"nums\":[0,1,0,1]}",
         "output": "4",
         "isSample": false
       },
       {
-        "input": "[[7, 8, 9]]",
+        "input": "{\"nums\":[7,8,9]}",
         "output": "2",
         "isSample": false
       },
       {
-        "input": "[[1, 1, 1, 2, 2, 2]]",
+        "input": "{\"nums\":[1,1,1,2,2,2]}",
         "output": "3",
         "isSample": false
       },
       {
-        "input": "[[2, 1, 2, 1, 2, 1, 2, 1]]",
+        "input": "{\"nums\":[2,1,2,1,2,1,2,1]}",
         "output": "16",
         "isSample": false
       }
@@ -1545,53 +1611,56 @@
     "baseMemoryLimit": 512,
     "baseTimeLimit": 1000,
     "timeLimitMultiplier": {
-      "cpp": 1.0,
+      "cpp": 1,
       "java": 1.5,
-      "python": 2.0
+      "python": 2
     },
     "starterCode": {
-      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
-      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
-      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+      "54": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    vector<vector<string>> groupStrings(vector<string>& strs) {\n        \n    }\n};\n",
+      "62": "import java.util.*;\n\nclass Solution {\n    public List<List<String>> groupStrings(String[] strs) {\n        \n    }\n}\n",
+      "71": "class Solution:\n    def groupStrings(self, strs: list[str]) -> list[list[str]]:\n        pass\n",
+      "python": "class Solution:\n    def groupStrings(self, strs: list[str]) -> list[list[str]]:\n        pass\n",
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    vector<vector<string>> groupStrings(vector<string>& strs) {\n        \n    }\n};\n",
+      "java": "import java.util.*;\n\nclass Solution {\n    public List<List<String>> groupStrings(String[] strs) {\n        \n    }\n}\n"
     },
     "testCases": [
       {
-        "input": "[[\"abc\", \"bcd\", \"ace\", \"bdf\", \"xyz\"]]",
+        "input": "{\"strs\":[\"abc\",\"bcd\",\"ace\",\"bdf\",\"xyz\"]}",
         "output": "[[\"abc\",\"bcd\",\"xyz\"],[\"ace\",\"bdf\"]]",
         "isSample": true
       },
       {
-        "input": "[[\"a\", \"b\", \"z\", \"ab\", \"bc\"]]",
+        "input": "{\"strs\":[\"a\",\"b\",\"z\",\"ab\",\"bc\"]}",
         "output": "[[\"a\",\"b\",\"z\"],[\"ab\",\"bc\"]]",
         "isSample": true
       },
       {
-        "input": "[[\"am\", \"bn\", \"co\", \"dp\"]]",
+        "input": "{\"strs\":[\"am\",\"bn\",\"co\",\"dp\"]}",
         "output": "[[\"am\",\"bn\",\"co\",\"dp\"]]",
         "isSample": false
       },
       {
-        "input": "[[\"ab\", \"ba\", \"cd\", \"dc\"]]",
+        "input": "{\"strs\":[\"ab\",\"ba\",\"cd\",\"dc\"]}",
         "output": "[[\"ab\",\"ba\",\"cd\",\"dc\"]]",
         "isSample": false
       },
       {
-        "input": "[[\"aaa\", \"bbb\", \"ccc\"]]",
+        "input": "{\"strs\":[\"aaa\",\"bbb\",\"ccc\"]}",
         "output": "[[\"aaa\",\"bbb\",\"ccc\"]]",
         "isSample": false
       },
       {
-        "input": "[[\"hello\", \"ifmmp\", \"world\"]]",
+        "input": "{\"strs\":[\"hello\",\"ifmmp\",\"world\"]}",
         "output": "[[\"hello\",\"ifmmp\"],[\"world\"]]",
         "isSample": false
       },
       {
-        "input": "[[\"a\", \"c\", \"d\", \"e\"]]",
+        "input": "{\"strs\":[\"a\",\"c\",\"d\",\"e\"]}",
         "output": "[[\"a\",\"c\",\"d\",\"e\"]]",
         "isSample": false
       },
       {
-        "input": "[[\"ab\", \"ac\", \"ad\"]]",
+        "input": "{\"strs\":[\"ab\",\"ac\",\"ad\"]}",
         "output": "[[\"ab\"],[\"ac\"],[\"ad\"]]",
         "isSample": false
       }
@@ -1614,53 +1683,56 @@
     "baseMemoryLimit": 512,
     "baseTimeLimit": 1500,
     "timeLimitMultiplier": {
-      "cpp": 1.0,
+      "cpp": 1,
       "java": 1.5,
-      "python": 2.0
+      "python": 2
     },
     "starterCode": {
-      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
-      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
-      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+      "54": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    int longestSubarray(vector<int>& nums) {\n        \n    }\n};\n",
+      "62": "import java.util.*;\n\nclass Solution {\n    public int longestSubarray(int[] nums) {\n        \n    }\n}\n",
+      "71": "class Solution:\n    def longestSubarray(self, nums: list[int]) -> int:\n        pass\n",
+      "python": "class Solution:\n    def longestSubarray(self, nums: list[int]) -> int:\n        pass\n",
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    int longestSubarray(vector<int>& nums) {\n        \n    }\n};\n",
+      "java": "import java.util.*;\n\nclass Solution {\n    public int longestSubarray(int[] nums) {\n        \n    }\n}\n"
     },
     "testCases": [
       {
-        "input": "[[1, 2, 1, 2, 3]]",
+        "input": "{\"nums\":[1,2,1,2,3]}",
         "output": "4",
         "isSample": true
       },
       {
-        "input": "[[1, 1, 2, 2, 3, 3]]",
+        "input": "{\"nums\":[1,1,2,2,3,3]}",
         "output": "6",
         "isSample": true
       },
       {
-        "input": "[[1, 1, 1]]",
+        "input": "{\"nums\":[1,1,1]}",
         "output": "3",
         "isSample": false
       },
       {
-        "input": "[[1, 2, 3, 4, 5]]",
+        "input": "{\"nums\":[1,2,3,4,5]}",
         "output": "5",
         "isSample": false
       },
       {
-        "input": "[[1, 2, 2, 1, 3, 3]]",
+        "input": "{\"nums\":[1,2,2,1,3,3]}",
         "output": "6",
         "isSample": false
       },
       {
-        "input": "[[1, 2, 3, 1, 2, 3, 4]]",
+        "input": "{\"nums\":[1,2,3,1,2,3,4]}",
         "output": "6",
         "isSample": false
       },
       {
-        "input": "[[1, 2, 1, 3, 1, 4]]",
-        "output": "2",
+        "input": "{\"nums\":[1,2,1,3,1,4]}",
+        "output": "3",
         "isSample": false
       },
       {
-        "input": "[[5, 5, 5, 5]]",
+        "input": "{\"nums\":[5,5,5,5]}",
         "output": "4",
         "isSample": false
       }
@@ -1681,53 +1753,56 @@
     "baseMemoryLimit": 512,
     "baseTimeLimit": 1000,
     "timeLimitMultiplier": {
-      "cpp": 1.0,
+      "cpp": 1,
       "java": 1.5,
-      "python": 2.0
+      "python": 2
     },
     "starterCode": {
-      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
-      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
-      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+      "54": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    int fractionToDecimal(int numerator, int denominator) {\n        \n    }\n};\n",
+      "62": "import java.util.*;\n\nclass Solution {\n    public int fractionToDecimal(int numerator, int denominator) {\n        \n    }\n}\n",
+      "71": "class Solution:\n    def fractionToDecimal(self, numerator: int, denominator: int) -> int:\n        pass\n",
+      "python": "class Solution:\n    def fractionToDecimal(self, numerator: int, denominator: int) -> int:\n        pass\n",
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    int fractionToDecimal(int numerator, int denominator) {\n        \n    }\n};\n",
+      "java": "import java.util.*;\n\nclass Solution {\n    public int fractionToDecimal(int numerator, int denominator) {\n        \n    }\n}\n"
     },
     "testCases": [
       {
-        "input": "[1, 3]",
+        "input": "{\"numerator\":1,\"denominator\":3}",
         "output": "1",
         "isSample": true
       },
       {
-        "input": "[1, 2]",
+        "input": "{\"numerator\":1,\"denominator\":2}",
         "output": "0",
         "isSample": true
       },
       {
-        "input": "[1, 7]",
+        "input": "{\"numerator\":1,\"denominator\":7}",
         "output": "6",
         "isSample": false
       },
       {
-        "input": "[22, 7]",
+        "input": "{\"numerator\":22,\"denominator\":7}",
         "output": "6",
         "isSample": false
       },
       {
-        "input": "[1, 6]",
+        "input": "{\"numerator\":1,\"denominator\":6}",
         "output": "1",
         "isSample": false
       },
       {
-        "input": "[1, 11]",
+        "input": "{\"numerator\":1,\"denominator\":11}",
         "output": "2",
         "isSample": false
       },
       {
-        "input": "[3, 8]",
+        "input": "{\"numerator\":3,\"denominator\":8}",
         "output": "0",
         "isSample": false
       },
       {
-        "input": "[1, 17]",
+        "input": "{\"numerator\":1,\"denominator\":17}",
         "output": "16",
         "isSample": false
       }
@@ -1752,53 +1827,56 @@
     "baseMemoryLimit": 512,
     "baseTimeLimit": 1000,
     "timeLimitMultiplier": {
-      "cpp": 1.0,
+      "cpp": 1,
       "java": 1.5,
-      "python": 2.0
+      "python": 2
     },
     "starterCode": {
-      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
-      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
-      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+      "54": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    int maxPoints(vector<vector<int>>& points) {\n        \n    }\n};\n",
+      "62": "import java.util.*;\n\nclass Solution {\n    public int maxPoints(int[][] points) {\n        \n    }\n}\n",
+      "71": "class Solution:\n    def maxPoints(self, points: list[list[int]]) -> int:\n        pass\n",
+      "python": "class Solution:\n    def maxPoints(self, points: list[list[int]]) -> int:\n        pass\n",
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    int maxPoints(vector<vector<int>>& points) {\n        \n    }\n};\n",
+      "java": "import java.util.*;\n\nclass Solution {\n    public int maxPoints(int[][] points) {\n        \n    }\n}\n"
     },
     "testCases": [
       {
-        "input": "[[[1,1],[2,2],[3,3]]]",
+        "input": "{\"points\":[[1,1],[2,2],[3,3]]}",
         "output": "3",
         "isSample": true
       },
       {
-        "input": "[[[1,1],[3,2],[5,3],[4,1],[2,3],[1,4]]]",
+        "input": "{\"points\":[[1,1],[3,2],[5,3],[4,1],[2,3],[1,4]]}",
         "output": "4",
         "isSample": true
       },
       {
-        "input": "[[[1,1]]]",
+        "input": "{\"points\":[[1,1]]}",
         "output": "1",
         "isSample": false
       },
       {
-        "input": "[[[1,1],[2,2]]]",
+        "input": "{\"points\":[[1,1],[2,2]]}",
         "output": "2",
         "isSample": false
       },
       {
-        "input": "[[[0,0],[1,1],[0,1],[1,0]]]",
+        "input": "{\"points\":[[0,0],[1,1],[0,1],[1,0]]}",
         "output": "2",
         "isSample": false
       },
       {
-        "input": "[[[0,0],[1,0],[2,0],[3,0],[0,1],[0,2]]]",
+        "input": "{\"points\":[[0,0],[1,0],[2,0],[3,0],[0,1],[0,2]]}",
         "output": "4",
         "isSample": false
       },
       {
-        "input": "[[[0,0],[1,1],[2,2],[3,3],[1,2],[2,4],[3,6]]]",
+        "input": "{\"points\":[[0,0],[1,1],[2,2],[3,3],[1,2],[2,4],[3,6]]}",
         "output": "4",
         "isSample": false
       },
       {
-        "input": "[[[1,1],[2,2],[3,3],[4,4],[5,5],[1,2],[2,3],[3,4]]]",
+        "input": "{\"points\":[[1,1],[2,2],[3,3],[4,4],[5,5],[1,2],[2,3],[3,4]]}",
         "output": "5",
         "isSample": false
       }
@@ -1824,54 +1902,57 @@
     "baseMemoryLimit": 512,
     "baseTimeLimit": 2000,
     "timeLimitMultiplier": {
-      "cpp": 1.0,
+      "cpp": 1,
       "java": 1.5,
-      "python": 2.0
+      "python": 2
     },
     "starterCode": {
-      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
-      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
-      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+      "54": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    int findSubstring(string& s, vector<string>& words) {\n        \n    }\n};\n",
+      "62": "import java.util.*;\n\nclass Solution {\n    public int findSubstring(String s, String[] words) {\n        \n    }\n}\n",
+      "71": "class Solution:\n    def findSubstring(self, s: str, words: list[str]) -> int:\n        pass\n",
+      "python": "class Solution:\n    def findSubstring(self, s: str, words: list[str]) -> int:\n        pass\n",
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    int findSubstring(string& s, vector<string>& words) {\n        \n    }\n};\n",
+      "java": "import java.util.*;\n\nclass Solution {\n    public int findSubstring(String s, String[] words) {\n        \n    }\n}\n"
     },
     "testCases": [
       {
-        "input": "[\"barfoothefoobarman\", [\"foo\",\"bar\"]]",
+        "input": "{\"s\":\"barfoothefoobarman\",\"words\":[\"foo\",\"bar\"]}",
         "output": "0",
         "isSample": true
       },
       {
-        "input": "[\"wordgoodgoodgoodword\", [\"word\",\"good\",\"best\",\"word\"]]",
+        "input": "{\"s\":\"wordgoodgoodgoodword\",\"words\":[\"word\",\"good\",\"best\",\"word\"]}",
         "output": "-1",
         "isSample": true
       },
       {
-        "input": "[\"barfoofoobarthefoobarman\", [\"bar\",\"foo\",\"the\"]]",
+        "input": "{\"s\":\"barfoofoobarthefoobarman\",\"words\":[\"bar\",\"foo\",\"the\"]}",
         "output": "6",
         "isSample": false
       },
       {
-        "input": "[\"wordgoodgoodgoodword\", [\"word\",\"good\",\"best\",\"good\"]]",
+        "input": "{\"s\":\"wordgoodgoodgoodword\",\"words\":[\"word\",\"good\",\"best\",\"good\"]}",
         "output": "-1",
         "isSample": false
       },
       {
-        "input": "[\"lingmindraboofooowingdingbarrwingcarerabybabarfoothefoobarman\", [\"fooo\",\"barr\",\"wing\",\"ding\"]]",
+        "input": "{\"s\":\"lingmindraboofooowingdingbarrwingcarerabybabarfoothefoobarman\",\"words\":[\"fooo\",\"barr\",\"wing\",\"ding\"]}",
         "output": "13",
         "isSample": false
       },
       {
-        "input": "[\"aaaaaaaa\", [\"aa\",\"aa\"]]",
+        "input": "{\"s\":\"aaaaaaaa\",\"words\":[\"aa\",\"aa\"]}",
         "output": "0",
         "isSample": false
       },
       {
-        "input": "[\"catbatratcatbat\", [\"cat\",\"bat\"]]",
+        "input": "{\"s\":\"catbatratcatbat\",\"words\":[\"cat\",\"bat\"]}",
         "output": "0",
         "isSample": false
       },
       {
-        "input": "[\"ababaab\", [\"ab\",\"ba\"]]",
-        "output": "1",
+        "input": "{\"s\":\"ababaab\",\"words\":[\"ab\",\"ba\"]}",
+        "output": "3",
         "isSample": false
       }
     ]
@@ -1893,14 +1974,17 @@
     "baseMemoryLimit": 256,
     "baseTimeLimit": 1000,
     "timeLimitMultiplier": {
-      "cpp": 1.0,
+      "cpp": 1,
       "java": 1.5,
-      "python": 2.0
+      "python": 2
     },
     "starterCode": {
-      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
-      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
-      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+      "54": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    bool backspaceCompare(string& s, string& t) {\n        \n    }\n};\n",
+      "62": "import java.util.*;\n\nclass Solution {\n    public boolean backspaceCompare(String s, String t) {\n        \n    }\n}\n",
+      "71": "class Solution:\n    def backspaceCompare(self, s: str, t: str) -> bool:\n        pass\n",
+      "python": "class Solution:\n    def backspaceCompare(self, s: str, t: str) -> bool:\n        pass\n",
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    bool backspaceCompare(string& s, string& t) {\n        \n    }\n};\n",
+      "java": "import java.util.*;\n\nclass Solution {\n    public boolean backspaceCompare(String s, String t) {\n        \n    }\n}\n"
     },
     "testCases": [
       {
@@ -1964,14 +2048,17 @@
     "baseMemoryLimit": 256,
     "baseTimeLimit": 1000,
     "timeLimitMultiplier": {
-      "cpp": 1.0,
+      "cpp": 1,
       "java": 1.5,
-      "python": 2.0
+      "python": 2
     },
     "starterCode": {
-      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
-      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
-      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+      "54": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    int calPoints(vector<string>& operations) {\n        \n    }\n};\n",
+      "62": "import java.util.*;\n\nclass Solution {\n    public int calPoints(String[] operations) {\n        \n    }\n}\n",
+      "71": "class Solution:\n    def calPoints(self, operations: list[str]) -> int:\n        pass\n",
+      "python": "class Solution:\n    def calPoints(self, operations: list[str]) -> int:\n        pass\n",
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    int calPoints(vector<string>& operations) {\n        \n    }\n};\n",
+      "java": "import java.util.*;\n\nclass Solution {\n    public int calPoints(String[] operations) {\n        \n    }\n}\n"
     },
     "testCases": [
       {
@@ -1991,12 +2078,12 @@
       },
       {
         "input": "{\"operations\": [\"10\",\"20\",\"30\",\"D\",\"+\"]}",
-        "output": "120",
+        "output": "210",
         "isSample": false
       },
       {
         "input": "{\"operations\": [\"-5\",\"-10\",\"D\",\"C\",\"+\"]}",
-        "output": "-25",
+        "output": "-30",
         "isSample": false
       },
       {
@@ -2032,14 +2119,17 @@
     "baseMemoryLimit": 256,
     "baseTimeLimit": 1000,
     "timeLimitMultiplier": {
-      "cpp": 1.0,
+      "cpp": 1,
       "java": 1.5,
-      "python": 2.0
+      "python": 2
     },
     "starterCode": {
-      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
-      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
-      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+      "54": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    string makeGood(string& s) {\n        \n    }\n};\n",
+      "62": "import java.util.*;\n\nclass Solution {\n    public String makeGood(String s) {\n        \n    }\n}\n",
+      "71": "class Solution:\n    def makeGood(self, s: str) -> str:\n        pass\n",
+      "python": "class Solution:\n    def makeGood(self, s: str) -> str:\n        pass\n",
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    string makeGood(string& s) {\n        \n    }\n};\n",
+      "java": "import java.util.*;\n\nclass Solution {\n    public String makeGood(String s) {\n        \n    }\n}\n"
     },
     "testCases": [
       {
@@ -2101,14 +2191,17 @@
     "baseMemoryLimit": 256,
     "baseTimeLimit": 1000,
     "timeLimitMultiplier": {
-      "cpp": 1.0,
+      "cpp": 1,
       "java": 1.5,
-      "python": 2.0
+      "python": 2
     },
     "starterCode": {
-      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
-      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
-      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+      "54": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    vector<int> dailyTemperatures(vector<int>& temperatures) {\n        \n    }\n};\n",
+      "62": "import java.util.*;\n\nclass Solution {\n    public int[] dailyTemperatures(int[] temperatures) {\n        \n    }\n}\n",
+      "71": "class Solution:\n    def dailyTemperatures(self, temperatures: list[int]) -> list[int]:\n        pass\n",
+      "python": "class Solution:\n    def dailyTemperatures(self, temperatures: list[int]) -> list[int]:\n        pass\n",
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    vector<int> dailyTemperatures(vector<int>& temperatures) {\n        \n    }\n};\n",
+      "java": "import java.util.*;\n\nclass Solution {\n    public int[] dailyTemperatures(int[] temperatures) {\n        \n    }\n}\n"
     },
     "testCases": [
       {
@@ -2169,14 +2262,17 @@
     "baseMemoryLimit": 256,
     "baseTimeLimit": 1000,
     "timeLimitMultiplier": {
-      "cpp": 1.0,
+      "cpp": 1,
       "java": 1.5,
-      "python": 2.0
+      "python": 2
     },
     "starterCode": {
-      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
-      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
-      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+      "54": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    string simplifyPath(string& path) {\n        \n    }\n};\n",
+      "62": "import java.util.*;\n\nclass Solution {\n    public String simplifyPath(String path) {\n        \n    }\n}\n",
+      "71": "class Solution:\n    def simplifyPath(self, path: str) -> str:\n        pass\n",
+      "python": "class Solution:\n    def simplifyPath(self, path: str) -> str:\n        pass\n",
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    string simplifyPath(string& path) {\n        \n    }\n};\n",
+      "java": "import java.util.*;\n\nclass Solution {\n    public String simplifyPath(String path) {\n        \n    }\n}\n"
     },
     "testCases": [
       {
@@ -2238,14 +2334,17 @@
     "baseMemoryLimit": 256,
     "baseTimeLimit": 1000,
     "timeLimitMultiplier": {
-      "cpp": 1.0,
+      "cpp": 1,
       "java": 1.5,
-      "python": 2.0
+      "python": 2
     },
     "starterCode": {
-      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
-      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
-      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+      "54": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    int evalRPN(vector<string>& tokens) {\n        \n    }\n};\n",
+      "62": "import java.util.*;\n\nclass Solution {\n    public int evalRPN(String[] tokens) {\n        \n    }\n}\n",
+      "71": "class Solution:\n    def evalRPN(self, tokens: list[str]) -> int:\n        pass\n",
+      "python": "class Solution:\n    def evalRPN(self, tokens: list[str]) -> int:\n        pass\n",
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    int evalRPN(vector<string>& tokens) {\n        \n    }\n};\n",
+      "java": "import java.util.*;\n\nclass Solution {\n    public int evalRPN(String[] tokens) {\n        \n    }\n}\n"
     },
     "testCases": [
       {
@@ -2307,14 +2406,17 @@
     "baseMemoryLimit": 256,
     "baseTimeLimit": 1000,
     "timeLimitMultiplier": {
-      "cpp": 1.0,
+      "cpp": 1,
       "java": 1.5,
-      "python": 2.0
+      "python": 2
     },
     "starterCode": {
-      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
-      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
-      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+      "54": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    vector<int> next(vector<string>& commands, vector<vector<int>>& arguments) {\n        \n    }\n};\n",
+      "62": "import java.util.*;\n\nclass Solution {\n    public int[] next(String[] commands, int[][] arguments) {\n        \n    }\n}\n",
+      "71": "class Solution:\n    def next(self, commands: list[str], arguments: list[list[int]]) -> list[int]:\n        pass\n",
+      "python": "class Solution:\n    def next(self, commands: list[str], arguments: list[list[int]]) -> list[int]:\n        pass\n",
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    vector<int> next(vector<string>& commands, vector<vector<int>>& arguments) {\n        \n    }\n};\n",
+      "java": "import java.util.*;\n\nclass Solution {\n    public int[] next(String[] commands, int[][] arguments) {\n        \n    }\n}\n"
     },
     "testCases": [
       {
@@ -2376,14 +2478,17 @@
     "baseMemoryLimit": 256,
     "baseTimeLimit": 1500,
     "timeLimitMultiplier": {
-      "cpp": 1.0,
+      "cpp": 1,
       "java": 1.5,
-      "python": 2.0
+      "python": 2
     },
     "starterCode": {
-      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
-      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
-      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+      "54": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    int largestRectangleArea(vector<int>& heights) {\n        \n    }\n};\n",
+      "62": "import java.util.*;\n\nclass Solution {\n    public int largestRectangleArea(int[] heights) {\n        \n    }\n}\n",
+      "71": "class Solution:\n    def largestRectangleArea(self, heights: list[int]) -> int:\n        pass\n",
+      "python": "class Solution:\n    def largestRectangleArea(self, heights: list[int]) -> int:\n        pass\n",
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    int largestRectangleArea(vector<int>& heights) {\n        \n    }\n};\n",
+      "java": "import java.util.*;\n\nclass Solution {\n    public int largestRectangleArea(int[] heights) {\n        \n    }\n}\n"
     },
     "testCases": [
       {
@@ -2446,53 +2551,56 @@
     "baseMemoryLimit": 512,
     "baseTimeLimit": 1000,
     "timeLimitMultiplier": {
-      "cpp": 1.0,
+      "cpp": 1,
       "java": 1.5,
-      "python": 2.0
+      "python": 2
     },
     "starterCode": {
-      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
-      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
-      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+      "54": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    int maximumUnits(vector<vector<int>>& boxTypes, int truckSize) {\n        \n    }\n};\n",
+      "62": "import java.util.*;\n\nclass Solution {\n    public int maximumUnits(int[][] boxTypes, int truckSize) {\n        \n    }\n}\n",
+      "71": "class Solution:\n    def maximumUnits(self, boxTypes: list[list[int]], truckSize: int) -> int:\n        pass\n",
+      "python": "class Solution:\n    def maximumUnits(self, boxTypes: list[list[int]], truckSize: int) -> int:\n        pass\n",
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    int maximumUnits(vector<vector<int>>& boxTypes, int truckSize) {\n        \n    }\n};\n",
+      "java": "import java.util.*;\n\nclass Solution {\n    public int maximumUnits(int[][] boxTypes, int truckSize) {\n        \n    }\n}\n"
     },
     "testCases": [
       {
-        "input": "[[[1,3],[2,2],[3,1]], 4]",
+        "input": "{\"boxTypes\":[[1,3],[2,2],[3,1]],\"truckSize\":4}",
         "output": "8",
         "isSample": true
       },
       {
-        "input": "[[[5,10],[2,5],[4,7],[3,9]], 10]",
+        "input": "{\"boxTypes\":[[5,10],[2,5],[4,7],[3,9]],\"truckSize\":10}",
         "output": "91",
         "isSample": true
       },
       {
-        "input": "[[[1,1]], 1]",
+        "input": "{\"boxTypes\":[[1,1]],\"truckSize\":1}",
         "output": "1",
         "isSample": false
       },
       {
-        "input": "[[[10,100]], 5]",
+        "input": "{\"boxTypes\":[[10,100]],\"truckSize\":5}",
         "output": "500",
         "isSample": false
       },
       {
-        "input": "[[[3,1],[3,2],[3,3]], 5]",
+        "input": "{\"boxTypes\":[[3,1],[3,2],[3,3]],\"truckSize\":5}",
         "output": "13",
         "isSample": false
       },
       {
-        "input": "[[[1,5],[2,4],[3,3]], 10]",
-        "output": "17",
+        "input": "{\"boxTypes\":[[1,5],[2,4],[3,3]],\"truckSize\":10}",
+        "output": "22",
         "isSample": false
       },
       {
-        "input": "[[[10,10],[10,20],[10,30]], 15]",
+        "input": "{\"boxTypes\":[[10,10],[10,20],[10,30]],\"truckSize\":15}",
         "output": "400",
         "isSample": false
       },
       {
-        "input": "[[[1,10],[1,10],[1,10]], 2]",
+        "input": "{\"boxTypes\":[[1,10],[1,10],[1,10]],\"truckSize\":2}",
         "output": "20",
         "isSample": false
       }
@@ -2514,53 +2622,56 @@
     "baseMemoryLimit": 512,
     "baseTimeLimit": 1000,
     "timeLimitMultiplier": {
-      "cpp": 1.0,
+      "cpp": 1,
       "java": 1.5,
-      "python": 2.0
+      "python": 2
     },
     "starterCode": {
-      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
-      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
-      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+      "54": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    int minimumSum(int num) {\n        \n    }\n};\n",
+      "62": "import java.util.*;\n\nclass Solution {\n    public int minimumSum(int num) {\n        \n    }\n}\n",
+      "71": "class Solution:\n    def minimumSum(self, num: int) -> int:\n        pass\n",
+      "python": "class Solution:\n    def minimumSum(self, num: int) -> int:\n        pass\n",
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    int minimumSum(int num) {\n        \n    }\n};\n",
+      "java": "import java.util.*;\n\nclass Solution {\n    public int minimumSum(int num) {\n        \n    }\n}\n"
     },
     "testCases": [
       {
-        "input": "[2932]",
+        "input": "{\"num\":2932}",
         "output": "52",
         "isSample": true
       },
       {
-        "input": "[4009]",
+        "input": "{\"num\":4009}",
         "output": "13",
         "isSample": true
       },
       {
-        "input": "[1000]",
+        "input": "{\"num\":1000}",
         "output": "1",
         "isSample": false
       },
       {
-        "input": "[9999]",
+        "input": "{\"num\":9999}",
         "output": "198",
         "isSample": false
       },
       {
-        "input": "[1234]",
+        "input": "{\"num\":1234}",
         "output": "37",
         "isSample": false
       },
       {
-        "input": "[5555]",
+        "input": "{\"num\":5555}",
         "output": "110",
         "isSample": false
       },
       {
-        "input": "[8008]",
+        "input": "{\"num\":8008}",
         "output": "16",
         "isSample": false
       },
       {
-        "input": "[1009]",
+        "input": "{\"num\":1009}",
         "output": "10",
         "isSample": false
       }
@@ -2584,53 +2695,56 @@
     "baseMemoryLimit": 512,
     "baseTimeLimit": 1000,
     "timeLimitMultiplier": {
-      "cpp": 1.0,
+      "cpp": 1,
       "java": 1.5,
-      "python": 2.0
+      "python": 2
     },
     "starterCode": {
-      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
-      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
-      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+      "54": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    int findContentChildren(vector<int>& g, vector<int>& s) {\n        \n    }\n};\n",
+      "62": "import java.util.*;\n\nclass Solution {\n    public int findContentChildren(int[] g, int[] s) {\n        \n    }\n}\n",
+      "71": "class Solution:\n    def findContentChildren(self, g: list[int], s: list[int]) -> int:\n        pass\n",
+      "python": "class Solution:\n    def findContentChildren(self, g: list[int], s: list[int]) -> int:\n        pass\n",
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    int findContentChildren(vector<int>& g, vector<int>& s) {\n        \n    }\n};\n",
+      "java": "import java.util.*;\n\nclass Solution {\n    public int findContentChildren(int[] g, int[] s) {\n        \n    }\n}\n"
     },
     "testCases": [
       {
-        "input": "[[1,2,3], [1,1]]",
+        "input": "{\"g\":[1,2,3],\"s\":[1,1]}",
         "output": "1",
         "isSample": true
       },
       {
-        "input": "[[1,2], [1,2,3]]",
+        "input": "{\"g\":[1,2],\"s\":[1,2,3]}",
         "output": "2",
         "isSample": true
       },
       {
-        "input": "[[3,4], [1,2,5]]",
+        "input": "{\"g\":[3,4],\"s\":[1,2,5]}",
         "output": "1",
         "isSample": false
       },
       {
-        "input": "[[10,20,30], [5,15,25,35]]",
+        "input": "{\"g\":[10,20,30],\"s\":[5,15,25,35]}",
         "output": "3",
         "isSample": false
       },
       {
-        "input": "[[1,2,3], []]",
+        "input": "{\"g\":[1,2,3],\"s\":[]}",
         "output": "0",
         "isSample": false
       },
       {
-        "input": "[[], [1,2,3]]",
+        "input": "{\"g\":[],\"s\":[1,2,3]}",
         "output": "0",
         "isSample": false
       },
       {
-        "input": "[[1,1,1], [1,1,1]]",
+        "input": "{\"g\":[1,1,1],\"s\":[1,1,1]}",
         "output": "3",
         "isSample": false
       },
       {
-        "input": "[[10], [9]]",
+        "input": "{\"g\":[10],\"s\":[9]}",
         "output": "0",
         "isSample": false
       }
@@ -2653,53 +2767,56 @@
     "baseMemoryLimit": 512,
     "baseTimeLimit": 1000,
     "timeLimitMultiplier": {
-      "cpp": 1.0,
+      "cpp": 1,
       "java": 1.5,
-      "python": 2.0
+      "python": 2
     },
     "starterCode": {
-      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
-      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
-      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+      "54": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    int canCompleteCircuit(vector<int>& gas, vector<int>& cost) {\n        \n    }\n};\n",
+      "62": "import java.util.*;\n\nclass Solution {\n    public int canCompleteCircuit(int[] gas, int[] cost) {\n        \n    }\n}\n",
+      "71": "class Solution:\n    def canCompleteCircuit(self, gas: list[int], cost: list[int]) -> int:\n        pass\n",
+      "python": "class Solution:\n    def canCompleteCircuit(self, gas: list[int], cost: list[int]) -> int:\n        pass\n",
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    int canCompleteCircuit(vector<int>& gas, vector<int>& cost) {\n        \n    }\n};\n",
+      "java": "import java.util.*;\n\nclass Solution {\n    public int canCompleteCircuit(int[] gas, int[] cost) {\n        \n    }\n}\n"
     },
     "testCases": [
       {
-        "input": "[[1,2,3,4,5], [3,4,5,1,2]]",
+        "input": "{\"gas\":[1,2,3,4,5],\"cost\":[3,4,5,1,2]}",
         "output": "3",
         "isSample": true
       },
       {
-        "input": "[[2,3,4], [3,4,3]]",
+        "input": "{\"gas\":[2,3,4],\"cost\":[3,4,3]}",
         "output": "-1",
         "isSample": true
       },
       {
-        "input": "[[5,1,2,3,4], [4,4,1,5,1]]",
+        "input": "{\"gas\":[5,1,2,3,4],\"cost\":[4,4,1,5,1]}",
         "output": "4",
         "isSample": false
       },
       {
-        "input": "[[3,1,1], [1,2,2]]",
+        "input": "{\"gas\":[3,1,1],\"cost\":[1,2,2]}",
         "output": "0",
         "isSample": false
       },
       {
-        "input": "[[1,2], [2,1]]",
+        "input": "{\"gas\":[1,2],\"cost\":[2,1]}",
         "output": "1",
         "isSample": false
       },
       {
-        "input": "[[4], [5]]",
+        "input": "{\"gas\":[4],\"cost\":[5]}",
         "output": "-1",
         "isSample": false
       },
       {
-        "input": "[[5], [4]]",
+        "input": "{\"gas\":[5],\"cost\":[4]}",
         "output": "0",
         "isSample": false
       },
       {
-        "input": "[[2,2,2], [2,2,2]]",
+        "input": "{\"gas\":[2,2,2],\"cost\":[2,2,2]}",
         "output": "0",
         "isSample": false
       }
@@ -2723,53 +2840,56 @@
     "baseMemoryLimit": 512,
     "baseTimeLimit": 1000,
     "timeLimitMultiplier": {
-      "cpp": 1.0,
+      "cpp": 1,
       "java": 1.5,
-      "python": 2.0
+      "python": 2
     },
     "starterCode": {
-      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
-      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
-      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+      "54": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    int eraseOverlapIntervals(vector<vector<int>>& intervals) {\n        \n    }\n};\n",
+      "62": "import java.util.*;\n\nclass Solution {\n    public int eraseOverlapIntervals(int[][] intervals) {\n        \n    }\n}\n",
+      "71": "class Solution:\n    def eraseOverlapIntervals(self, intervals: list[list[int]]) -> int:\n        pass\n",
+      "python": "class Solution:\n    def eraseOverlapIntervals(self, intervals: list[list[int]]) -> int:\n        pass\n",
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    int eraseOverlapIntervals(vector<vector<int>>& intervals) {\n        \n    }\n};\n",
+      "java": "import java.util.*;\n\nclass Solution {\n    public int eraseOverlapIntervals(int[][] intervals) {\n        \n    }\n}\n"
     },
     "testCases": [
       {
-        "input": "[[[1,2],[2,3],[3,4],[1,3]]]",
+        "input": "{\"intervals\":[[1,2],[2,3],[3,4],[1,3]]}",
         "output": "1",
         "isSample": true
       },
       {
-        "input": "[[[1,2],[1,2],[1,2]]]",
+        "input": "{\"intervals\":[[1,2],[1,2],[1,2]]}",
         "output": "2",
         "isSample": true
       },
       {
-        "input": "[[[1,2],[2,3]]]",
+        "input": "{\"intervals\":[[1,2],[2,3]]}",
         "output": "0",
         "isSample": false
       },
       {
-        "input": "[[[1,100],[11,22],[1,11],[2,12]]]",
+        "input": "{\"intervals\":[[1,100],[11,22],[1,11],[2,12]]}",
         "output": "2",
         "isSample": false
       },
       {
-        "input": "[[[1,2],[3,4],[5,6]]]",
+        "input": "{\"intervals\":[[1,2],[3,4],[5,6]]}",
         "output": "0",
         "isSample": false
       },
       {
-        "input": "[[[-50,-40],[-45,-35],[-30,-20]]]",
+        "input": "{\"intervals\":[[-50,-40],[-45,-35],[-30,-20]]}",
         "output": "1",
         "isSample": false
       },
       {
-        "input": "[[[1,10],[2,3],[3,4],[4,5]]]",
+        "input": "{\"intervals\":[[1,10],[2,3],[3,4],[4,5]]}",
         "output": "1",
         "isSample": false
       },
       {
-        "input": "[[[1,5],[2,6],[3,7],[4,8]]]",
+        "input": "{\"intervals\":[[1,5],[2,6],[3,7],[4,8]]}",
         "output": "3",
         "isSample": false
       }
@@ -2793,53 +2913,56 @@
     "baseMemoryLimit": 512,
     "baseTimeLimit": 1000,
     "timeLimitMultiplier": {
-      "cpp": 1.0,
+      "cpp": 1,
       "java": 1.5,
-      "python": 2.0
+      "python": 2
     },
     "starterCode": {
-      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
-      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
-      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+      "54": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    vector<vector<int>> reconstructQueue(vector<vector<int>>& people) {\n        \n    }\n};\n",
+      "62": "import java.util.*;\n\nclass Solution {\n    public int[][] reconstructQueue(int[][] people) {\n        \n    }\n}\n",
+      "71": "class Solution:\n    def reconstructQueue(self, people: list[list[int]]) -> list[list[int]]:\n        pass\n",
+      "python": "class Solution:\n    def reconstructQueue(self, people: list[list[int]]) -> list[list[int]]:\n        pass\n",
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    vector<vector<int>> reconstructQueue(vector<vector<int>>& people) {\n        \n    }\n};\n",
+      "java": "import java.util.*;\n\nclass Solution {\n    public int[][] reconstructQueue(int[][] people) {\n        \n    }\n}\n"
     },
     "testCases": [
       {
-        "input": "[[[7,0],[4,4],[7,1],[5,0],[6,1],[5,2]]]",
+        "input": "{\"people\":[[7,0],[4,4],[7,1],[5,0],[6,1],[5,2]]}",
         "output": "[[5,0],[7,0],[5,2],[6,1],[4,4],[7,1]]",
         "isSample": true
       },
       {
-        "input": "[[[6,0],[5,0],[4,0],[3,2],[2,2],[1,4]]]",
+        "input": "{\"people\":[[6,0],[5,0],[4,0],[3,2],[2,2],[1,4]]}",
         "output": "[[4,0],[5,0],[2,2],[3,2],[1,4],[6,0]]",
         "isSample": true
       },
       {
-        "input": "[[[1,0]]]",
+        "input": "{\"people\":[[1,0]]}",
         "output": "[[1,0]]",
         "isSample": false
       },
       {
-        "input": "[[[2,0],[1,1]]]",
+        "input": "{\"people\":[[2,0],[1,1]]}",
         "output": "[[2,0],[1,1]]",
         "isSample": false
       },
       {
-        "input": "[[[1,1],[2,0]]]",
+        "input": "{\"people\":[[1,1],[2,0]]}",
         "output": "[[2,0],[1,1]]",
         "isSample": false
       },
       {
-        "input": "[[[5,0],[5,1],[5,2]]]",
+        "input": "{\"people\":[[5,0],[5,1],[5,2]]}",
         "output": "[[5,0],[5,1],[5,2]]",
         "isSample": false
       },
       {
-        "input": "[[[9,0],[7,0],[8,0],[7,1]]]",
+        "input": "{\"people\":[[9,0],[7,0],[8,0],[7,1]]}",
         "output": "[[7,0],[7,1],[8,0],[9,0]]",
         "isSample": false
       },
       {
-        "input": "[[[3,0],[2,1],[1,2]]]",
+        "input": "{\"people\":[[3,0],[2,1],[1,2]]}",
         "output": "[[3,0],[2,1],[1,2]]",
         "isSample": false
       }
@@ -2865,53 +2988,56 @@
     "baseMemoryLimit": 512,
     "baseTimeLimit": 1000,
     "timeLimitMultiplier": {
-      "cpp": 1.0,
+      "cpp": 1,
       "java": 1.5,
-      "python": 2.0
+      "python": 2
     },
     "starterCode": {
-      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
-      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
-      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+      "54": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    int leastInterval(vector<string>& tasks, int n) {\n        \n    }\n};\n",
+      "62": "import java.util.*;\n\nclass Solution {\n    public int leastInterval(String[] tasks, int n) {\n        \n    }\n}\n",
+      "71": "class Solution:\n    def leastInterval(self, tasks: list[str], n: int) -> int:\n        pass\n",
+      "python": "class Solution:\n    def leastInterval(self, tasks: list[str], n: int) -> int:\n        pass\n",
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    int leastInterval(vector<string>& tasks, int n) {\n        \n    }\n};\n",
+      "java": "import java.util.*;\n\nclass Solution {\n    public int leastInterval(String[] tasks, int n) {\n        \n    }\n}\n"
     },
     "testCases": [
       {
-        "input": "[[\"A\",\"A\",\"A\",\"B\",\"B\",\"B\"], 2]",
+        "input": "{\"tasks\":[\"A\",\"A\",\"A\",\"B\",\"B\",\"B\"],\"n\":2}",
         "output": "8",
         "isSample": true
       },
       {
-        "input": "[[\"A\",\"A\",\"A\",\"B\",\"B\",\"B\"], 0]",
+        "input": "{\"tasks\":[\"A\",\"A\",\"A\",\"B\",\"B\",\"B\"],\"n\":0}",
         "output": "6",
         "isSample": true
       },
       {
-        "input": "[[\"A\",\"A\",\"A\",\"A\",\"A\",\"A\",\"B\",\"C\",\"D\",\"E\",\"F\",\"G\"], 2]",
+        "input": "{\"tasks\":[\"A\",\"A\",\"A\",\"A\",\"A\",\"A\",\"B\",\"C\",\"D\",\"E\",\"F\",\"G\"],\"n\":2}",
         "output": "16",
         "isSample": false
       },
       {
-        "input": "[[\"A\",\"B\",\"C\",\"D\"], 2]",
+        "input": "{\"tasks\":[\"A\",\"B\",\"C\",\"D\"],\"n\":2}",
         "output": "4",
         "isSample": false
       },
       {
-        "input": "[[\"A\",\"A\",\"B\",\"B\"], 3]",
-        "output": "5",
+        "input": "{\"tasks\":[\"A\",\"A\",\"B\",\"B\"],\"n\":3}",
+        "output": "6",
         "isSample": false
       },
       {
-        "input": "[[\"A\"], 100]",
+        "input": "{\"tasks\":[\"A\"],\"n\":100}",
         "output": "1",
         "isSample": false
       },
       {
-        "input": "[[\"A\",\"A\",\"A\"], 1]",
+        "input": "{\"tasks\":[\"A\",\"A\",\"A\"],\"n\":1}",
         "output": "5",
         "isSample": false
       },
       {
-        "input": "[[\"A\",\"B\",\"A\",\"B\",\"A\",\"B\"], 3]",
+        "input": "{\"tasks\":[\"A\",\"B\",\"A\",\"B\",\"A\",\"B\"],\"n\":3}",
         "output": "10",
         "isSample": false
       }
@@ -2934,53 +3060,56 @@
     "baseMemoryLimit": 512,
     "baseTimeLimit": 1000,
     "timeLimitMultiplier": {
-      "cpp": 1.0,
+      "cpp": 1,
       "java": 1.5,
-      "python": 2.0
+      "python": 2
     },
     "starterCode": {
-      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
-      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
-      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+      "54": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    int candy(vector<int>& ratings) {\n        \n    }\n};\n",
+      "62": "import java.util.*;\n\nclass Solution {\n    public int candy(int[] ratings) {\n        \n    }\n}\n",
+      "71": "class Solution:\n    def candy(self, ratings: list[int]) -> int:\n        pass\n",
+      "python": "class Solution:\n    def candy(self, ratings: list[int]) -> int:\n        pass\n",
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    int candy(vector<int>& ratings) {\n        \n    }\n};\n",
+      "java": "import java.util.*;\n\nclass Solution {\n    public int candy(int[] ratings) {\n        \n    }\n}\n"
     },
     "testCases": [
       {
-        "input": "[[1,0,2]]",
+        "input": "{\"ratings\":[1,0,2]}",
         "output": "5",
         "isSample": true
       },
       {
-        "input": "[[1,2,2]]",
+        "input": "{\"ratings\":[1,2,2]}",
         "output": "4",
         "isSample": true
       },
       {
-        "input": "[[1,3,2,2,1]]",
+        "input": "{\"ratings\":[1,3,2,2,1]}",
         "output": "7",
         "isSample": false
       },
       {
-        "input": "[[1,2,87,87,87,2,1]]",
+        "input": "{\"ratings\":[1,2,87,87,87,2,1]}",
         "output": "13",
         "isSample": false
       },
       {
-        "input": "[[1,2,3,4,5]]",
+        "input": "{\"ratings\":[1,2,3,4,5]}",
         "output": "15",
         "isSample": false
       },
       {
-        "input": "[[5,4,3,2,1]]",
+        "input": "{\"ratings\":[5,4,3,2,1]}",
         "output": "15",
         "isSample": false
       },
       {
-        "input": "[[1,1,1,1]]",
+        "input": "{\"ratings\":[1,1,1,1]}",
         "output": "4",
         "isSample": false
       },
       {
-        "input": "[[1,6,10,8,7,3,2]]",
+        "input": "{\"ratings\":[1,6,10,8,7,3,2]}",
         "output": "18",
         "isSample": false
       }
@@ -3004,53 +3133,56 @@
     "baseMemoryLimit": 512,
     "baseTimeLimit": 1500,
     "timeLimitMultiplier": {
-      "cpp": 1.0,
+      "cpp": 1,
       "java": 1.5,
-      "python": 2.0
+      "python": 2
     },
     "starterCode": {
-      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
-      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
-      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+      "54": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    int scheduleCourse(vector<vector<int>>& courses) {\n        \n    }\n};\n",
+      "62": "import java.util.*;\n\nclass Solution {\n    public int scheduleCourse(int[][] courses) {\n        \n    }\n}\n",
+      "71": "class Solution:\n    def scheduleCourse(self, courses: list[list[int]]) -> int:\n        pass\n",
+      "python": "class Solution:\n    def scheduleCourse(self, courses: list[list[int]]) -> int:\n        pass\n",
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    int scheduleCourse(vector<vector<int>>& courses) {\n        \n    }\n};\n",
+      "java": "import java.util.*;\n\nclass Solution {\n    public int scheduleCourse(int[][] courses) {\n        \n    }\n}\n"
     },
     "testCases": [
       {
-        "input": "[[[100,200],[200,1300],[1000,1250],[2000,3200]]]",
+        "input": "{\"courses\":[[100,200],[200,1300],[1000,1250],[2000,3200]]}",
         "output": "3",
         "isSample": true
       },
       {
-        "input": "[[[1,2]]]",
+        "input": "{\"courses\":[[1,2]]}",
         "output": "1",
         "isSample": true
       },
       {
-        "input": "[[[3,2],[4,3]]]",
+        "input": "{\"courses\":[[3,2],[4,3]]}",
         "output": "0",
         "isSample": false
       },
       {
-        "input": "[[[5,5],[4,6],[2,6]]]",
+        "input": "{\"courses\":[[5,5],[4,6],[2,6]]}",
         "output": "2",
         "isSample": false
       },
       {
-        "input": "[[[100,200],[200,1300],[1000,1250],[2000,3200],[300,1200]]]",
+        "input": "{\"courses\":[[100,200],[200,1300],[1000,1250],[2000,3200],[300,1200]]}",
         "output": "4",
         "isSample": false
       },
       {
-        "input": "[[[5,15],[3,19],[6,7],[2,10],[5,16],[8,14],[10,11],[2,19]]]",
+        "input": "{\"courses\":[[5,15],[3,19],[6,7],[2,10],[5,16],[8,14],[10,11],[2,19]]}",
         "output": "5",
         "isSample": false
       },
       {
-        "input": "[[[10,12],[5,15],[10,16]]]",
+        "input": "{\"courses\":[[10,12],[5,15],[10,16]]}",
         "output": "2",
         "isSample": false
       },
       {
-        "input": "[[[1,2],[2,3]]]",
+        "input": "{\"courses\":[[1,2],[2,3]]}",
         "output": "2",
         "isSample": false
       }
@@ -3072,53 +3204,56 @@
     "baseMemoryLimit": 256,
     "baseTimeLimit": 1000,
     "timeLimitMultiplier": {
-      "cpp": 1.0,
+      "cpp": 1,
       "java": 1.5,
-      "python": 2.0
+      "python": 2
     },
     "starterCode": {
-      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
-      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
-      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+      "54": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    int searchRange(vector<int>& nums, int target) {\n        \n    }\n};\n",
+      "62": "import java.util.*;\n\nclass Solution {\n    public int searchRange(int[] nums, int target) {\n        \n    }\n}\n",
+      "71": "class Solution:\n    def searchRange(self, nums: list[int], target: int) -> int:\n        pass\n",
+      "python": "class Solution:\n    def searchRange(self, nums: list[int], target: int) -> int:\n        pass\n",
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    int searchRange(vector<int>& nums, int target) {\n        \n    }\n};\n",
+      "java": "import java.util.*;\n\nclass Solution {\n    public int searchRange(int[] nums, int target) {\n        \n    }\n}\n"
     },
     "testCases": [
       {
-        "input": "[[1,2,2,2,3],2]",
+        "input": "{\"nums\":[1,2,2,2,3],\"target\":2}",
         "output": "1",
         "isSample": true
       },
       {
-        "input": "[[1,2,3,4,5],6]",
+        "input": "{\"nums\":[1,2,3,4,5],\"target\":6}",
         "output": "-1",
         "isSample": true
       },
       {
-        "input": "[[1,1,1,1,1],1]",
+        "input": "{\"nums\":[1,1,1,1,1],\"target\":1}",
         "output": "0",
         "isSample": false
       },
       {
-        "input": "[[2],2]",
+        "input": "{\"nums\":[2],\"target\":2}",
         "output": "0",
         "isSample": false
       },
       {
-        "input": "[[2],3]",
+        "input": "{\"nums\":[2],\"target\":3}",
         "output": "-1",
         "isSample": false
       },
       {
-        "input": "[[1,3,5,7,9],5]",
+        "input": "{\"nums\":[1,3,5,7,9],\"target\":5}",
         "output": "2",
         "isSample": false
       },
       {
-        "input": "[[1,3,5,7,9],1]",
+        "input": "{\"nums\":[1,3,5,7,9],\"target\":1}",
         "output": "0",
         "isSample": false
       },
       {
-        "input": "[[1,3,5,7,9],9]",
+        "input": "{\"nums\":[1,3,5,7,9],\"target\":9}",
         "output": "4",
         "isSample": false
       }
@@ -3139,53 +3274,56 @@
     "baseMemoryLimit": 256,
     "baseTimeLimit": 1000,
     "timeLimitMultiplier": {
-      "cpp": 1.0,
+      "cpp": 1,
       "java": 1.5,
-      "python": 2.0
+      "python": 2
     },
     "starterCode": {
-      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
-      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
-      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+      "54": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    int mySqrt(int x) {\n        \n    }\n};\n",
+      "62": "import java.util.*;\n\nclass Solution {\n    public int mySqrt(int x) {\n        \n    }\n}\n",
+      "71": "class Solution:\n    def mySqrt(self, x: int) -> int:\n        pass\n",
+      "python": "class Solution:\n    def mySqrt(self, x: int) -> int:\n        pass\n",
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    int mySqrt(int x) {\n        \n    }\n};\n",
+      "java": "import java.util.*;\n\nclass Solution {\n    public int mySqrt(int x) {\n        \n    }\n}\n"
     },
     "testCases": [
       {
-        "input": "[4]",
+        "input": "{\"x\":4}",
         "output": "2",
         "isSample": true
       },
       {
-        "input": "[8]",
+        "input": "{\"x\":8}",
         "output": "2",
         "isSample": true
       },
       {
-        "input": "[0]",
+        "input": "{\"x\":0}",
         "output": "0",
         "isSample": false
       },
       {
-        "input": "[1]",
+        "input": "{\"x\":1}",
         "output": "1",
         "isSample": false
       },
       {
-        "input": "[2]",
+        "input": "{\"x\":2}",
         "output": "1",
         "isSample": false
       },
       {
-        "input": "[2147483647]",
+        "input": "{\"x\":2147483647}",
         "output": "46340",
         "isSample": false
       },
       {
-        "input": "[100]",
+        "input": "{\"x\":100}",
         "output": "10",
         "isSample": false
       },
       {
-        "input": "[99]",
+        "input": "{\"x\":99}",
         "output": "9",
         "isSample": false
       }
@@ -3208,53 +3346,56 @@
     "baseMemoryLimit": 256,
     "baseTimeLimit": 1000,
     "timeLimitMultiplier": {
-      "cpp": 1.0,
+      "cpp": 1,
       "java": 1.5,
-      "python": 2.0
+      "python": 2
     },
     "starterCode": {
-      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
-      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
-      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+      "54": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    int searchInsert(vector<int>& nums, int target) {\n        \n    }\n};\n",
+      "62": "import java.util.*;\n\nclass Solution {\n    public int searchInsert(int[] nums, int target) {\n        \n    }\n}\n",
+      "71": "class Solution:\n    def searchInsert(self, nums: list[int], target: int) -> int:\n        pass\n",
+      "python": "class Solution:\n    def searchInsert(self, nums: list[int], target: int) -> int:\n        pass\n",
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    int searchInsert(vector<int>& nums, int target) {\n        \n    }\n};\n",
+      "java": "import java.util.*;\n\nclass Solution {\n    public int searchInsert(int[] nums, int target) {\n        \n    }\n}\n"
     },
     "testCases": [
       {
-        "input": "[[1,3,5,6],5]",
+        "input": "{\"nums\":[1,3,5,6],\"target\":5}",
         "output": "2",
         "isSample": true
       },
       {
-        "input": "[[1,3,5,6],2]",
+        "input": "{\"nums\":[1,3,5,6],\"target\":2}",
         "output": "1",
         "isSample": true
       },
       {
-        "input": "[[1,3,5,6],7]",
+        "input": "{\"nums\":[1,3,5,6],\"target\":7}",
         "output": "4",
         "isSample": false
       },
       {
-        "input": "[[1,3,5,6],0]",
+        "input": "{\"nums\":[1,3,5,6],\"target\":0}",
         "output": "0",
         "isSample": false
       },
       {
-        "input": "[[1],0]",
+        "input": "{\"nums\":[1],\"target\":0}",
         "output": "0",
         "isSample": false
       },
       {
-        "input": "[[1],2]",
+        "input": "{\"nums\":[1],\"target\":2}",
         "output": "1",
         "isSample": false
       },
       {
-        "input": "[[1,3],2]",
+        "input": "{\"nums\":[1,3],\"target\":2}",
         "output": "1",
         "isSample": false
       },
       {
-        "input": "[[1,3,5,7,9,11],8]",
+        "input": "{\"nums\":[1,3,5,7,9,11],\"target\":8}",
         "output": "4",
         "isSample": false
       }
@@ -3277,53 +3418,56 @@
     "baseMemoryLimit": 256,
     "baseTimeLimit": 1000,
     "timeLimitMultiplier": {
-      "cpp": 1.0,
+      "cpp": 1,
       "java": 1.5,
-      "python": 2.0
+      "python": 2
     },
     "starterCode": {
-      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
-      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
-      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+      "54": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    int findPeakElement(vector<int>& nums) {\n        \n    }\n};\n",
+      "62": "import java.util.*;\n\nclass Solution {\n    public int findPeakElement(int[] nums) {\n        \n    }\n}\n",
+      "71": "class Solution:\n    def findPeakElement(self, nums: list[int]) -> int:\n        pass\n",
+      "python": "class Solution:\n    def findPeakElement(self, nums: list[int]) -> int:\n        pass\n",
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    int findPeakElement(vector<int>& nums) {\n        \n    }\n};\n",
+      "java": "import java.util.*;\n\nclass Solution {\n    public int findPeakElement(int[] nums) {\n        \n    }\n}\n"
     },
     "testCases": [
       {
-        "input": "[[1,2,3,1]]",
+        "input": "{\"nums\":[1,2,3,1]}",
         "output": "2",
         "isSample": true
       },
       {
-        "input": "[[1,2,1,3,5,6,4]]",
+        "input": "{\"nums\":[1,2,1,3,5,6,4]}",
         "output": "5",
         "isSample": true
       },
       {
-        "input": "[[1]]",
+        "input": "{\"nums\":[1]}",
         "output": "0",
         "isSample": false
       },
       {
-        "input": "[[1,2]]",
+        "input": "{\"nums\":[1,2]}",
         "output": "1",
         "isSample": false
       },
       {
-        "input": "[[2,1]]",
+        "input": "{\"nums\":[2,1]}",
         "output": "0",
         "isSample": false
       },
       {
-        "input": "[[1,2,3,4,5]]",
+        "input": "{\"nums\":[1,2,3,4,5]}",
         "output": "4",
         "isSample": false
       },
       {
-        "input": "[[5,4,3,2,1]]",
+        "input": "{\"nums\":[5,4,3,2,1]}",
         "output": "0",
         "isSample": false
       },
       {
-        "input": "[[1,3,2,1]]",
+        "input": "{\"nums\":[1,3,2,1]}",
         "output": "1",
         "isSample": false
       }
@@ -3346,53 +3490,56 @@
     "baseMemoryLimit": 256,
     "baseTimeLimit": 2000,
     "timeLimitMultiplier": {
-      "cpp": 1.0,
+      "cpp": 1,
       "java": 1.5,
-      "python": 2.0
+      "python": 2
     },
     "starterCode": {
-      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
-      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
-      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+      "54": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    int minEatingSpeed(vector<int>& piles, int h) {\n        \n    }\n};\n",
+      "62": "import java.util.*;\n\nclass Solution {\n    public int minEatingSpeed(int[] piles, int h) {\n        \n    }\n}\n",
+      "71": "class Solution:\n    def minEatingSpeed(self, piles: list[int], h: int) -> int:\n        pass\n",
+      "python": "class Solution:\n    def minEatingSpeed(self, piles: list[int], h: int) -> int:\n        pass\n",
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    int minEatingSpeed(vector<int>& piles, int h) {\n        \n    }\n};\n",
+      "java": "import java.util.*;\n\nclass Solution {\n    public int minEatingSpeed(int[] piles, int h) {\n        \n    }\n}\n"
     },
     "testCases": [
       {
-        "input": "[[3,6,7,11],8]",
+        "input": "{\"piles\":[3,6,7,11],\"h\":8}",
         "output": "4",
         "isSample": true
       },
       {
-        "input": "[[30,11,23,4,20],5]",
+        "input": "{\"piles\":[30,11,23,4,20],\"h\":5}",
         "output": "30",
         "isSample": true
       },
       {
-        "input": "[[30,11,23,4,20],6]",
+        "input": "{\"piles\":[30,11,23,4,20],\"h\":6}",
         "output": "23",
         "isSample": false
       },
       {
-        "input": "[[312884469],312884469]",
+        "input": "{\"piles\":[312884469],\"h\":312884469}",
         "output": "1",
         "isSample": false
       },
       {
-        "input": "[[1000000000],2]",
+        "input": "{\"piles\":[1000000000],\"h\":2}",
         "output": "500000000",
         "isSample": false
       },
       {
-        "input": "[[3,3,3],3]",
+        "input": "{\"piles\":[3,3,3],\"h\":3}",
         "output": "3",
         "isSample": false
       },
       {
-        "input": "[[3,3,3],9]",
+        "input": "{\"piles\":[3,3,3],\"h\":9}",
         "output": "1",
         "isSample": false
       },
       {
-        "input": "[[10,20,30],5]",
+        "input": "{\"piles\":[10,20,30],\"h\":5}",
         "output": "15",
         "isSample": false
       }
@@ -3415,53 +3562,56 @@
     "baseMemoryLimit": 256,
     "baseTimeLimit": 1000,
     "timeLimitMultiplier": {
-      "cpp": 1.0,
+      "cpp": 1,
       "java": 1.5,
-      "python": 2.0
+      "python": 2
     },
     "starterCode": {
-      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
-      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
-      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+      "54": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    int search(vector<int>& nums, int target) {\n        \n    }\n};\n",
+      "62": "import java.util.*;\n\nclass Solution {\n    public int search(int[] nums, int target) {\n        \n    }\n}\n",
+      "71": "class Solution:\n    def search(self, nums: list[int], target: int) -> int:\n        pass\n",
+      "python": "class Solution:\n    def search(self, nums: list[int], target: int) -> int:\n        pass\n",
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    int search(vector<int>& nums, int target) {\n        \n    }\n};\n",
+      "java": "import java.util.*;\n\nclass Solution {\n    public int search(int[] nums, int target) {\n        \n    }\n}\n"
     },
     "testCases": [
       {
-        "input": "[[4,5,6,7,0,1,2],0]",
+        "input": "{\"nums\":[4,5,6,7,0,1,2],\"target\":0}",
         "output": "4",
         "isSample": true
       },
       {
-        "input": "[[4,5,6,7,0,1,2],3]",
+        "input": "{\"nums\":[4,5,6,7,0,1,2],\"target\":3}",
         "output": "-1",
         "isSample": true
       },
       {
-        "input": "[[1],0]",
+        "input": "{\"nums\":[1],\"target\":0}",
         "output": "-1",
         "isSample": false
       },
       {
-        "input": "[[1],1]",
+        "input": "{\"nums\":[1],\"target\":1}",
         "output": "0",
         "isSample": false
       },
       {
-        "input": "[[3,1],1]",
+        "input": "{\"nums\":[3,1],\"target\":1}",
         "output": "1",
         "isSample": false
       },
       {
-        "input": "[[5,1,3],5]",
+        "input": "{\"nums\":[5,1,3],\"target\":5}",
         "output": "0",
         "isSample": false
       },
       {
-        "input": "[[4,5,6,7,8,1,2,3],8]",
+        "input": "{\"nums\":[4,5,6,7,8,1,2,3],\"target\":8}",
         "output": "4",
         "isSample": false
       },
       {
-        "input": "[[8,9,1,2,3,4,5,6,7],2]",
+        "input": "{\"nums\":[8,9,1,2,3,4,5,6,7],\"target\":2}",
         "output": "3",
         "isSample": false
       }
@@ -3483,53 +3633,56 @@
     "baseMemoryLimit": 256,
     "baseTimeLimit": 1500,
     "timeLimitMultiplier": {
-      "cpp": 1.0,
+      "cpp": 1,
       "java": 1.5,
-      "python": 2.0
+      "python": 2
     },
     "starterCode": {
-      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
-      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
-      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+      "54": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    int shipWithinDays(vector<int>& weights, int days) {\n        \n    }\n};\n",
+      "62": "import java.util.*;\n\nclass Solution {\n    public int shipWithinDays(int[] weights, int days) {\n        \n    }\n}\n",
+      "71": "class Solution:\n    def shipWithinDays(self, weights: list[int], days: int) -> int:\n        pass\n",
+      "python": "class Solution:\n    def shipWithinDays(self, weights: list[int], days: int) -> int:\n        pass\n",
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    int shipWithinDays(vector<int>& weights, int days) {\n        \n    }\n};\n",
+      "java": "import java.util.*;\n\nclass Solution {\n    public int shipWithinDays(int[] weights, int days) {\n        \n    }\n}\n"
     },
     "testCases": [
       {
-        "input": "[[1,2,3,4,5,6,7,8,9,10],5]",
+        "input": "{\"weights\":[1,2,3,4,5,6,7,8,9,10],\"days\":5}",
         "output": "15",
         "isSample": true
       },
       {
-        "input": "[[3,2,2,4,1,4],3]",
+        "input": "{\"weights\":[3,2,2,4,1,4],\"days\":3}",
         "output": "6",
         "isSample": true
       },
       {
-        "input": "[[1,2,3,1,1],4]",
+        "input": "{\"weights\":[1,2,3,1,1],\"days\":4}",
         "output": "3",
         "isSample": false
       },
       {
-        "input": "[[10],1]",
+        "input": "{\"weights\":[10],\"days\":1}",
         "output": "10",
         "isSample": false
       },
       {
-        "input": "[[5,5,5,5,5],2]",
+        "input": "{\"weights\":[5,5,5,5,5],\"days\":2}",
         "output": "15",
         "isSample": false
       },
       {
-        "input": "[[1,2,3,4,5],5]",
+        "input": "{\"weights\":[1,2,3,4,5],\"days\":5}",
         "output": "5",
         "isSample": false
       },
       {
-        "input": "[[1,2,3,4,5],1]",
+        "input": "{\"weights\":[1,2,3,4,5],\"days\":1}",
         "output": "15",
         "isSample": false
       },
       {
-        "input": "[[10,20,30,40,50],3]",
+        "input": "{\"weights\":[10,20,30,40,50],\"days\":3}",
         "output": "60",
         "isSample": false
       }
@@ -3555,53 +3708,56 @@
     "baseMemoryLimit": 256,
     "baseTimeLimit": 1000,
     "timeLimitMultiplier": {
-      "cpp": 1.0,
+      "cpp": 1,
       "java": 1.5,
-      "python": 2.0
+      "python": 2
     },
     "starterCode": {
-      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
-      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
-      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+      "54": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2) {\n        \n    }\n};\n",
+      "62": "import java.util.*;\n\nclass Solution {\n    public double findMedianSortedArrays(int[] nums1, int[] nums2) {\n        \n    }\n}\n",
+      "71": "class Solution:\n    def findMedianSortedArrays(self, nums1: list[int], nums2: list[int]) -> float:\n        pass\n",
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2) {\n        \n    }\n};\n",
+      "java": "import java.util.*;\n\nclass Solution {\n    public double findMedianSortedArrays(int[] nums1, int[] nums2) {\n        \n    }\n}\n",
+      "python": "class Solution:\n    def findMedianSortedArrays(self, nums1: list[int], nums2: list[int]) -> float:\n        pass\n"
     },
     "testCases": [
       {
-        "input": "[[1,3],[2]]",
+        "input": "{\"nums1\":[1,3],\"nums2\":[2]}",
         "output": "2.0",
         "isSample": true
       },
       {
-        "input": "[[1,2],[3,4]]",
+        "input": "{\"nums1\":[1,2],\"nums2\":[3,4]}",
         "output": "2.5",
         "isSample": true
       },
       {
-        "input": "[[],[1]]",
+        "input": "{\"nums1\":[],\"nums2\":[1]}",
         "output": "1.0",
         "isSample": false
       },
       {
-        "input": "[[2],[]]",
+        "input": "{\"nums1\":[2],\"nums2\":[]}",
         "output": "2.0",
         "isSample": false
       },
       {
-        "input": "[[0,0],[0,0]]",
+        "input": "{\"nums1\":[0,0],\"nums2\":[0,0]}",
         "output": "0.0",
         "isSample": false
       },
       {
-        "input": "[[1,3,5],[2,4,6]]",
+        "input": "{\"nums1\":[1,3,5],\"nums2\":[2,4,6]}",
         "output": "3.5",
         "isSample": false
       },
       {
-        "input": "[[1,2,3],[4,5,6,7]]",
+        "input": "{\"nums1\":[1,2,3],\"nums2\":[4,5,6,7]}",
         "output": "4.0",
         "isSample": false
       },
       {
-        "input": "[[1,1,1],[1,1,1]]",
+        "input": "{\"nums1\":[1,1,1],\"nums2\":[1,1,1]}",
         "output": "1.0",
         "isSample": false
       }
@@ -3626,53 +3782,56 @@
     "baseMemoryLimit": 256,
     "baseTimeLimit": 1500,
     "timeLimitMultiplier": {
-      "cpp": 1.0,
+      "cpp": 1,
       "java": 1.5,
-      "python": 2.0
+      "python": 2
     },
     "starterCode": {
-      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
-      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
-      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+      "54": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    int splitArray(vector<int>& nums, int k) {\n        \n    }\n};\n",
+      "62": "import java.util.*;\n\nclass Solution {\n    public int splitArray(int[] nums, int k) {\n        \n    }\n}\n",
+      "71": "class Solution:\n    def splitArray(self, nums: list[int], k: int) -> int:\n        pass\n",
+      "python": "class Solution:\n    def splitArray(self, nums: list[int], k: int) -> int:\n        pass\n",
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    int splitArray(vector<int>& nums, int k) {\n        \n    }\n};\n",
+      "java": "import java.util.*;\n\nclass Solution {\n    public int splitArray(int[] nums, int k) {\n        \n    }\n}\n"
     },
     "testCases": [
       {
-        "input": "[[7,2,5,10,8],2]",
+        "input": "{\"nums\":[7,2,5,10,8],\"k\":2}",
         "output": "18",
         "isSample": true
       },
       {
-        "input": "[[1,2,3,4,5],2]",
+        "input": "{\"nums\":[1,2,3,4,5],\"k\":2}",
         "output": "9",
         "isSample": true
       },
       {
-        "input": "[[1,4,4],3]",
+        "input": "{\"nums\":[1,4,4],\"k\":3}",
         "output": "4",
         "isSample": false
       },
       {
-        "input": "[[10,20,30,40],1]",
+        "input": "{\"nums\":[10,20,30,40],\"k\":1}",
         "output": "100",
         "isSample": false
       },
       {
-        "input": "[[10,20,30,40],4]",
+        "input": "{\"nums\":[10,20,30,40],\"k\":4}",
         "output": "40",
         "isSample": false
       },
       {
-        "input": "[[5,5,5,5],2]",
+        "input": "{\"nums\":[5,5,5,5],\"k\":2}",
         "output": "10",
         "isSample": false
       },
       {
-        "input": "[[1,2,3,4,5,6,7,8,9,10],5]",
+        "input": "{\"nums\":[1,2,3,4,5,6,7,8,9,10],\"k\":5}",
         "output": "15",
         "isSample": false
       },
       {
-        "input": "[[1,100,1,100,1],2]",
+        "input": "{\"nums\":[1,100,1,100,1],\"k\":2}",
         "output": "102",
         "isSample": false
       }
@@ -3694,14 +3853,17 @@
     "baseMemoryLimit": 256,
     "baseTimeLimit": 1000,
     "timeLimitMultiplier": {
-      "cpp": 1.0,
+      "cpp": 1,
       "java": 1.5,
-      "python": 2.0
+      "python": 2
     },
     "starterCode": {
-      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
-      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
-      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+      "54": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    int minCostClimbingStairs(vector<int>& cost) {\n        \n    }\n};\n",
+      "62": "import java.util.*;\n\nclass Solution {\n    public int minCostClimbingStairs(int[] cost) {\n        \n    }\n}\n",
+      "71": "class Solution:\n    def minCostClimbingStairs(self, cost: list[int]) -> int:\n        pass\n",
+      "python": "class Solution:\n    def minCostClimbingStairs(self, cost: list[int]) -> int:\n        pass\n",
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    int minCostClimbingStairs(vector<int>& cost) {\n        \n    }\n};\n",
+      "java": "import java.util.*;\n\nclass Solution {\n    public int minCostClimbingStairs(int[] cost) {\n        \n    }\n}\n"
     },
     "testCases": [
       {
@@ -3721,12 +3883,12 @@
       },
       {
         "input": "{\"cost\": [1, 2, 3, 4, 5]}",
-        "output": "2",
+        "output": "3",
         "isSample": false
       },
       {
         "input": "{\"cost\": [10, 20, 30, 40, 50, 60]}",
-        "output": "30",
+        "output": "50",
         "isSample": false
       },
       {
@@ -3736,7 +3898,7 @@
       },
       {
         "input": "{\"cost\": [10, 1, 1, 1, 10]}",
-        "output": "2",
+        "output": "1",
         "isSample": false
       },
       {
@@ -3762,14 +3924,17 @@
     "baseMemoryLimit": 256,
     "baseTimeLimit": 1000,
     "timeLimitMultiplier": {
-      "cpp": 1.0,
+      "cpp": 1,
       "java": 1.5,
-      "python": 2.0
+      "python": 2
     },
     "starterCode": {
-      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
-      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
-      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+      "54": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    int maximumEnergy(vector<int>& energy) {\n        \n    }\n};\n",
+      "62": "import java.util.*;\n\nclass Solution {\n    public int maximumEnergy(int[] energy) {\n        \n    }\n}\n",
+      "71": "class Solution:\n    def maximumEnergy(self, energy: list[int]) -> int:\n        pass\n",
+      "python": "class Solution:\n    def maximumEnergy(self, energy: list[int]) -> int:\n        pass\n",
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    int maximumEnergy(vector<int>& energy) {\n        \n    }\n};\n",
+      "java": "import java.util.*;\n\nclass Solution {\n    public int maximumEnergy(int[] energy) {\n        \n    }\n}\n"
     },
     "testCases": [
       {
@@ -3828,14 +3993,17 @@
     "baseMemoryLimit": 256,
     "baseTimeLimit": 1000,
     "timeLimitMultiplier": {
-      "cpp": 1.0,
+      "cpp": 1,
       "java": 1.5,
-      "python": 2.0
+      "python": 2
     },
     "starterCode": {
-      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
-      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
-      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+      "54": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    int integerReplacement(int n) {\n        \n    }\n};\n",
+      "62": "import java.util.*;\n\nclass Solution {\n    public int integerReplacement(int n) {\n        \n    }\n}\n",
+      "71": "class Solution:\n    def integerReplacement(self, n: int) -> int:\n        pass\n",
+      "python": "class Solution:\n    def integerReplacement(self, n: int) -> int:\n        pass\n",
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    int integerReplacement(int n) {\n        \n    }\n};\n",
+      "java": "import java.util.*;\n\nclass Solution {\n    public int integerReplacement(int n) {\n        \n    }\n}\n"
     },
     "testCases": [
       {
@@ -3898,14 +4066,17 @@
     "baseMemoryLimit": 256,
     "baseTimeLimit": 2000,
     "timeLimitMultiplier": {
-      "cpp": 1.0,
+      "cpp": 1,
       "java": 1.5,
-      "python": 2.0
+      "python": 2
     },
     "starterCode": {
-      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
-      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
-      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+      "54": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    int jobScheduling(vector<int>& startTime, vector<int>& endTime, vector<int>& profit) {\n        \n    }\n};\n",
+      "62": "import java.util.*;\n\nclass Solution {\n    public int jobScheduling(int[] startTime, int[] endTime, int[] profit) {\n        \n    }\n}\n",
+      "71": "class Solution:\n    def jobScheduling(self, startTime: list[int], endTime: list[int], profit: list[int]) -> int:\n        pass\n",
+      "python": "class Solution:\n    def jobScheduling(self, startTime: list[int], endTime: list[int], profit: list[int]) -> int:\n        pass\n",
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    int jobScheduling(vector<int>& startTime, vector<int>& endTime, vector<int>& profit) {\n        \n    }\n};\n",
+      "java": "import java.util.*;\n\nclass Solution {\n    public int jobScheduling(int[] startTime, int[] endTime, int[] profit) {\n        \n    }\n}\n"
     },
     "testCases": [
       {
@@ -3968,14 +4139,17 @@
     "baseMemoryLimit": 256,
     "baseTimeLimit": 1000,
     "timeLimitMultiplier": {
-      "cpp": 1.0,
+      "cpp": 1,
       "java": 1.5,
-      "python": 2.0
+      "python": 2
     },
     "starterCode": {
-      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
-      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
-      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+      "54": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    int getMaximumGold(vector<vector<int>>& grid) {\n        \n    }\n};\n",
+      "62": "import java.util.*;\n\nclass Solution {\n    public int getMaximumGold(int[][] grid) {\n        \n    }\n}\n",
+      "71": "class Solution:\n    def getMaximumGold(self, grid: list[list[int]]) -> int:\n        pass\n",
+      "python": "class Solution:\n    def getMaximumGold(self, grid: list[list[int]]) -> int:\n        pass\n",
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    int getMaximumGold(vector<vector<int>>& grid) {\n        \n    }\n};\n",
+      "java": "import java.util.*;\n\nclass Solution {\n    public int getMaximumGold(int[][] grid) {\n        \n    }\n}\n"
     },
     "testCases": [
       {
@@ -3985,7 +4159,7 @@
       },
       {
         "input": "{\"grid\": [[0,1],[-1,0]]}",
-        "output": "-1",
+        "output": "1",
         "isSample": true
       },
       {
@@ -4038,14 +4212,17 @@
     "baseMemoryLimit": 256,
     "baseTimeLimit": 1000,
     "timeLimitMultiplier": {
-      "cpp": 1.0,
+      "cpp": 1,
       "java": 1.5,
-      "python": 2.0
+      "python": 2
     },
     "starterCode": {
-      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
-      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
-      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+      "54": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    int findTargetSumWays(vector<int>& nums, int target) {\n        \n    }\n};\n",
+      "62": "import java.util.*;\n\nclass Solution {\n    public int findTargetSumWays(int[] nums, int target) {\n        \n    }\n}\n",
+      "71": "class Solution:\n    def findTargetSumWays(self, nums: list[int], target: int) -> int:\n        pass\n",
+      "python": "class Solution:\n    def findTargetSumWays(self, nums: list[int], target: int) -> int:\n        pass\n",
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    int findTargetSumWays(vector<int>& nums, int target) {\n        \n    }\n};\n",
+      "java": "import java.util.*;\n\nclass Solution {\n    public int findTargetSumWays(int[] nums, int target) {\n        \n    }\n}\n"
     },
     "testCases": [
       {
@@ -4107,19 +4284,22 @@
     "baseMemoryLimit": 256,
     "baseTimeLimit": 1500,
     "timeLimitMultiplier": {
-      "cpp": 1.0,
+      "cpp": 1,
       "java": 1.5,
-      "python": 2.0
+      "python": 2
     },
     "starterCode": {
-      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
-      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
-      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+      "54": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    int longestSubsequence(vector<int>& nums, int k) {\n        \n    }\n};\n",
+      "62": "import java.util.*;\n\nclass Solution {\n    public int longestSubsequence(int[] nums, int k) {\n        \n    }\n}\n",
+      "71": "class Solution:\n    def longestSubsequence(self, nums: list[int], k: int) -> int:\n        pass\n",
+      "python": "class Solution:\n    def longestSubsequence(self, nums: list[int], k: int) -> int:\n        pass\n",
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    int longestSubsequence(vector<int>& nums, int k) {\n        \n    }\n};\n",
+      "java": "import java.util.*;\n\nclass Solution {\n    public int longestSubsequence(int[] nums, int k) {\n        \n    }\n}\n"
     },
     "testCases": [
       {
         "input": "{\"nums\": [1,5,2,4,3,7,8], \"k\": 2}",
-        "output": "5",
+        "output": "3",
         "isSample": true
       },
       {
@@ -4134,7 +4314,7 @@
       },
       {
         "input": "{\"nums\": [1,3,2,5,4,7,6], \"k\": 2}",
-        "output": "6",
+        "output": "4",
         "isSample": false
       },
       {
@@ -4149,7 +4329,7 @@
       },
       {
         "input": "{\"nums\": [1,2,5,8,9], \"k\": 3}",
-        "output": "4",
+        "output": "5",
         "isSample": false
       },
       {
@@ -4176,14 +4356,17 @@
     "baseMemoryLimit": 256,
     "baseTimeLimit": 2000,
     "timeLimitMultiplier": {
-      "cpp": 1.0,
+      "cpp": 1,
       "java": 1.5,
-      "python": 2.0
+      "python": 2
     },
     "starterCode": {
-      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
-      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
-      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+      "54": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    int mergeStones(vector<int>& stones, int k) {\n        \n    }\n};\n",
+      "62": "import java.util.*;\n\nclass Solution {\n    public int mergeStones(int[] stones, int k) {\n        \n    }\n}\n",
+      "71": "class Solution:\n    def mergeStones(self, stones: list[int], k: int) -> int:\n        pass\n",
+      "python": "class Solution:\n    def mergeStones(self, stones: list[int], k: int) -> int:\n        pass\n",
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    int mergeStones(vector<int>& stones, int k) {\n        \n    }\n};\n",
+      "java": "import java.util.*;\n\nclass Solution {\n    public int mergeStones(int[] stones, int k) {\n        \n    }\n}\n"
     },
     "testCases": [
       {
@@ -4244,14 +4427,17 @@
     "baseMemoryLimit": 256,
     "baseTimeLimit": 2000,
     "timeLimitMultiplier": {
-      "cpp": 1.0,
+      "cpp": 1,
       "java": 1.5,
-      "python": 2.0
+      "python": 2
     },
     "starterCode": {
-      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nint main() {\n    ios_base::sync_with_stdio(false);\n    cin.tie(NULL);\n    \n    // Write your code here\n    \n    return 0;\n}",
-      "java": "import java.util.*;\nimport java.io.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        \n        // Write your code here\n        \n    }\n}",
-      "python": "import sys\n\ndef solve():\n    # Write your code here\n    pass\n\nif __name__ == \"__main__\":\n    solve()"
+      "54": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    int count(int low, int high, int k) {\n        \n    }\n};\n",
+      "62": "import java.util.*;\n\nclass Solution {\n    public int count(int low, int high, int k) {\n        \n    }\n}\n",
+      "71": "class Solution:\n    def count(self, low: int, high: int, k: int) -> int:\n        pass\n",
+      "python": "class Solution:\n    def count(self, low: int, high: int, k: int) -> int:\n        pass\n",
+      "cpp": "#include <iostream>\n#include <vector>\n#include <string>\n#include <algorithm>\nusing namespace std;\n\nclass Solution {\npublic:\n    int count(int low, int high, int k) {\n        \n    }\n};\n",
+      "java": "import java.util.*;\n\nclass Solution {\n    public int count(int low, int high, int k) {\n        \n    }\n}\n"
     },
     "testCases": [
       {

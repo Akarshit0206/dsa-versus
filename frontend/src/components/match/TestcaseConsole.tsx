@@ -1,17 +1,22 @@
-import { useState } from 'react';
+import { useState, useEffect, useMemo, useRef } from 'react';
 import {
   Plus,
   Trash2,
   CheckCircle2,
   XCircle,
   Clock,
-  Terminal,
+  Code2,
   AlertCircle,
   Copy,
   Check,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import type { PublicTestCase } from '@/types';
+import type { PublicQuestion } from '@/types';
+import {
+  parseTestCaseInput,
+  serializeTestCaseInput,
+  type TestCaseParam,
+} from '@/utils/testCaseUtils';
 
 export interface TestCaseItem {
   id: string;
@@ -21,7 +26,7 @@ export interface TestCaseItem {
 }
 
 export interface RunResult {
-  status: 'PENDING' | 'ACCEPTED' | 'WRONG ANSWER' | 'RUNTIME ERROR' | 'TLE';
+  status: 'PENDING' | 'ACCEPTED' | 'WRONG ANSWER' | 'RUNTIME ERROR' | 'TLE' | 'COMPILATION ERROR';
   totalCount: number;
   passedCount: number;
   details?: {
@@ -31,10 +36,13 @@ export interface RunResult {
     actualOutput?: string;
     expectedOutput?: string;
     time?: number;
+    stderr?: string;
+    compileOutput?: string;
   }[];
 }
 
 interface TestcaseConsoleProps {
+  question?: PublicQuestion;
   testCases: TestCaseItem[];
   activeCaseIndex: number;
   onSelectCase: (index: number) => void;
@@ -46,8 +54,11 @@ interface TestcaseConsoleProps {
 }
 
 const MAX_TOTAL_TEST_CASES = 5;
+// Custom test cases disabled for now as custom cases lack precomputed server-side expected outputs
+const ENABLE_CUSTOM_TEST_CASES = false;
 
 export function TestcaseConsole({
+  question,
   testCases,
   activeCaseIndex,
   onSelectCase,
@@ -60,8 +71,65 @@ export function TestcaseConsole({
   const [activeTab, setActiveTab] = useState<'testcase' | 'result'>('testcase');
   const [showMaxNotice, setShowMaxNotice] = useState(false);
   const [copiedKey, setCopiedKey] = useState<string | null>(null);
+  const [selectedResultCaseIndex, setSelectedResultCaseIndex] = useState(0);
+
+  // Local parameter values for smooth, cursor-safe editing of the active test case
+  const [localParamValues, setLocalParamValues] = useState<Record<string, string>>({});
+  const lastCaseIdRef = useRef<string | null>(null);
 
   const canAddMore = testCases.length < MAX_TOTAL_TEST_CASES;
+  const currentCase = testCases[activeCaseIndex] || testCases[0];
+
+  // Auto-switch to result tab when run starts or results arrive
+  useEffect(() => {
+    if (isRunning) {
+      setActiveTab('result');
+      setSelectedResultCaseIndex(0);
+    }
+  }, [isRunning]);
+
+  useEffect(() => {
+    if (runResult) {
+      setActiveTab('result');
+    }
+  }, [runResult]);
+
+  // Parse structured parameters for current case
+  const parsedParams: TestCaseParam[] = useMemo(() => {
+    if (!currentCase) return [];
+    return parseTestCaseInput(currentCase.input, question);
+  }, [currentCase?.input, question]);
+
+  // Keep local parameter state synchronized when changing active test cases
+  useEffect(() => {
+    if (!currentCase) return;
+
+    if (lastCaseIdRef.current !== currentCase.id) {
+      const initialMap: Record<string, string> = {};
+      parsedParams.forEach((p) => {
+        initialMap[p.name] = p.value;
+      });
+      setLocalParamValues(initialMap);
+      lastCaseIdRef.current = currentCase.id;
+    }
+  }, [currentCase?.id, parsedParams]);
+
+  const handleParamChange = (paramName: string, newValue: string) => {
+    const updatedMap = {
+      ...localParamValues,
+      [paramName]: newValue,
+    };
+    setLocalParamValues(updatedMap);
+
+    // Reconstruct parameter list preserving existing order
+    const updatedParams: TestCaseParam[] = parsedParams.map((p) => ({
+      name: p.name,
+      value: p.name === paramName ? newValue : updatedMap[p.name] ?? p.value,
+    }));
+
+    const serialized = serializeTestCaseInput(updatedParams);
+    onUpdateCustomInput(activeCaseIndex, serialized);
+  };
 
   const handleAddClick = () => {
     if (canAddMore) {
@@ -83,11 +151,17 @@ export function TestcaseConsole({
     }
   };
 
-  const currentCase = testCases[activeCaseIndex] || testCases[0];
+  // Result tab: active case detail
+  const activeResultDetail = runResult?.details?.[selectedResultCaseIndex];
+  const activeResultCase = testCases[selectedResultCaseIndex] || testCases[0];
+  const activeResultParams = useMemo(() => {
+    if (!activeResultCase) return [];
+    return parseTestCaseInput(activeResultCase.input, question);
+  }, [activeResultCase?.input, question]);
 
   return (
     <div className="flex h-full flex-col bg-card/60 text-ink">
-      {/* Console Nav Tabs: Testcase vs Test Result */}
+      {/* Console Nav Tabs: Testcases vs Result */}
       <div className="flex items-center justify-between border-b border-border/80 bg-background/50 px-3 py-1.5 text-xs">
         <div className="flex items-center gap-2">
           <button
@@ -100,8 +174,12 @@ export function TestcaseConsole({
                 : 'text-muted-foreground hover:text-ink'
             )}
           >
-            <Terminal className="size-3" />
-            <span>Testcases ({testCases.length}/{MAX_TOTAL_TEST_CASES})</span>
+            <Code2 className="size-3" />
+            <span>
+              {ENABLE_CUSTOM_TEST_CASES
+                ? `Testcases (${testCases.length}/${MAX_TOTAL_TEST_CASES})`
+                : `Testcases (${testCases.length})`}
+            </span>
           </button>
 
           <button
@@ -139,7 +217,7 @@ export function TestcaseConsole({
       <div className="flex-1 overflow-y-auto p-4 text-xs">
         {activeTab === 'testcase' ? (
           <div>
-            {/* Case selector pills + Add button */}
+            {/* LeetCode-style Case tabs: Case 1, Case 2, Case 3, + */}
             <div className="flex flex-wrap items-center gap-1.5 border-b border-border/60 pb-3">
               {testCases.map((tc, idx) => {
                 const isSelected = idx === activeCaseIndex;
@@ -147,32 +225,31 @@ export function TestcaseConsole({
                   <div
                     key={tc.id}
                     className={cn(
-                      'group flex items-center rounded-lg border text-xs font-semibold transition-all',
+                      'group flex items-center rounded-lg text-xs font-semibold transition-all',
                       isSelected
-                        ? 'border-ink bg-ink text-background'
-                        : 'border-border bg-background/60 text-muted-foreground hover:bg-background hover:text-ink'
+                        ? 'bg-neutral-800 text-neutral-100 dark:bg-neutral-700 dark:text-white shadow-xs'
+                        : 'text-muted-foreground hover:bg-secondary/60 hover:text-ink'
                     )}
                   >
                     <button
                       type="button"
                       onClick={() => onSelectCase(idx)}
-                      className="px-2.5 py-1"
+                      className={cn(
+                        'px-3 py-1.5 transition-colors',
+                        tc.isCustom ? 'pr-1.5' : 'pr-3'
+                      )}
                     >
                       Case {idx + 1}
-                      {tc.isCustom && ' *'}
                     </button>
 
-                    {tc.isCustom && (
+                    {ENABLE_CUSTOM_TEST_CASES && tc.isCustom && (
                       <button
                         type="button"
                         onClick={(e) => {
                           e.stopPropagation();
                           onDeleteCustomCase(tc.id);
                         }}
-                        className={cn(
-                          'pr-1.5 opacity-60 hover:opacity-100 transition-opacity',
-                          isSelected ? 'text-background' : 'text-muted-foreground hover:text-destructive'
-                        )}
+                        className="pr-2 pl-0.5 opacity-60 hover:opacity-100 hover:text-destructive transition-opacity"
                         title="Delete custom test case"
                       >
                         <Trash2 className="size-3" />
@@ -182,83 +259,73 @@ export function TestcaseConsole({
                 );
               })}
 
-              {/* Add Custom Testcase Button */}
-              <button
-                type="button"
-                onClick={handleAddClick}
-                disabled={!canAddMore}
-                className={cn(
-                  'flex size-7 items-center justify-center rounded-lg border border-dashed transition-colors',
-                  canAddMore
-                    ? 'border-border text-muted-foreground hover:border-marker/70 hover:bg-secondary hover:text-ink'
-                    : 'border-border/40 text-muted-foreground/40 cursor-not-allowed'
-                )}
-                title={canAddMore ? 'Add custom testcase' : 'Max 5 testcases reached'}
-                aria-label="Add custom testcase"
-              >
-                <Plus className="size-3.5" />
-              </button>
+              {/* Add Custom Testcase Button (Preserved, conditionally hidden while custom testcases are disabled) */}
+              {ENABLE_CUSTOM_TEST_CASES && (
+                <button
+                  type="button"
+                  onClick={handleAddClick}
+                  disabled={!canAddMore}
+                  className={cn(
+                    'flex size-7 items-center justify-center rounded-lg border border-dashed transition-colors',
+                    canAddMore
+                      ? 'border-border text-muted-foreground hover:border-marker/70 hover:bg-secondary hover:text-ink'
+                      : 'border-border/40 text-muted-foreground/40 cursor-not-allowed'
+                  )}
+                  title={canAddMore ? 'Add testcase' : 'Max 5 testcases reached'}
+                  aria-label="Add custom testcase"
+                >
+                  <Plus className="size-3.5" />
+                </button>
+              )}
             </div>
 
-            {/* Selected Testcase View / Editor */}
+            {/* LeetCode-style Parameter Fields: param1 = [value], param2 = [value] */}
             {currentCase && (
-              <div className="mt-4 space-y-4 font-mono">
-                <div>
-                  <div className="flex items-center justify-between text-[11px] font-sans font-bold text-muted-foreground mb-1.5">
-                    <span>
-                      Input {currentCase.isCustom ? '(Editable Custom Input)' : ''}:
-                    </span>
-                    <button
-                      type="button"
-                      onClick={() => handleCopy(currentCase.input, 'current-in')}
-                      className="text-muted-foreground hover:text-ink"
-                      title="Copy input"
-                    >
-                      {copiedKey === 'current-in' ? (
-                        <Check className="size-3 text-emerald-500" />
-                      ) : (
-                        <Copy className="size-3" />
-                      )}
-                    </button>
-                  </div>
+              <div className="mt-4 space-y-4">
+                {parsedParams.map((param, pIdx) => {
+                  const currentValue = localParamValues[param.name] ?? param.value;
+                  const rowCount = Math.min(6, Math.max(1, currentValue.split('\n').length));
 
-                  {currentCase.isCustom ? (
-                    <textarea
-                      value={currentCase.input}
-                      onChange={(e) => onUpdateCustomInput(activeCaseIndex, e.target.value)}
-                      rows={3}
-                      className="w-full rounded-lg border border-border bg-background/80 p-2.5 text-xs text-ink outline-none focus:border-marker transition-colors resize-none"
-                      placeholder='e.g. {"gain": [-5, 1, 5, 0, -7]}'
-                    />
-                  ) : (
-                    <pre className="w-full rounded-lg border border-border/80 bg-background/70 p-2.5 text-xs text-ink overflow-x-auto whitespace-pre-wrap break-all">
-                      {currentCase.input}
-                    </pre>
-                  )}
-                </div>
+                  return (
+                    <div key={param.name || pIdx} className="space-y-1.5">
+                      <div className="text-xs font-mono font-medium text-muted-foreground select-none">
+                        {param.name} =
+                      </div>
 
-                {currentCase.output !== undefined && (
-                  <div>
-                    <div className="flex items-center justify-between text-[11px] font-sans font-bold text-muted-foreground mb-1.5">
-                      <span>Expected Output:</span>
-                      <button
-                        type="button"
-                        onClick={() => handleCopy(currentCase.output || '', 'current-out')}
-                        className="text-muted-foreground hover:text-ink"
-                        title="Copy expected output"
-                      >
-                        {copiedKey === 'current-out' ? (
-                          <Check className="size-3 text-emerald-500" />
-                        ) : (
-                          <Copy className="size-3" />
-                        )}
-                      </button>
+                      <div className="group relative rounded-lg border border-border/80 bg-neutral-900/60 dark:bg-[#262626] p-3 transition-colors focus-within:border-marker/80 hover:border-border">
+                        <textarea
+                          value={currentValue}
+                          onChange={(e) => {
+                            if (ENABLE_CUSTOM_TEST_CASES) {
+                              handleParamChange(param.name, e.target.value);
+                            }
+                          }}
+                          readOnly={!ENABLE_CUSTOM_TEST_CASES}
+                          rows={rowCount}
+                          className={cn(
+                            'w-full bg-transparent font-mono text-xs text-ink dark:text-neutral-100 outline-none resize-none leading-relaxed overflow-x-auto break-all',
+                            !ENABLE_CUSTOM_TEST_CASES && 'cursor-default'
+                          )}
+                          placeholder="Enter parameter value"
+                          spellCheck={false}
+                        />
+
+                        <button
+                          type="button"
+                          onClick={() => handleCopy(currentValue, `param-${pIdx}`)}
+                          className="absolute top-2.5 right-2.5 opacity-0 group-hover:opacity-100 transition-opacity text-muted-foreground hover:text-ink"
+                          title={`Copy ${param.name}`}
+                        >
+                          {copiedKey === `param-${pIdx}` ? (
+                            <Check className="size-3 text-emerald-500" />
+                          ) : (
+                            <Copy className="size-3" />
+                          )}
+                        </button>
+                      </div>
                     </div>
-                    <pre className="w-full rounded-lg border border-border/80 bg-background/70 p-2.5 text-xs text-ink overflow-x-auto whitespace-pre-wrap break-all">
-                      {currentCase.output}
-                    </pre>
-                  </div>
-                )}
+                  );
+                })}
               </div>
             )}
           </div>
@@ -266,12 +333,13 @@ export function TestcaseConsole({
           /* Test Result Tab */
           <div>
             {isRunning ? (
-              <div className="flex h-32 flex-col items-center justify-center gap-2 text-muted-foreground">
+              <div className="flex h-36 flex-col items-center justify-center gap-2 text-muted-foreground">
                 <Clock className="size-6 animate-spin text-marker" />
-                <p>Executing test cases...</p>
+                <p className="font-medium text-xs">Executing test cases...</p>
               </div>
             ) : runResult ? (
               <div className="space-y-4">
+                {/* Result Status Banner */}
                 <div
                   className={cn(
                     'flex items-center justify-between rounded-xl border p-4',
@@ -294,43 +362,111 @@ export function TestcaseConsole({
                   </span>
                 </div>
 
-                {/* Case breakdown if details present */}
-                {runResult.details && runResult.details.length > 0 && (
-                  <div className="space-y-2">
-                    {runResult.details.map((d, i) => (
-                      <div
-                        key={i}
-                        className="rounded-lg border border-border bg-background/60 p-3 font-mono text-xs"
+                {/* Case selector pills inside Result view */}
+                <div className="flex flex-wrap items-center gap-1.5 border-b border-border/60 pb-3">
+                  {testCases.map((_, idx) => {
+                    const isSelected = idx === selectedResultCaseIndex;
+                    const detail = runResult.details?.[idx];
+                    const passed = detail ? detail.passed : runResult.status === 'ACCEPTED';
+
+                    return (
+                      <button
+                        key={idx}
+                        type="button"
+                        onClick={() => setSelectedResultCaseIndex(idx)}
+                        className={cn(
+                          'flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-xs font-semibold transition-all',
+                          isSelected
+                            ? 'bg-neutral-800 text-neutral-100 dark:bg-neutral-700 dark:text-white shadow-xs'
+                            : 'text-muted-foreground hover:bg-secondary/60 hover:text-ink'
+                        )}
                       >
-                        <div className="flex items-center justify-between mb-1">
-                          <span className="font-bold font-sans">Testcase {i + 1}</span>
-                          <span
-                            className={cn(
-                              'font-bold',
-                              d.passed ? 'text-emerald-500' : 'text-destructive'
-                            )}
-                          >
-                            {d.passed ? 'Passed' : 'Failed'}
-                          </span>
-                        </div>
-                        {d.actualOutput !== undefined && (
-                          <div className="text-muted-foreground mt-1">
-                            Output: <span className="text-ink">{d.actualOutput}</span>
-                          </div>
-                        )}
-                        {d.expectedOutput !== undefined && (
-                          <div className="text-muted-foreground">
-                            Expected: <span className="text-ink">{d.expectedOutput}</span>
-                          </div>
-                        )}
+                        <span
+                          className={cn(
+                            'size-1.5 rounded-full',
+                            passed ? 'bg-emerald-500' : 'bg-destructive'
+                          )}
+                        />
+                        <span>Case {idx + 1}</span>
+                      </button>
+                    );
+                  })}
+                </div>
+
+                {/* Selected Result Case Details in LeetCode Format */}
+                <div className="space-y-3.5">
+                  {/* Inputs */}
+                  {activeResultParams.map((param, pIdx) => (
+                    <div key={pIdx} className="space-y-1">
+                      <div className="text-xs font-mono font-medium text-muted-foreground select-none">
+                        {param.name} =
                       </div>
-                    ))}
-                  </div>
-                )}
+                      <div className="rounded-lg border border-border/80 bg-neutral-900/60 dark:bg-[#262626] p-2.5 font-mono text-xs text-ink dark:text-neutral-100 break-all overflow-x-auto">
+                        {param.value}
+                      </div>
+                    </div>
+                  ))}
+
+                  {/* Actual Output */}
+                  {activeResultDetail?.actualOutput !== undefined && (
+                    <div className="space-y-1">
+                      <div className="text-xs font-mono font-medium text-muted-foreground select-none">
+                        Output =
+                      </div>
+                      <div
+                        className={cn(
+                          'rounded-lg border p-2.5 font-mono text-xs break-all overflow-x-auto',
+                          activeResultDetail.passed
+                            ? 'border-border/80 bg-neutral-900/60 dark:bg-[#262626] text-ink dark:text-neutral-100'
+                            : 'border-destructive/40 bg-destructive/10 text-destructive'
+                        )}
+                      >
+                        {activeResultDetail.actualOutput || '<empty output>'}
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Expected Output */}
+                  {(activeResultDetail?.expectedOutput !== undefined ||
+                    activeResultCase?.output !== undefined) && (
+                    <div className="space-y-1">
+                      <div className="text-xs font-mono font-medium text-muted-foreground select-none">
+                        Expected =
+                      </div>
+                      <div className="rounded-lg border border-border/80 bg-neutral-900/60 dark:bg-[#262626] p-2.5 font-mono text-xs text-ink dark:text-neutral-100 break-all overflow-x-auto">
+                        {activeResultDetail?.expectedOutput ?? activeResultCase?.output}
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Stdout if available */}
+                  {activeResultDetail?.stdout && (
+                    <div className="space-y-1">
+                      <div className="text-xs font-mono font-medium text-muted-foreground select-none">
+                        Stdout =
+                      </div>
+                      <div className="rounded-lg border border-border/80 bg-neutral-900/60 dark:bg-[#262626] p-2.5 font-mono text-xs text-muted-foreground break-all overflow-x-auto">
+                        {activeResultDetail.stdout}
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Stderr / Compiler Output if available */}
+                  {(activeResultDetail?.stderr || activeResultDetail?.compileOutput) && (
+                    <div className="space-y-1">
+                      <div className="text-xs font-mono font-medium text-destructive select-none">
+                        Error / Stderr =
+                      </div>
+                      <div className="rounded-lg border border-destructive/40 bg-destructive/10 p-2.5 font-mono text-xs text-destructive whitespace-pre-wrap break-all overflow-x-auto">
+                        {activeResultDetail.stderr || activeResultDetail.compileOutput}
+                      </div>
+                    </div>
+                  )}
+                </div>
               </div>
             ) : (
-              <div className="flex h-32 flex-col items-center justify-center text-muted-foreground">
-                <p>Run your code to evaluate against sample test cases.</p>
+              <div className="flex h-36 flex-col items-center justify-center text-muted-foreground">
+                <p>Run your code to evaluate against test cases.</p>
               </div>
             )}
           </div>

@@ -8,26 +8,24 @@ export type SupportedLanguage = 'python' | 'cpp' | 'java';
 
 export interface LanguageOption {
   id: SupportedLanguage;
-  judge0Id: number;
+  languageId: number;
+  judge0Id?: number;
   label: string;
   monacoLang: string;
 }
 
 export const SUPPORTED_LANGUAGES: LanguageOption[] = [
-  { id: 'python', judge0Id: 71, label: 'Python 3', monacoLang: 'python' },
-  { id: 'cpp', judge0Id: 54, label: 'C++ (GCC)', monacoLang: 'cpp' },
-  { id: 'java', judge0Id: 62, label: 'Java (OpenJDK)', monacoLang: 'java' },
+  { id: 'python', languageId: 71, judge0Id: 71, label: 'Python 3', monacoLang: 'python' },
+  { id: 'cpp', languageId: 54, judge0Id: 54, label: 'C++ (GCC)', monacoLang: 'cpp' },
+  { id: 'java', languageId: 62, judge0Id: 62, label: 'Java (OpenJDK)', monacoLang: 'java' },
 ];
 
+
 export const DEFAULT_BOILERPLATES: Record<SupportedLanguage, string> = {
-  python: `import sys
-
-def solve():
-    # Write your solution here
-    pass
-
-if __name__ == "__main__":
-    solve()
+  python: `class Solution:
+    def solve(self):
+        # Write your solution here
+        pass
 `,
   cpp: `#include <iostream>
 #include <vector>
@@ -35,24 +33,18 @@ if __name__ == "__main__":
 #include <algorithm>
 using namespace std;
 
-int main() {
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
-    
-    // Write your solution here
-    
-    return 0;
-}
+class Solution {
+public:
+    void solve() {
+        // Write your solution here
+    }
+};
 `,
   java: `import java.util.*;
-import java.io.*;
 
-public class Main {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        
+class Solution {
+    public void solve() {
         // Write your solution here
-        
     }
 }
 `,

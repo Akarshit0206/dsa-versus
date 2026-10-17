@@ -13,6 +13,7 @@ export function useMatchSocket(initialMatch?: Match | null) {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
   const [winnerUserId, setWinnerUserId] = useState<string | null>(null);
+  const [matchEndReason, setMatchEndReason] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
@@ -37,9 +38,15 @@ export function useMatchSocket(initialMatch?: Match | null) {
       });
     }
 
-    function handleMatchEnded(payload: { matchId: string; winnerUserId?: string }) {
+    function handleMatchEnded(payload: {
+      matchId: string;
+      winnerUserId?: string;
+      reason?: string;
+      match?: Match;
+    }) {
       setMatch((prev) => {
         if (!prev || prev.matchId !== payload.matchId) return prev;
+        if (payload.match) return payload.match;
         return {
           ...prev,
           status: 'completed',
@@ -48,6 +55,9 @@ export function useMatchSocket(initialMatch?: Match | null) {
       });
       if (payload.winnerUserId) {
         setWinnerUserId(payload.winnerUserId);
+      }
+      if (payload.reason) {
+        setMatchEndReason(payload.reason);
       }
     }
 
@@ -115,15 +125,52 @@ export function useMatchSocket(initialMatch?: Match | null) {
     [socket]
   );
 
+  const endMatch = useCallback(
+    (payload: { matchId: string; reason?: string; forfeit?: boolean }): Promise<Match> => {
+      return new Promise((resolve, reject) => {
+        socket.emit('match:end', payload, (response: SocketResponse<Match>) => {
+          if (response.success && response.data) {
+            setMatch(response.data);
+            resolve(response.data);
+          } else {
+            const errMsg = response.error || 'Failed to end match.';
+            reject(new Error(errMsg));
+          }
+        });
+      });
+    },
+    [socket]
+  );
+
+  const leaveMatch = useCallback(
+    (matchId: string): Promise<Match> => {
+      return new Promise((resolve, reject) => {
+        socket.emit('match:leave', { matchId }, (response: SocketResponse<Match>) => {
+          if (response.success && response.data) {
+            setMatch(response.data);
+            resolve(response.data);
+          } else {
+            const errMsg = response.error || 'Failed to leave match.';
+            reject(new Error(errMsg));
+          }
+        });
+      });
+    },
+    [socket]
+  );
+
   return {
     isConnected,
     match,
     isLoading,
     isSubmitting,
     winnerUserId,
+    matchEndReason,
     error,
     getMatch,
     updateProgress,
+    endMatch,
+    leaveMatch,
     setMatch,
   };
 }

@@ -17,6 +17,9 @@ import {
   type TestCaseItem,
   type RunResult,
 } from '@/components/match/TestcaseConsole';
+import { MatchResultModal } from '@/components/match/MatchResultModal';
+import { apiRequest } from '@/lib/api';
+import { createDefaultTestCaseInput } from '@/utils/testCaseUtils';
 import type { PublicQuestion } from '@/types';
 
 // Fallback preview question for standalone frontend dev
@@ -37,9 +40,31 @@ Return the highest altitude of a point.`,
     ],
     topics: ['Arrays', 'Prefix Sum'],
     starterCode: {
-      python: DEFAULT_BOILERPLATES.python,
-      cpp: DEFAULT_BOILERPLATES.cpp,
-      java: DEFAULT_BOILERPLATES.java,
+      python: `class Solution:
+    def largestAltitude(self, gain: list[int]) -> int:
+        pass
+`,
+      cpp: `#include <iostream>
+#include <vector>
+#include <string>
+#include <algorithm>
+using namespace std;
+
+class Solution {
+public:
+    int largestAltitude(vector<int>& gain) {
+        
+    }
+};
+`,
+      java: `import java.util.*;
+
+class Solution {
+    public int largestAltitude(int[] gain) {
+        
+    }
+}
+`,
     },
     testCases: [
       {
@@ -69,9 +94,31 @@ Return the indices of the two numbers, index1 and index2, added by one as an int
     ],
     topics: ['Arrays', 'Two Pointers', 'Binary Search'],
     starterCode: {
-      python: DEFAULT_BOILERPLATES.python,
-      cpp: DEFAULT_BOILERPLATES.cpp,
-      java: DEFAULT_BOILERPLATES.java,
+      python: `class Solution:
+    def twoSum(self, numbers: list[int], target: int) -> list[int]:
+        pass
+`,
+      cpp: `#include <iostream>
+#include <vector>
+#include <string>
+#include <algorithm>
+using namespace std;
+
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& numbers, int target) {
+        
+    }
+};
+`,
+      java: `import java.util.*;
+
+class Solution {
+    public int[] twoSum(int[] numbers, int target) {
+        
+    }
+}
+`,
     },
     testCases: [
       {
@@ -92,8 +139,16 @@ export function MatchPage() {
   const { matchId } = useParams<{ matchId: string }>();
   const navigate = useNavigate();
   const { user } = useAuth();
-  const { match, isConnected, isLoading, error, getMatch, updateProgress } =
-    useMatchSocket();
+  const {
+    match,
+    isConnected,
+    isLoading,
+    error,
+    getMatch,
+    updateProgress,
+    leaveMatch,
+    matchEndReason,
+  } = useMatchSocket();
 
   // Arena state
   const [activeQuestionIndex, setActiveQuestionIndex] = useState(0);
@@ -108,6 +163,9 @@ export function MatchPage() {
 
   // Custom test cases state map: `${questionId}` -> TestCaseItem[]
   const [customTestCasesMap, setCustomTestCasesMap] = useState<Record<string, TestCaseItem[]>>({});
+  // Sample test case overrides state map: `${questionId}` -> Record<caseIndex, string>
+  const [editedSampleCasesMap, setEditedSampleCasesMap] = useState<Record<string, Record<number, string>>>({});
+  const [showResultModal, setShowResultModal] = useState(true);
 
   // Hydrate match on mount or reload
   useEffect(() => {
@@ -168,23 +226,31 @@ export function MatchPage() {
   };
 
   // Build combined test cases for the active question (sample test cases + custom user test cases)
+  // Custom test cases disabled for now as custom cases lack precomputed expected outputs
+  const ENABLE_CUSTOM_TEST_CASES = false;
   const currentTestCases: TestCaseItem[] = useMemo(() => {
+    const editedSamples = editedSampleCasesMap[activeQuestion._id] || {};
     const samples: TestCaseItem[] = (activeQuestion.testCases || []).map((tc, idx) => ({
       id: `sample-${idx}`,
-      input: tc.input,
+      input: editedSamples[idx] !== undefined ? editedSamples[idx] : tc.input,
       output: tc.output,
       isCustom: false,
     }));
 
+    if (!ENABLE_CUSTOM_TEST_CASES) {
+      return samples;
+    }
+
     const customs = customTestCasesMap[activeQuestion._id] || [];
     return [...samples, ...customs];
-  }, [activeQuestion, customTestCasesMap]);
+  }, [activeQuestion, customTestCasesMap, editedSampleCasesMap, ENABLE_CUSTOM_TEST_CASES]);
 
   const handleAddCustomCase = () => {
     const customs = customTestCasesMap[activeQuestion._id] || [];
+    const defaultInput = createDefaultTestCaseInput(activeQuestion);
     const newCase: TestCaseItem = {
       id: `custom-${Date.now()}`,
-      input: '{"input": "sample_value"}',
+      input: defaultInput,
       isCustom: true,
     };
     const updated = [...customs, newCase];
@@ -208,73 +274,177 @@ export function MatchPage() {
 
   const handleUpdateCustomInput = (caseIndex: number, value: string) => {
     const currentItem = currentTestCases[caseIndex];
-    if (!currentItem || !currentItem.isCustom) return;
+    if (!currentItem) return;
 
-    const customs = customTestCasesMap[activeQuestion._id] || [];
-    const updated = customs.map((c) =>
-      c.id === currentItem.id ? { ...c, input: value } : c
-    );
-    setCustomTestCasesMap((prev) => ({
-      ...prev,
-      [activeQuestion._id]: updated,
-    }));
+    if (currentItem.isCustom) {
+      const customs = customTestCasesMap[activeQuestion._id] || [];
+      const updated = customs.map((c) =>
+        c.id === currentItem.id ? { ...c, input: value } : c
+      );
+      setCustomTestCasesMap((prev) => ({
+        ...prev,
+        [activeQuestion._id]: updated,
+      }));
+    } else {
+      setEditedSampleCasesMap((prev) => ({
+        ...prev,
+        [activeQuestion._id]: {
+          ...(prev[activeQuestion._id] || {}),
+          [caseIndex]: value,
+        },
+      }));
+    }
   };
 
-  // Run Code Action: Evaluates active test cases
+  // Run Code Action: Evaluates active test cases via Piston Sandbox
   const handleRunCode = async () => {
     if (isRunning || isSubmitting) return;
     setIsRunning(true);
     setRunResult(null);
 
-    // Simulate test run
-    setTimeout(() => {
-      const totalCount = currentTestCases.length;
-      const details = currentTestCases.map((tc, idx) => ({
-        caseIndex: idx,
-        passed: true,
-        actualOutput: tc.output || 'Passed output',
-        expectedOutput: tc.output,
-      }));
+    const langOption = SUPPORTED_LANGUAGES.find((l) => l.id === activeLanguage);
+    const languageId = langOption?.languageId || 71;
 
-      setRunResult({
-        status: 'ACCEPTED',
-        totalCount,
-        passedCount: totalCount,
-        details,
+    try {
+      const response = await apiRequest<{
+        status: 'PENDING' | 'ACCEPTED' | 'WRONG ANSWER' | 'RUNTIME ERROR' | 'TLE' | 'COMPILATION ERROR';
+        totalCount: number;
+        passedCount: number;
+        details?: Array<{
+          caseIndex: number;
+          passed: boolean;
+          actualOutput?: string;
+          expectedOutput?: string;
+          time?: number;
+          stderr?: string;
+          compileOutput?: string;
+        }>;
+      }>('/api/submissions/run', {
+        method: 'POST',
+        body: JSON.stringify({
+          code: currentCode,
+          languageId,
+          questionId: activeQuestion._id,
+          testCases: currentTestCases,
+          slug: activeQuestion.slug,
+          title: activeQuestion.title,
+        }),
       });
+
+      if (response.success && response.data) {
+        setRunResult({
+          status: response.data.status,
+          totalCount: response.data.totalCount,
+          passedCount: response.data.passedCount,
+          details: response.data.details,
+        });
+      }
+    } catch (err: any) {
+      setRunResult({
+        status: 'RUNTIME ERROR',
+        totalCount: currentTestCases.length,
+        passedCount: 0,
+        details: [
+          {
+            caseIndex: 0,
+            passed: false,
+            actualOutput: err.message || 'Execution failed',
+          },
+        ],
+      });
+    } finally {
       setIsRunning(false);
-    }, 700);
+    }
   };
 
-  // Submit Solution Action: Evaluates and broadcasts progress to socket
+  // Submit Solution Action: Evaluates against all test cases via Piston and resolves match outcome
   const handleSubmitCode = async () => {
     if (isRunning || isSubmitting) return;
     setIsSubmitting(true);
 
-    setTimeout(async () => {
-      const totalCount = currentTestCases.length;
-      setRunResult({
-        status: 'ACCEPTED',
-        totalCount,
-        passedCount: totalCount,
+    const langOption = SUPPORTED_LANGUAGES.find((l) => l.id === activeLanguage);
+    const languageId = langOption?.languageId || 71;
+
+    try {
+      const response = await apiRequest<{
+        submissionId: string;
+        verdict: string;
+        passedCount: number;
+        totalCount: number;
+        details?: Array<{
+          caseIndex: number;
+          passed: boolean;
+          actualOutput?: string;
+          expectedOutput?: string;
+          time?: number;
+          stderr?: string;
+          compileOutput?: string;
+        }>;
+        matchEnded: boolean;
+        winnerUserId?: string;
+      }>('/api/submissions/submit', {
+        method: 'POST',
+        body: JSON.stringify({
+          matchId: match?.matchId,
+          questionId: activeQuestion._id,
+          code: currentCode,
+          languageId,
+          testCases: currentTestCases,
+          slug: activeQuestion.slug,
+          title: activeQuestion.title,
+        }),
       });
 
-      if (match && user) {
-        try {
-          await updateProgress({
-            matchId: match.matchId,
-            userId: user._id,
-            questionId: activeQuestion._id,
-            testCasesPassed: totalCount,
-            totalTestCases: totalCount,
-          });
-        } catch {
-          // Handled gracefully
+      if (response.success && response.data) {
+        const mappedStatus =
+          response.data.verdict === 'ACCEPTED'
+            ? 'ACCEPTED'
+            : response.data.verdict === 'TLE'
+            ? 'TLE'
+            : response.data.verdict === 'RUNTIME ERROR'
+            ? 'RUNTIME ERROR'
+            : response.data.verdict === 'COMPILATION ERROR'
+            ? 'COMPILATION ERROR'
+            : 'WRONG ANSWER';
+
+        setRunResult({
+          status: mappedStatus as any,
+          totalCount: response.data.totalCount,
+          passedCount: response.data.passedCount,
+          details: response.data.details,
+        });
+
+        // Also notify via socket progress update if in an active match
+        if (match && user) {
+          try {
+            await updateProgress({
+              matchId: match.matchId,
+              userId: user._id,
+              questionId: activeQuestion._id,
+              testCasesPassed: response.data.passedCount,
+              totalTestCases: response.data.totalCount,
+            });
+          } catch {
+            // Handled gracefully via socket listener
+          }
         }
       }
-
+    } catch (err: any) {
+      setRunResult({
+        status: 'RUNTIME ERROR',
+        totalCount: 1,
+        passedCount: 0,
+        details: [
+          {
+            caseIndex: 0,
+            passed: false,
+            actualOutput: err.message || 'Submission failed',
+          },
+        ],
+      });
+    } finally {
       setIsSubmitting(false);
-    }, 900);
+    }
   };
 
   // Loading state during hydration
@@ -344,6 +514,17 @@ export function MatchPage() {
     status: 'in_progress' as const,
   };
 
+  const handleLeaveMatch = async () => {
+    if (match && match.status === 'in_progress') {
+      try {
+        await leaveMatch(match.matchId);
+      } catch (err) {
+        console.warn('Forfeit on leave error:', err);
+      }
+    }
+    navigate('/');
+  };
+
   return (
     <div className="flex h-[calc(100dvh-4rem)] flex-col overflow-hidden bg-background">
       {/* Top Header Navigation & Status Bar */}
@@ -360,6 +541,7 @@ export function MatchPage() {
         onSubmitCode={handleSubmitCode}
         isRunning={isRunning}
         isSubmitting={isSubmitting}
+        onLeaveMatch={handleLeaveMatch}
       />
 
       {/* Main Resizable Workspace */}
@@ -401,6 +583,7 @@ export function MatchPage() {
               {/* Bottom Right: Testcase Console */}
               <Panel defaultSize="40%" minSize="15%" className="flex flex-col overflow-hidden">
                 <TestcaseConsole
+                  question={activeQuestion}
                   testCases={currentTestCases}
                   activeCaseIndex={activeCaseIndex}
                   onSelectCase={setActiveCaseIndex}
@@ -415,6 +598,16 @@ export function MatchPage() {
           </Panel>
         </Group>
       </div>
+
+      {/* Match Result Overlay Modal */}
+      {displayMatch.status === 'completed' && showResultModal && (
+        <MatchResultModal
+          match={displayMatch}
+          currentUserId={user?._id}
+          reason={matchEndReason || undefined}
+          onClose={() => setShowResultModal(false)}
+        />
+      )}
     </div>
   );
 }

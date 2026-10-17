@@ -14,12 +14,15 @@ export interface ClientToServerEvents {
   'match:get': (payload: { matchId: string }, ack: (res: SocketResponse<Match>) => void) => void;
   'match:update_progress': (payload: UpdateProgressInput, ack?: (res: SocketResponse<Match>) => void) => void;
   'match:reconnect': (payload: { matchId: string }, ack: (res: SocketResponse<Match>) => void) => void;
+  'match:end': (payload: { matchId: string; reason?: string; forfeit?: boolean }, ack?: (res: SocketResponse<Match>) => void) => void;
+  'match:leave': (payload: { matchId: string }, ack?: (res: SocketResponse<Match>) => void) => void;
 }
 
 export interface ServerToClientEvents {
   'room:updated': (room: Room) => void;
   'match:started': (payload: { match: Match }) => void;
   'match:progress_updated': (payload: { matchId: string; player1Stats: PlayerStats; player2Stats: PlayerStats }) => void;
-  'match:ended': (payload: { matchId: string; winnerUserId?: string }) => void;
+  'match:ended': (payload: { matchId: string; winnerUserId?: string; reason?: string; match?: Match }) => void;
   'match:player_disconnected': (payload: { userId: string }) => void;
 }
+

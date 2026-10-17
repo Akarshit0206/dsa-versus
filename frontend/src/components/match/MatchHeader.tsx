@@ -23,6 +23,7 @@ interface MatchHeaderProps {
   onSubmitCode: () => void;
   isRunning: boolean;
   isSubmitting: boolean;
+  onLeaveMatch?: () => void;
 }
 
 export function MatchHeader({
@@ -34,6 +35,7 @@ export function MatchHeader({
   onSubmitCode,
   isRunning,
   isSubmitting,
+  onLeaveMatch,
 }: MatchHeaderProps) {
   const navigate = useNavigate();
   const { user } = useAuth();
@@ -80,8 +82,16 @@ export function MatchHeader({
   const opponentPlayer = isPlayer1 ? match.player2 : match.player1;
 
   const handleLeave = () => {
-    if (window.confirm('Are you sure you want to leave the active match?')) {
-      navigate('/');
+    if (
+      window.confirm(
+        'Are you sure you want to leave the active match? Leaving will forfeit the match and declare your opponent the winner.'
+      )
+    ) {
+      if (onLeaveMatch) {
+        onLeaveMatch();
+      } else {
+        navigate('/');
+      }
     }
   };
 

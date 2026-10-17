@@ -150,6 +150,36 @@ export class MatchManager {
   }
 
   /**
+   * Find an active in-progress match by user ID
+   */
+  public getActiveMatchByUserId(userId: string): InMemoryMatch | undefined {
+    for (const match of this.activeMatches.values()) {
+      if (
+        match.status === "in_progress" &&
+        (match.player1.userId === userId || match.player2.userId === userId)
+      ) {
+        return match;
+      }
+    }
+    return undefined;
+  }
+
+  /**
+   * Find an active in-progress match by socket ID
+   */
+  public getActiveMatchBySocketId(socketId: string): InMemoryMatch | undefined {
+    for (const match of this.activeMatches.values()) {
+      if (
+        match.status === "in_progress" &&
+        (match.player1.socketId === socketId || match.player2.socketId === socketId)
+      ) {
+        return match;
+      }
+    }
+    return undefined;
+  }
+
+  /**
    * Get an active match with sanitized questions, hydrating from DB if needed
    */
   public async getMatchWithQuestions(matchId: string): Promise<InMemoryMatch | undefined> {
@@ -237,6 +267,129 @@ export class MatchManager {
         (sum, p) => sum + p.testCasesPassed,
         0
       );
+
+      // Track elapsed time taken
+      const startTime = new Date(match.startedAt).getTime();
+      playerStats.timeTaken = Math.max(0, Math.floor((Date.now() - startTime) / 1000));
+    }
+
+    return match;
+  }
+
+  /**
+   * Determine whether a match should end and who won based on contest rules
+   */
+  public checkAndResolveWinner(
+    matchId: string,
+    options?: { forceEnd?: boolean; reason?: string; forfeitUserId?: string }
+  ): { isEnded: boolean; winnerId: string | null; reason: string } {
+    const match = this.activeMatches.get(matchId);
+    if (!match) throw new Error("MATCH_NOT_FOUND");
+
+    if (match.status === "completed") {
+      return {
+        isEnded: true,
+        winnerId: match.winner ? match.winner.toString() : null,
+        reason: "MATCH_ALREADY_COMPLETED",
+      };
+    }
+
+    // 1. Forfeit Case
+    if (options?.forfeitUserId) {
+      const winnerId =
+        match.player1.userId === options.forfeitUserId
+          ? match.player2.userId
+          : match.player1.userId;
+      return { isEnded: true, winnerId, reason: "FORFEIT" };
+    }
+
+    // 2. Check if either duelist solved all questions (100% test cases)
+    const p1Progress = match.player1Stats.questionProgress;
+    const p2Progress = match.player2Stats.questionProgress;
+
+    const p1SolvedAll =
+      p1Progress.length > 0 &&
+      p1Progress.every((p) => p.totalTestCases > 0 && p.testCasesPassed === p.totalTestCases);
+
+    const p2SolvedAll =
+      p2Progress.length > 0 &&
+      p2Progress.every((p) => p.totalTestCases > 0 && p.testCasesPassed === p.totalTestCases);
+
+    if (p1SolvedAll && !p2SolvedAll) {
+      return { isEnded: true, winnerId: match.player1.userId, reason: "ALL_PROBLEMS_SOLVED" };
+    }
+
+    if (p2SolvedAll && !p1SolvedAll) {
+      return { isEnded: true, winnerId: match.player2.userId, reason: "ALL_PROBLEMS_SOLVED" };
+    }
+
+    if (p1SolvedAll && p2SolvedAll) {
+      // Both solved all: faster timeTaken wins
+      if (match.player1Stats.timeTaken < match.player2Stats.timeTaken) {
+        return { isEnded: true, winnerId: match.player1.userId, reason: "ALL_PROBLEMS_SOLVED_FASTER" };
+      } else if (match.player2Stats.timeTaken < match.player1Stats.timeTaken) {
+        return { isEnded: true, winnerId: match.player2.userId, reason: "ALL_PROBLEMS_SOLVED_FASTER" };
+      }
+      return { isEnded: true, winnerId: null, reason: "ALL_PROBLEMS_SOLVED_TIE" };
+    }
+
+    // 3. Timeout / Force End: compare test cases passed & timeTaken
+    if (options?.forceEnd) {
+      const p1Score = match.player1Stats.totalTestCasesPassed;
+      const p2Score = match.player2Stats.totalTestCasesPassed;
+
+      if (p1Score > p2Score) {
+        return { isEnded: true, winnerId: match.player1.userId, reason: "HIGHER_SCORE_ON_TIMEOUT" };
+      } else if (p2Score > p1Score) {
+        return { isEnded: true, winnerId: match.player2.userId, reason: "HIGHER_SCORE_ON_TIMEOUT" };
+      } else {
+        // Equal test cases: tie-break by timeTaken
+        if (
+          match.player1Stats.timeTaken > 0 &&
+          match.player2Stats.timeTaken > 0 &&
+          match.player1Stats.timeTaken !== match.player2Stats.timeTaken
+        ) {
+          const winnerId =
+            match.player1Stats.timeTaken < match.player2Stats.timeTaken
+              ? match.player1.userId
+              : match.player2.userId;
+          return { isEnded: true, winnerId, reason: "FASTER_TIME_ON_TIMEOUT" };
+        }
+        return { isEnded: true, winnerId: null, reason: "DRAW_ON_TIMEOUT" };
+      }
+    }
+
+    return { isEnded: false, winnerId: null, reason: "IN_PROGRESS" };
+  }
+
+  /**
+   * Finalize match, record winner, and persist to MongoDB
+   */
+  public async finalizeMatch(
+    matchId: string,
+    winnerUserId: string | null,
+    reason: string = "MATCH_COMPLETED"
+  ): Promise<InMemoryMatch> {
+    const match = this.activeMatches.get(matchId);
+    if (!match) throw new Error("MATCH_NOT_FOUND");
+
+    match.status = "completed";
+    match.endedAt = new Date();
+
+    if (winnerUserId && Types.ObjectId.isValid(winnerUserId)) {
+      match.winner = new Types.ObjectId(winnerUserId);
+    } else {
+      match.winner = null;
+    }
+
+    // Persist final match state in MongoDB
+    if (Types.ObjectId.isValid(matchId)) {
+      await MatchModel.findByIdAndUpdate(matchId, {
+        winner: match.winner,
+        endedAt: match.endedAt,
+        player1Stats: match.player1Stats,
+        player2Stats: match.player2Stats,
+      });
     }
 
     return match;

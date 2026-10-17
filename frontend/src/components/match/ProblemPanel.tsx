@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { BookOpen, Copy, Check, Hash, Sparkles } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { formatExampleInput } from '@/utils/testCaseUtils';
 import type { PublicQuestion } from '@/types';
 
 interface ProblemPanelProps {
@@ -103,7 +104,7 @@ export function ProblemPanel({ question, questionIndex }: ProblemPanelProps) {
                         <span className="font-sans font-bold">Input:</span>
                         <button
                           type="button"
-                          onClick={() => handleCopy(tc.input, inputKey)}
+                          onClick={() => handleCopy(formatExampleInput(tc.input, question), inputKey)}
                           className="opacity-0 group-hover/item:opacity-100 transition-opacity text-muted-foreground hover:text-ink"
                           title="Copy input"
                         >
@@ -114,7 +115,7 @@ export function ProblemPanel({ question, questionIndex }: ProblemPanelProps) {
                           )}
                         </button>
                       </div>
-                      <code className="text-ink break-all">{tc.input}</code>
+                      <code className="text-ink break-all">{formatExampleInput(tc.input, question)}</code>
                     </div>
 
                     {/* Output */}

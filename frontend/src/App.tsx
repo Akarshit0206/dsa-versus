@@ -10,6 +10,7 @@ import { SignInPage } from '@/pages/SignInPage'
 import { SignUpPage } from '@/pages/SignUpPage'
 import { RoomLobbyPage } from '@/pages/RoomLobbyPage'
 import { MatchPage } from '@/pages/MatchPage'
+import { ProfilePage } from '@/pages/ProfilePage'
 
 export default function App() {
   return (
@@ -50,6 +51,14 @@ export default function App() {
               element={
                 <ProtectedRoute>
                   <MatchPage />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/profile"
+              element={
+                <ProtectedRoute>
+                  <ProfilePage />
                 </ProtectedRoute>
               }
             />

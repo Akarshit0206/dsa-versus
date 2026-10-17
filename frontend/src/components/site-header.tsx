@@ -30,12 +30,20 @@ export function SiteHeader() {
         <div className="flex items-center gap-3">
           {user ? (
             <div className="flex items-center gap-2">
-              <div className="flex items-center gap-2 rounded-full border border-slate-300 bg-slate-100/80 px-3 py-1 text-xs font-semibold text-slate-800 dark:border-slate-700 dark:bg-slate-800/80 dark:text-slate-200">
+              <Link
+                to="/profile"
+                className="cursor-pointer flex items-center gap-2 rounded-full border border-slate-300 bg-slate-100/80 px-3 py-1 text-xs font-semibold text-slate-800 transition-all hover:border-slate-400 hover:bg-slate-200/90 active:scale-95 dark:border-slate-700 dark:bg-slate-800/80 dark:text-slate-200 dark:hover:bg-slate-700"
+                title="View your profile"
+              >
                 <span className="flex size-5 items-center justify-center rounded-full bg-slate-800 text-slate-100 dark:bg-slate-200 dark:text-slate-900">
-                  <UserIcon className="size-3" />
+                  {user.avatar ? (
+                    <span className="text-[10px]">{user.avatar}</span>
+                  ) : (
+                    <UserIcon className="size-3" />
+                  )}
                 </span>
                 <span className="max-w-[120px] truncate sm:max-w-[160px]">{user.username}</span>
-              </div>
+              </Link>
 
               <button
                 type="button"

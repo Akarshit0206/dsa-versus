@@ -17,7 +17,7 @@ async function computeUserStatsAndMatches(userId: Types.ObjectId) {
     .populate("player1Stats.player", "username avatar")
     .populate("player2Stats.player", "username avatar")
     .populate("winner", "username avatar")
-    .populate("questions", "title difficulty topics")
+    .populate("questions", "title difficulty topics testCases")
     .lean();
 
   let wins = 0;
@@ -72,12 +72,36 @@ async function computeUserStatsAndMatches(userId: Types.ObjectId) {
       timeTaken: myStats?.timeTaken ?? -1,
       duration: m.duration || 15,
       playedAt: m.endedAt || m.createdAt,
-      questions: (m.questions || []).map((q: any) => ({
-        _id: q._id?.toString() || "",
-        title: q.title || "DSA Problem",
-        difficulty: q.difficulty || "MEDIUM",
-        topics: q.topics || [],
-      })),
+      questions: (m.questions || []).map((q: any, idx: number) => {
+        const qId = q._id ? q._id.toString() : q.toString();
+        const myQProg =
+          myStats?.questionProgress?.find(
+            (qp: any) => (qp.question?._id || qp.question)?.toString() === qId
+          ) || myStats?.questionProgress?.[idx];
+        const oppQProg =
+          opponentStats?.questionProgress?.find(
+            (qp: any) => (qp.question?._id || qp.question)?.toString() === qId
+          ) || opponentStats?.questionProgress?.[idx];
+
+        const myPassed = myQProg?.testCasesPassed ?? 0;
+        const oppPassed = oppQProg?.testCasesPassed ?? 0;
+        const rawTotal =
+          myQProg?.totalTestCases ||
+          oppQProg?.totalTestCases ||
+          (Array.isArray(q.testCases) ? q.testCases.length : 0);
+        const totalTestCases = Math.max(rawTotal, myPassed, oppPassed);
+
+        return {
+          _id: qId,
+          title: q.title || "DSA Problem",
+          difficulty: q.difficulty || "MEDIUM",
+          topics: q.topics || [],
+          totalTestCases,
+          testCasesPassed: myPassed,
+          myTestCasesPassed: myPassed,
+          opponentTestCasesPassed: oppPassed,
+        };
+      }),
     };
   });
 

@@ -15,6 +15,10 @@ export interface RecentMatchQuestion {
   title: string;
   difficulty: 'EASY' | 'MEDIUM' | 'HARD';
   topics: string[];
+  totalTestCases: number;
+  testCasesPassed?: number;
+  myTestCasesPassed?: number;
+  opponentTestCasesPassed?: number;
 }
 
 export interface RecentMatch {

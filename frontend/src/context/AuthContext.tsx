@@ -8,6 +8,7 @@ interface AuthContextType {
   login: (identifier: string, password: string) => Promise<UserProfile>
   register: (username: string, email: string, password: string) => Promise<UserProfile>
   logout: () => Promise<void>
+  updateUser: (updatedFields: Partial<UserProfile>) => void
 }
 
 const STORAGE_KEY = 'algoduel_user_session'
@@ -110,8 +111,17 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     }
   }
 
+  function updateUser(updatedFields: Partial<UserProfile>) {
+    setUser((prev) => {
+      if (!prev) return prev;
+      const updated = { ...prev, ...updatedFields };
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(updated));
+      return updated;
+    });
+  }
+
   return (
-    <AuthContext.Provider value={{ user, loading, login, register, logout }}>
+    <AuthContext.Provider value={{ user, loading, login, register, logout, updateUser }}>
       {children}
     </AuthContext.Provider>
   )
